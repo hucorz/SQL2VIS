@@ -1,9 +1,3 @@
-'''
-customers_campaigns_ecommerce / schema.sql
-products_for_hire / schema.sql
- 里面有个 CREATE 里面少了个 逗号
-
-'''
 import os
 import ijson
 import random
