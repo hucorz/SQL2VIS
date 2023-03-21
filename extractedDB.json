@@ -4,62 +4,41 @@
             "aid",
             "homepage",
             "name",
-            "oid",
-            "PRIMARY"
+            "oid"
         ],
         "conference": [
             "cid",
             "homepage",
-            "name",
-            "PRIMARY"
+            "name"
         ],
         "domain": [
             "did",
-            "name",
-            "PRIMARY"
+            "name"
         ],
         "domain_author": [
             "aid",
-            "did",
-            "PRIMARY",
-            "aid",
-            "FOREIGN",
-            "FOREIGN"
+            "did"
         ],
         "domain_conference": [
             "cid",
-            "did",
-            "PRIMARY",
-            "cid",
-            "FOREIGN",
-            "FOREIGN"
+            "did"
         ],
         "journal": [
             "homepage",
             "jid",
-            "name",
-            "PRIMARY"
+            "name"
         ],
         "domain_journal": [
             "did",
-            "jid",
-            "PRIMARY",
-            "jid",
-            "FOREIGN",
-            "FOREIGN"
+            "jid"
         ],
         "keyword": [
             "keyword",
-            "kid",
-            "PRIMARY"
+            "kid"
         ],
         "domain_keyword": [
             "did",
-            "kid",
-            "PRIMARY",
-            "kid",
-            "FOREIGN",
-            "FOREIGN"
+            "kid"
         ],
         "publication": [
             "abstract",
@@ -69,47 +48,29 @@
             "pid",
             "reference_num",
             "title",
-            "year",
-            "PRIMARY",
-            "FOREIGN",
-            "FOREIGN"
+            "year"
         ],
         "domain_publication": [
             "did",
-            "pid",
-            "PRIMARY",
-            "pid",
-            "FOREIGN",
-            "FOREIGN"
+            "pid"
         ],
         "organization": [
             "continent",
             "homepage",
             "name",
-            "oid",
-            "PRIMARY"
+            "oid"
         ],
         "publication_keyword": [
             "pid",
-            "kid",
-            "PRIMARY",
-            "pid",
-            "FOREIGN",
-            "FOREIGN"
+            "kid"
         ],
         "writes": [
             "aid",
-            "pid",
-            "PRIMARY",
-            "pid",
-            "FOREIGN",
-            "FOREIGN"
+            "pid"
         ],
         "cite": [
             "cited",
-            "citing",
-            "FOREIGN",
-            "FOREIGN"
+            "citing"
         ]
     },
     "activity_1": {
@@ -119,15 +80,11 @@
         ],
         "Participates_in": [
             "stuid",
-            "actid",
-            "FOREIGN",
-            "FOREIGN"
+            "actid"
         ],
         "Faculty_Participates_in": [
             "FacID",
-            "actid",
-            "FOREIGN",
-            "FOREIGN"
+            "actid"
         ],
         "Student": [
             "StuID",
@@ -154,8 +111,7 @@
         "pilot": [
             "Pilot_Id",
             "Name",
-            "Age",
-            "PRIMARY"
+            "Age"
         ],
         "aircraft": [
             "Aircraft_ID",
@@ -163,8 +119,7 @@
             "Description",
             "Max_Gross_Weight",
             "Total_disk_area",
-            "Max_disk_Loading",
-            "PRIMARY"
+            "Max_disk_Loading"
         ],
         "match": [
             "Round",
@@ -173,10 +128,7 @@
             "Date",
             "Fastest_Qualifying",
             "Winning_Pilot",
-            "Winning_Aircraft",
-            "PRIMARY",
-            "FOREIGN",
-            "FOREIGN"
+            "Winning_Aircraft"
         ],
         "airport": [
             "Airport_ID",
@@ -187,17 +139,12 @@
             "Domestic_Passengers",
             "Transit_Passengers",
             "Aircraft_Movements",
-            "Freight_Metric_Tonnes",
-            "PRIMARY"
+            "Freight_Metric_Tonnes"
         ],
         "airport_aircraft": [
             "ID",
             "Airport_ID",
-            "Aircraft_ID",
-            "PRIMARY",
-            "Aircraft_ID",
-            "FOREIGN",
-            "FOREIGN"
+            "Aircraft_ID"
         ]
     },
     "allergy_1": {
@@ -207,9 +154,7 @@
         ],
         "Has_Allergy": [
             "StuID",
-            "Allergy",
-            "FOREIGN",
-            "FOREIGN"
+            "Allergy"
         ],
         "Student": [
             "StuID",
@@ -231,7 +176,6 @@
             "building_address",
             "building_manager",
             "building_phone",
-            "PRIMARY",
             "UNIQUE"
         ],
         "Apartments": [
@@ -242,16 +186,11 @@
             "bathroom_count",
             "bedroom_count",
             "room_count",
-            "PRIMARY",
-            "UNIQUE",
-            "FOREIGN"
+            "UNIQUE"
         ],
         "Apartment_Facilities": [
             "apt_id",
-            "facility_code",
-            "PRIMARY",
-            "facility_code",
-            "FOREIGN"
+            "facility_code"
         ],
         "Guests": [
             "guest_id",
@@ -259,7 +198,6 @@
             "guest_first_name",
             "guest_last_name",
             "date_of_birth",
-            "PRIMARY",
             "UNIQUE"
         ],
         "Apartment_Bookings": [
@@ -269,19 +207,13 @@
             "booking_status_code",
             "booking_start_date",
             "booking_end_date",
-            "PRIMARY",
-            "UNIQUE",
-            "FOREIGN",
-            "FOREIGN"
+            "UNIQUE"
         ],
         "View_Unit_Status": [
             "apt_id",
             "apt_booking_id",
             "status_date",
-            "available_yn",
-            "PRIMARY",
-            "FOREIGN",
-            "FOREIGN"
+            "available_yn"
         ]
     },
     "architecture": {
@@ -289,8 +221,7 @@
             "id",
             "name",
             "nationality",
-            "gender",
-            "PRIMARY"
+            "gender"
         ],
         "bridge": [
             "architect_id",
@@ -298,9 +229,7 @@
             "name",
             "location",
             "length_meters",
-            "length_feet",
-            "PRIMARY",
-            "FOREIGN"
+            "length_feet"
         ],
         "mill": [
             "architect_id",
@@ -309,9 +238,7 @@
             "name",
             "type",
             "built_year",
-            "notes",
-            "PRIMARY",
-            "FOREIGN"
+            "notes"
         ]
     },
     "assets_maintenance": {
@@ -327,8 +254,7 @@
             "maintenance_contract_company_id",
             "contract_start_date",
             "contract_end_date",
-            "other_contract_details",
-            "FOREIGN"
+            "other_contract_details"
         ],
         "Parts": [
             "part_id",
@@ -357,29 +283,22 @@
             "asset_model",
             "asset_acquired_date",
             "asset_disposed_date",
-            "other_asset_details",
-            "FOREIGN",
-            "FOREIGN"
+            "other_asset_details"
         ],
         "Asset_Parts": [
             "asset_id",
-            "part_id",
-            "FOREIGN",
-            "FOREIGN"
+            "part_id"
         ],
         "Maintenance_Engineers": [
             "engineer_id",
             "company_id",
             "first_name",
             "last_name",
-            "other_details",
-            "FOREIGN"
+            "other_details"
         ],
         "Engineer_Skills": [
             "engineer_id",
-            "skill_id",
-            "FOREIGN",
-            "FOREIGN"
+            "skill_id"
         ],
         "Fault_Log": [
             "fault_log_entry_id",
@@ -387,9 +306,7 @@
             "recorded_by_staff_id",
             "fault_log_entry_datetime",
             "fault_description",
-            "other_fault_details",
-            "FOREIGN",
-            "FOREIGN"
+            "other_fault_details"
         ],
         "Engineer_Visits": [
             "engineer_visit_id",
@@ -399,31 +316,23 @@
             "fault_status",
             "visit_start_datetime",
             "visit_end_datetime",
-            "other_visit_details",
-            "FOREIGN",
-            "FOREIGN",
-            "FOREIGN"
+            "other_visit_details"
         ],
         "Part_Faults": [
             "part_fault_id",
             "part_id",
             "fault_short_name",
             "fault_description",
-            "other_fault_details",
-            "FOREIGN"
+            "other_fault_details"
         ],
         "Fault_Log_Parts": [
             "fault_log_entry_id",
             "part_fault_id",
-            "fault_status",
-            "FOREIGN",
-            "FOREIGN"
+            "fault_status"
         ],
         "Skills_Required_To_Fix": [
             "part_fault_id",
-            "skill_id",
-            "FOREIGN",
-            "FOREIGN"
+            "skill_id"
         ]
     },
     "battle_death": {
@@ -433,8 +342,7 @@
             "date",
             "bulgarian_commander",
             "latin_commander",
-            "result",
-            "PRIMARY"
+            "result"
         ],
         "ship": [
             "lost_in_battle",
@@ -443,18 +351,14 @@
             "tonnage",
             "ship_type",
             "location",
-            "disposition_of_ship",
-            "PRIMARY",
-            "FOREIGN"
+            "disposition_of_ship"
         ],
         "death": [
             "caused_by_ship_id",
             "id",
             "note",
             "killed",
-            "injured",
-            "PRIMARY",
-            "FOREIGN"
+            "injured"
         ]
     },
     "behavior_monitoring": {
@@ -491,8 +395,7 @@
             "email_address",
             "date_first_rental",
             "date_left_university",
-            "other_student_details",
-            "FOREIGN"
+            "other_student_details"
         ],
         "Teachers": [
             "teacher_id",
@@ -503,8 +406,7 @@
             "gender",
             "cell_mobile_number",
             "email_address",
-            "other_details",
-            "FOREIGN"
+            "other_details"
         ],
         "Assessment_Notes": [
             "notes_id",
@@ -512,9 +414,7 @@
             "teacher_id",
             "date_of_notes",
             "text_of_notes",
-            "other_details",
-            "FOREIGN",
-            "FOREIGN"
+            "other_details"
         ],
         "Behavior_Incident": [
             "incident_id",
@@ -524,9 +424,7 @@
             "date_incident_end",
             "incident_summary",
             "recommendations",
-            "other_details",
-            "FOREIGN",
-            "FOREIGN"
+            "other_details"
         ],
         "Detention": [
             "detention_id",
@@ -535,9 +433,7 @@
             "datetime_detention_start",
             "datetime_detention_end",
             "detention_summary",
-            "other_details",
-            "FOREIGN",
-            "FOREIGN"
+            "other_details"
         ],
         "Student_Addresses": [
             "student_id",
@@ -545,18 +441,12 @@
             "date_address_from",
             "date_address_to",
             "monthly_rental",
-            "4",
-            "other_details",
-            "FOREIGN",
-            "FOREIGN"
+            "other_details"
         ],
         "Students_in_Detention": [
             "student_id",
             "detention_id",
-            "incident_id",
-            "FOREIGN",
-            "FOREIGN",
-            "FOREIGN"
+            "incident_id"
         ]
     },
     "body_builder": {
@@ -565,9 +455,7 @@
             "People_ID",
             "Snatch",
             "Clean_Jerk",
-            "Total",
-            "PRIMARY",
-            "FOREIGN"
+            "Total"
         ],
         "people": [
             "People_ID",
@@ -575,8 +463,7 @@
             "Height",
             "Weight",
             "Birth_Date",
-            "Birth_Place",
-            "PRIMARY"
+            "Birth_Place"
         ]
     },
     "book_2": {
@@ -585,27 +472,32 @@
             "Book_ID",
             "Publisher",
             "Publication_Date",
-            "Price",
-            "PRIMARY",
-            "FOREIGN"
+            "Price"
         ],
         "book": [
             "Book_ID",
             "Title",
             "Issues",
-            "Writer",
-            "PRIMARY"
+            "Writer"
         ]
     },
     "browser_web": {
-        "IF": [
+        "Web_client_accelerator": [
+            "id",
+            "name",
+            "Operating_system",
+            "Client",
+            "Connection"
+        ],
+        "browser": [
+            "id",
+            "name",
+            "market_share"
+        ],
+        "accelerator_compatible_browser": [
             "accelerator_id",
             "browser_id",
-            "compatible_since_year",
-            "PRIMARY",
-            "browser_id",
-            "FOREIGN",
-            "FOREIGN"
+            "compatible_since_year"
         ]
     },
     "candidate_poll": {
@@ -617,9 +509,7 @@
             "Support_rate",
             "Consider_rate",
             "Oppose_rate",
-            "Unsure_rate",
-            "PRIMARY",
-            "FOREIGN"
+            "Unsure_rate"
         ],
         "people": [
             "People_ID",
@@ -627,8 +517,7 @@
             "Name",
             "Date_of_Birth",
             "Height",
-            "Weight",
-            "PRIMARY"
+            "Weight"
         ]
     },
     "cinema": {
@@ -639,27 +528,21 @@
             "Title",
             "Directed_by",
             "Original_air_date",
-            "Production_code",
-            "PRIMARY"
+            "Production_code"
         ],
         "cinema": [
             "Cinema_ID",
             "Name",
             "Openning_year",
             "Capacity",
-            "Location",
-            "PRIMARY"
+            "Location"
         ],
         "schedule": [
             "Cinema_ID",
             "Film_ID",
             "Date",
             "Show_times_per_day",
-            "Price",
-            "PRIMARY",
-            "Film_ID",
-            "FOREIGN",
-            "FOREIGN"
+            "Price"
         ]
     },
     "city_record": {
@@ -669,8 +552,7 @@
             "Hanzi",
             "Hanyu_Pinyin",
             "Regional_Population",
-            "GDP",
-            "PRIMARY"
+            "GDP"
         ],
         "match": [
             "Match_ID",
@@ -678,8 +560,7 @@
             "Venue",
             "Score",
             "Result",
-            "Competition",
-            "PRIMARY"
+            "Competition"
         ],
         "temperature": [
             "City_ID",
@@ -693,17 +574,12 @@
             "Sep",
             "Oct",
             "Nov",
-            "Dec",
-            "PRIMARY",
-            "FOREIGN"
+            "Dec"
         ],
         "hosting_city": [
             "Year",
             "Match_ID",
-            "Host_City",
-            "PRIMARY",
-            "FOREIGN",
-            "FOREIGN"
+            "Host_City"
         ]
     },
     "climbing": {
@@ -713,8 +589,7 @@
             "Height",
             "Prominence",
             "Range",
-            "Country",
-            "PRIMARY"
+            "Country"
         ],
         "climber": [
             "Climber_ID",
@@ -722,9 +597,7 @@
             "Country",
             "Time",
             "Points",
-            "Mountain_ID",
-            "PRIMARY",
-            "FOREIGN"
+            "Mountain_ID"
         ]
     },
     "club_1": {
@@ -747,9 +620,7 @@
         "Member_of_club": [
             "StuID",
             "ClubID",
-            "Position",
-            "FOREIGN",
-            "FOREIGN"
+            "Position"
         ]
     },
     "coffee_shop": {
@@ -758,8 +629,7 @@
             "Address",
             "Num_of_staff",
             "Score",
-            "Open_Year",
-            "PRIMARY"
+            "Open_Year"
         ],
         "member": [
             "Member_ID",
@@ -768,26 +638,18 @@
             "Age",
             "Time_of_purchase",
             "Level_of_membership",
-            "Address",
-            "PRIMARY"
+            "Address"
         ],
         "happy_hour": [
             "HH_ID",
             "Shop_ID",
             "Month",
-            "Num_of_shaff_in_charge",
-            "PRIMARY",
-            "Shop_I",
-            "Month",
-            "FOREIGN"
+            "Num_of_shaff_in_charge"
         ],
         "happy_hour_member": [
             "HH_ID",
             "Member_ID",
-            "Total_amount",
-            "PRIMARY",
-            "Member_ID",
-            "FOREIGN"
+            "Total_amount"
         ]
     },
     "college_3": {
@@ -822,9 +684,7 @@
         "Member_of": [
             "FacID",
             "DNO",
-            "Appt_Type",
-            "FOREIGN",
-            "FOREIGN"
+            "Appt_Type"
         ],
         "Course": [
             "CID",
@@ -833,23 +693,16 @@
             "Instructor",
             "Days",
             "Hours",
-            "DNO",
-            "FOREIGN",
-            "FOREIGN"
+            "DNO"
         ],
         "Minor_in": [
             "StuID",
-            "DNO",
-            "FOREIGN",
-            "FOREIGN"
+            "DNO"
         ],
         "Enrolled_in": [
             "StuID",
             "CID",
-            "Grade",
-            "FOREIGN",
-            "FOREIGN",
-            "FOREIGN"
+            "Grade"
         ],
         "Gradeconversion": [
             "lettergrade",
@@ -862,8 +715,7 @@
             "Age",
             "Name",
             "Nationality",
-            "Graduation_College",
-            "PRIMARY"
+            "Graduation_College"
         ],
         "company": [
             "Company_ID",
@@ -873,17 +725,12 @@
             "Sales_in_Billion",
             "Profits_in_Billion",
             "Assets_in_Billion",
-            "Market_Value_in_Billion",
-            "PRIMARY"
+            "Market_Value_in_Billion"
         ],
         "employment": [
             "Company_ID",
             "People_ID",
-            "Year_working",
-            "PRIMARY",
-            "People_ID",
-            "FOREIGN",
-            "FOREIGN"
+            "Year_working"
         ]
     },
     "company_office": {
@@ -893,8 +740,7 @@
             "City",
             "Height",
             "Stories",
-            "Status",
-            "PRIMARY"
+            "Status"
         ],
         "Companies": [
             "id",
@@ -904,17 +750,12 @@
             "Sales_billion",
             "Profits_billion",
             "Assets_billion",
-            "Market_Value_billion",
-            "PRIMARY"
+            "Market_Value_billion"
         ],
         "Office_locations": [
             "building_id",
             "company_id",
-            "move_in_year",
-            "PRIMARY",
-            "company_id",
-            "FOREIGN",
-            "FOREIGN"
+            "move_in_year"
         ]
     },
     "concert_singer": {
@@ -925,8 +766,7 @@
             "Capacity",
             "Highest",
             "Lowest",
-            "Average",
-            "PRIMARY"
+            "Average"
         ],
         "singer": [
             "Singer_ID",
@@ -935,25 +775,18 @@
             "Song_Name",
             "Song_release_year",
             "Age",
-            "Is_male",
-            "PRIMARY"
+            "Is_male"
         ],
         "concert": [
             "concert_ID",
             "concert_Name",
             "Theme",
             "Stadium_ID",
-            "Year",
-            "PRIMARY",
-            "FOREIGN"
+            "Year"
         ],
         "singer_in_concert": [
             "concert_ID",
-            "Singer_ID",
-            "PRIMARY",
-            "Singer_ID",
-            "FOREIGN",
-            "FOREIGN"
+            "Singer_ID"
         ]
     },
     "county_public_safety": {
@@ -966,8 +799,7 @@
             "Case_burden",
             "Crime_rate",
             "Police_force",
-            "Location",
-            "PRIMARY"
+            "Location"
         ],
         "city": [
             "City_ID",
@@ -978,52 +810,40 @@
             "Amerindian",
             "Asian",
             "Multiracial",
-            "Hispanic",
-            "PRIMARY",
-            "FOREIGN"
+            "Hispanic"
         ]
     },
     "course_teach": {
         "course": [
             "Course_ID",
             "Staring_Date",
-            "Course",
-            "PRIMARY"
+            "Course"
         ],
         "teacher": [
             "Teacher_ID",
             "Name",
             "Age",
-            "Hometown",
-            "PRIMARY"
+            "Hometown"
         ],
         "course_arrange": [
             "Course_ID",
             "Teacher_ID",
-            "Grade",
-            "PRIMARY",
-            "Teacher_I",
-            "Grade",
-            "FOREIGN",
-            "FOREIGN"
+            "Grade"
         ]
     },
     "cre_Docs_and_Epenses": {
         "Ref_Document_Types": [
             "Document_Type_Code",
             "Document_Type_Name",
-            "Document_Type_Description",
-            "PRIMARY"
+            "Document_Type_Description"
         ],
         "Ref_Budget_Codes": [
             "Budget_Type_Code",
-            "Budget_Type_Description",
-            "PRIMARY"
+            "Budget_Type_Description"
         ],
         "Projects": [
             "Project_ID",
-            "Project_Details",
-            "PRIMARY"
+            "Project_Details"
         ],
         "Documents": [
             "Document_ID",
@@ -1032,59 +852,44 @@
             "Document_Date",
             "Document_Name",
             "Document_Description",
-            "Other_Details",
-            "PRIMARY",
-            "FOREIGN",
-            "FOREIGN"
+            "Other_Details"
         ],
         "Statements": [
             "Statement_ID",
-            "Statement_Details",
-            "PRIMARY",
-            "FOREIGN"
+            "Statement_Details"
         ],
         "Documents_with_Expenses": [
             "Document_ID",
             "Budget_Type_Code",
-            "Document_Details",
-            "PRIMARY",
-            "FOREIGN",
-            "FOREIGN"
+            "Document_Details"
         ],
         "Accounts": [
             "Account_ID",
             "Statement_ID",
-            "Account_Details",
-            "PRIMARY",
-            "FOREIGN"
+            "Account_Details"
         ]
     },
     "cre_Doc_Control_Systems": {
         "Ref_Document_Types": [
             "document_type_code",
-            "document_type_description",
-            "PRIMARY"
+            "document_type_description"
         ],
         "Roles": [
             "role_code",
-            "role_description",
-            "PRIMARY"
+            "role_description"
         ],
         "Addresses": [
             "address_id",
-            "address_details",
-            "PRIMARY"
+            "address_details"
         ],
         "Ref_Document_Status": [
             "document_status_code",
-            "document_status_description",
-            "PRIMARY"
+            "document_status_description"
         ],
         "Ref_Shipping_Agents": [
             "shipping_agent_code",
             "shipping_agent_name",
-            "shipping_agent_description",
-            "PRIMARY"
+            "shipping_agent_description"
         ],
         "Documents": [
             "document_id",
@@ -1093,70 +898,40 @@
             "shipping_agent_code",
             "receipt_date",
             "receipt_number",
-            "other_details",
-            "PRIMARY",
-            "FOREIGN",
-            "FOREIGN",
-            "FOREIGN"
+            "other_details"
         ],
         "Employees": [
             "employee_id",
             "role_code",
             "employee_name",
-            "other_details",
-            "PRIMARY",
-            "FOREIGN"
+            "other_details"
         ],
         "Document_Drafts": [
             "document_id",
             "draft_number",
-            "draft_details",
-            "PRIMARY",
-            "draft_number",
-            "FOREIGN"
+            "draft_details"
         ],
         "Draft_Copies": [
             "document_id",
             "draft_number",
-            "copy_number",
-            "PRIMARY",
-            "draft_numbe",
-            "copy_number",
-            "FOREIGN",
-            "draft_number)",
-            "draft_number"
+            "copy_number"
         ],
         "Circulation_History": [
             "document_id",
             "draft_number",
             "copy_number",
-            "employee_id",
-            "PRIMARY",
-            "draft_numbe",
-            "copy_numbe",
-            "employee_id",
-            "FOREIGN",
-            "draft_numbe",
-            "copy_number)",
-            "draft_numbe",
-            "copy_number",
-            "FOREIGN"
+            "employee_id"
         ],
         "Documents_Mailed": [
             "document_id",
             "mailed_to_address_id",
-            "mailing_date",
-            "PRIMARY",
-            "mailed_to_address_id",
-            "FOREIGN",
-            "FOREIGN"
+            "mailing_date"
         ]
     },
     "cre_Doc_Template_Mgt": {
         "Ref_Template_Types": [
             "Template_Type_Code",
-            "Template_Type_Description",
-            "PRIMARY"
+            "Template_Type_Description"
         ],
         "Templates": [
             "Template_ID",
@@ -1164,51 +939,41 @@
             "Template_Type_Code",
             "Date_Effective_From",
             "Date_Effective_To",
-            "Template_Details",
-            "PRIMARY",
-            "FOREIGN"
+            "Template_Details"
         ],
         "Documents": [
             "Document_ID",
             "Template_ID",
             "Document_Name",
             "Document_Description",
-            "Other_Details",
-            "PRIMARY",
-            "FOREIGN"
+            "Other_Details"
         ],
         "Paragraphs": [
             "Paragraph_ID",
             "Document_ID",
             "Paragraph_Text",
-            "Other_Details",
-            "PRIMARY",
-            "FOREIGN"
+            "Other_Details"
         ]
     },
     "cre_Doc_Tracking_DB": {
         "Ref_Document_Types": [
             "Document_Type_Code",
             "Document_Type_Name",
-            "Document_Type_Description",
-            "PRIMARY"
+            "Document_Type_Description"
         ],
         "Ref_Calendar": [
             "Calendar_Date",
-            "Day_Number",
-            "PRIMARY"
+            "Day_Number"
         ],
         "Ref_Locations": [
             "Location_Code",
             "Location_Name",
-            "Location_Description",
-            "PRIMARY"
+            "Location_Description"
         ],
         "Roles": [
             "Role_Code",
             "Role_Name",
-            "Role_Description",
-            "PRIMARY"
+            "Role_Description"
         ],
         "All_Documents": [
             "Document_ID",
@@ -1216,10 +981,7 @@
             "Document_Type_Code",
             "Document_Name",
             "Document_Description",
-            "Other_Details",
-            "PRIMARY",
-            "FOREIGN",
-            "FOREIGN"
+            "Other_Details"
         ],
         "Employees": [
             "Employee_ID",
@@ -1227,22 +989,13 @@
             "Employee_Name",
             "Gender_MFU",
             "Date_of_Birth",
-            "Other_Details",
-            "PRIMARY",
-            "FOREIGN"
+            "Other_Details"
         ],
         "Document_Locations": [
             "Document_ID",
             "Location_Code",
             "Date_in_Location_From",
-            "Date_in_Locaton_To",
-            "PRIMARY",
-            "Location_Cod",
-            "Date_in_Location_From",
-            "FOREIGN",
-            "FOREIGN",
-            "FOREIGN",
-            "FOREIGN"
+            "Date_in_Locaton_To"
         ],
         "Documents_to_be_Destroyed": [
             "Document_ID",
@@ -1250,27 +1003,19 @@
             "Destroyed_by_Employee_ID",
             "Planned_Destruction_Date",
             "Actual_Destruction_Date",
-            "Other_Details",
-            "PRIMARY",
-            "FOREIGN",
-            "FOREIGN",
-            "FOREIGN",
-            "FOREIGN",
-            "FOREIGN"
+            "Other_Details"
         ]
     },
     "cre_Drama_Workshop_Groups": {
         "Ref_Payment_Methods": [
             "payment_method_code",
             "payment_method_description",
-            "PRIMARY",
             "UNIQUE"
         ],
         "Ref_Service_Types": [
             "Service_Type_Code",
             "Parent_Service_Type_Code",
             "Service_Type_Description",
-            "PRIMARY",
             "UNIQUE"
         ],
         "Addresses": [
@@ -1280,17 +1025,14 @@
             "City_Town",
             "State_County",
             "Other_Details",
-            "PRIMARY",
             "UNIQUE"
         ],
         "Products": [
             "Product_ID",
             "Product_Name",
             "Product_Price",
-            "4",
             "Product_Description",
             "Other_Product_Service_Details",
-            "PRIMARY",
             "UNIQUE"
         ],
         "Marketing_Regions": [
@@ -1298,7 +1040,6 @@
             "Marketing_Region_Name",
             "Marketing_Region_Descriptrion",
             "Other_Details",
-            "PRIMARY",
             "UNIQUE"
         ],
         "Clients": [
@@ -1308,9 +1049,7 @@
             "Customer_Name",
             "Customer_Phone",
             "Other_Details",
-            "PRIMARY",
-            "UNIQUE",
-            "FOREIGN"
+            "UNIQUE"
         ],
         "Drama_Workshop_Groups": [
             "Workshop_Group_ID",
@@ -1321,9 +1060,7 @@
             "Store_Phone",
             "Store_Email_Address",
             "Other_Details",
-            "PRIMARY",
-            "UNIQUE",
-            "FOREIGN"
+            "UNIQUE"
         ],
         "Performers": [
             "Performer_ID",
@@ -1332,9 +1069,7 @@
             "Customer_Phone",
             "Customer_Email_Address",
             "Other_Details",
-            "PRIMARY",
-            "UNIQUE",
-            "FOREIGN"
+            "UNIQUE"
         ],
         "Customers": [
             "Customer_ID",
@@ -1343,9 +1078,7 @@
             "Customer_Phone",
             "Customer_Email_Address",
             "Other_Details",
-            "PRIMARY",
-            "UNIQUE",
-            "FOREIGN"
+            "UNIQUE"
         ],
         "Stores": [
             "Store_ID",
@@ -1355,10 +1088,7 @@
             "Store_Phone",
             "Store_Email_Address",
             "Other_Details",
-            "PRIMARY",
-            "UNIQUE",
-            "FOREIGN",
-            "FOREIGN"
+            "UNIQUE"
         ],
         "Bookings": [
             "Booking_ID",
@@ -1370,18 +1100,11 @@
             "Planned_Delivery_Date",
             "Actual_Delivery_Date",
             "Other_Order_Details",
-            "PRIMARY",
-            "UNIQUE",
-            "FOREIGN",
-            "FOREIGN"
+            "UNIQUE"
         ],
         "Performers_in_Bookings": [
             "Order_ID",
-            "Performer_ID",
-            "PRIMARY",
-            "Performer_ID",
-            "FOREIGN",
-            "FOREIGN"
+            "Performer_ID"
         ],
         "Customer_Orders": [
             "Order_ID",
@@ -1391,20 +1114,14 @@
             "Planned_Delivery_Date",
             "Actual_Delivery_Date",
             "Other_Order_Details",
-            "PRIMARY",
-            "UNIQUE",
-            "FOREIGN",
-            "FOREIGN"
+            "UNIQUE"
         ],
         "Order_Items": [
             "Order_Item_ID",
             "Order_ID",
             "Product_ID",
             "Order_Quantity",
-            "Other_Item_Details",
-            "PRIMARY",
-            "FOREIGN",
-            "FOREIGN"
+            "Other_Item_Details"
         ],
         "Invoices": [
             "Invoice_ID",
@@ -1413,11 +1130,7 @@
             "Product_ID",
             "Order_Quantity",
             "Other_Item_Details",
-            "Order_Item_ID",
-            "PRIMARY",
-            "FOREIGN",
-            "FOREIGN",
-            "FOREIGN"
+            "Order_Item_ID"
         ],
         "Services": [
             "Service_ID",
@@ -1426,20 +1139,12 @@
             "Product_Description",
             "Product_Name",
             "Product_Price",
-            "4",
             "Other_Product_Service_Details",
-            "PRIMARY",
-            "UNIQUE",
-            "FOREIGN",
-            "FOREIGN"
+            "UNIQUE"
         ],
         "Bookings_Services": [
             "Order_ID",
-            "Product_ID",
-            "PRIMARY",
-            "Product_ID",
-            "FOREIGN",
-            "FOREIGN"
+            "Product_ID"
         ],
         "Invoice_Items": [
             "Invoice_Item_ID",
@@ -1448,54 +1153,41 @@
             "Order_Item_ID",
             "Product_ID",
             "Order_Quantity",
-            "Other_Item_Details",
-            "PRIMARY",
-            "FOREIGN",
-            "FOREIGN",
-            "FOREIGN",
-            "Product_ID)",
-            "Product_ID"
+            "Other_Item_Details"
         ]
     },
     "cre_Theme_park": {
         "Ref_Hotel_Star_Ratings": [
             "star_rating_code",
             "star_rating_description",
-            "PRIMARY",
             "UNIQUE"
         ],
         "Locations": [
             "Location_ID",
             "Location_Name",
             "Address",
-            "Other_Details",
-            "PRIMARY"
+            "Other_Details"
         ],
         "Ref_Attraction_Types": [
             "Attraction_Type_Code",
             "Attraction_Type_Description",
-            "PRIMARY",
             "UNIQUE"
         ],
         "Visitors": [
             "Tourist_ID",
             "Tourist_Details",
-            "PRIMARY",
             "UNIQUE"
         ],
         "Features": [
             "Feature_ID",
-            "Feature_Details",
-            "PRIMARY"
+            "Feature_Details"
         ],
         "Hotels": [
             "hotel_id",
             "star_rating_code",
             "pets_allowed_yn",
             "price_range",
-            "other_hotel_details",
-            "PRIMARY",
-            "FOREIGN"
+            "other_hotel_details"
         ],
         "Tourist_Attractions": [
             "Tourist_Attraction_ID",
@@ -1505,50 +1197,34 @@
             "Name",
             "Description",
             "Opening_Hours",
-            "Other_Details",
-            "PRIMARY",
-            "FOREIGN",
-            "FOREIGN"
+            "Other_Details"
         ],
         "Street_Markets": [
             "Market_ID",
-            "Market_Details",
-            "PRIMARY",
-            "FOREIGN"
+            "Market_Details"
         ],
         "Shops": [
             "Shop_ID",
-            "Shop_Details",
-            "PRIMARY",
-            "FOREIGN"
+            "Shop_Details"
         ],
         "Museums": [
             "Museum_ID",
-            "Museum_Details",
-            "PRIMARY",
-            "FOREIGN"
+            "Museum_Details"
         ],
         "Royal_Family": [
             "Royal_Family_ID",
-            "Royal_Family_Details",
-            "PRIMARY",
-            "FOREIGN"
+            "Royal_Family_Details"
         ],
         "Theme_Parks": [
             "Theme_Park_ID",
-            "Theme_Park_Details",
-            "PRIMARY",
-            "FOREIGN"
+            "Theme_Park_Details"
         ],
         "Visits": [
             "Visit_ID",
             "Tourist_Attraction_ID",
             "Tourist_ID",
             "Visit_Date",
-            "Visit_Details",
-            "PRIMARY",
-            "FOREIGN",
-            "FOREIGN"
+            "Visit_Details"
         ],
         "Photos": [
             "Photo_ID",
@@ -1556,25 +1232,17 @@
             "Name",
             "Description",
             "Filename",
-            "Other_Details",
-            "PRIMARY",
-            "FOREIGN"
+            "Other_Details"
         ],
         "Staff": [
             "Staff_ID",
             "Tourist_Attraction_ID",
             "Name",
-            "Other_Details",
-            "PRIMARY",
-            "FOREIGN"
+            "Other_Details"
         ],
         "Tourist_Attraction_Features": [
             "Tourist_Attraction_ID",
-            "Feature_ID",
-            "PRIMARY",
-            "Feature_ID",
-            "FOREIGN",
-            "FOREIGN"
+            "Feature_ID"
         ]
     },
     "csu_1": {
@@ -1588,41 +1256,30 @@
         "csu_fees": [
             "Campus",
             "Year",
-            "CampusFee",
-            "FOREIGN"
+            "CampusFee"
         ],
         "degrees": [
             "Year",
             "Campus",
-            "Degrees",
-            "PRIMARY",
-            "Campus",
-            "FOREIGN"
+            "Degrees"
         ],
         "discipline_enrollments": [
             "Campus",
             "Discipline",
             "Year",
             "Undergraduate",
-            "Graduate",
-            "PRIMARY",
-            "Discipline",
-            "FOREIGN"
+            "Graduate"
         ],
         "enrollments": [
             "Campus",
             "Year",
             "TotalEnrollment_AY",
-            "FTE_AY",
-            "PRIMARY",
-            "Year",
-            "FOREIGN"
+            "FTE_AY"
         ],
         "faculty": [
             "Campus",
             "Year",
-            "Faculty",
-            "FOREIGN"
+            "Faculty"
         ]
     },
     "culture_company": {
@@ -1633,8 +1290,7 @@
             "Book_Title",
             "Publisher",
             "Category",
-            "Result",
-            "PRIMARY"
+            "Result"
         ],
         "movie": [
             "movie_id",
@@ -1642,8 +1298,7 @@
             "Year",
             "Director",
             "Budget_million",
-            "Gross_worldwide",
-            "PRIMARY"
+            "Gross_worldwide"
         ],
         "culture_company": [
             "Company_name",
@@ -1651,10 +1306,7 @@
             "Incorporated_in",
             "Group_Equity_Shareholding",
             "book_club_id",
-            "movie_id",
-            "PRIMARY",
-            "FOREIGN",
-            "FOREIGN"
+            "movie_id"
         ]
     },
     "customers_and_addresses": {
@@ -1683,32 +1335,26 @@
             "address_id",
             "date_address_from",
             "address_type",
-            "date_address_to",
-            "FOREIGN",
-            "FOREIGN"
+            "date_address_to"
         ],
         "Customer_Contact_Channels": [
             "customer_id",
             "channel_code",
             "active_from_date",
             "active_to_date",
-            "contact_number",
-            "FOREIGN"
+            "contact_number"
         ],
         "Customer_Orders": [
             "order_id",
             "customer_id",
             "order_status",
             "order_date",
-            "order_details",
-            "FOREIGN"
+            "order_details"
         ],
         "Order_Items": [
             "order_id",
             "product_id",
-            "order_quantity",
-            "FOREIGN",
-            "FOREIGN"
+            "order_quantity"
         ]
     },
     "customers_and_invoices": {
@@ -1730,39 +1376,33 @@
             "order_id",
             "customer_id",
             "date_order_placed",
-            "order_details",
-            "FOREIGN"
+            "order_details"
         ],
         "Invoices": [
             "invoice_number",
             "order_id",
-            "invoice_date",
-            "FOREIGN"
+            "invoice_date"
         ],
         "Accounts": [
             "account_id",
             "customer_id",
             "date_account_opened",
             "account_name",
-            "other_account_details",
-            "FOREIGN"
+            "other_account_details"
         ],
         "Product_Categories": [
             "production_type_code",
             "product_type_description",
-            "vat_rating",
-            "4"
+            "vat_rating"
         ],
         "Products": [
             "product_id",
             "parent_product_id",
             "production_type_code",
             "unit_price",
-            "4",
             "product_name",
             "product_color",
-            "product_size",
-            "FOREIGN"
+            "product_size"
         ],
         "Financial_Transactions": [
             "transaction_id",
@@ -1771,20 +1411,15 @@
             "transaction_type",
             "transaction_date",
             "transaction_amount",
-            "4",
             "transaction_comment",
-            "other_transaction_details",
-            "FOREIGN",
-            "FOREIGN"
+            "other_transaction_details"
         ],
         "Order_Items": [
             "order_item_id",
             "order_id",
             "product_id",
             "product_quantity",
-            "other_order_item_details",
-            "FOREIGN",
-            "FOREIGN"
+            "other_order_item_details"
         ],
         "Invoice_Line_Items": [
             "order_item_id",
@@ -1793,16 +1428,9 @@
             "product_title",
             "product_quantity",
             "product_price",
-            "4",
             "derived_product_cost",
-            "4",
             "derived_vat_payable",
-            "4",
-            "derived_total_cost",
-            "4",
-            "FOREIGN",
-            "FOREIGN",
-            "FOREIGN"
+            "derived_total_cost"
         ]
     },
     "customers_and_products_contacts": {
@@ -1841,24 +1469,19 @@
             "customer_id",
             "address_id",
             "date_from",
-            "date_to",
-            "FOREIGN",
-            "FOREIGN"
+            "date_to"
         ],
         "Customer_Orders": [
             "order_id",
             "customer_id",
             "order_date",
-            "order_status_code",
-            "FOREIGN"
+            "order_status_code"
         ],
         "Order_Items": [
             "order_item_id",
             "order_id",
             "product_id",
-            "order_quantity",
-            "FOREIGN",
-            "FOREIGN"
+            "order_quantity"
         ]
     },
     "customers_campaigns_ecommerce": {
@@ -1894,9 +1517,7 @@
             "premise_id",
             "date_address_from",
             "address_type_code",
-            "date_address_to",
-            "FOREIGN",
-            "FOREIGN"
+            "date_address_to"
         ],
         "Customer_Orders": [
             "order_id",
@@ -1905,16 +1526,13 @@
             "shipping_method_code",
             "order_placed_datetime",
             "order_delivered_datetime",
-            "order_shipping_charges",
-            "FOREIGN"
+            "order_shipping_charges"
         ],
         "Mailshot_Customers": [
             "mailshot_id",
             "customer_id",
             "outcome_code",
-            "mailshot_customer_date",
-            "FOREIGN",
-            "FOREIGN"
+            "mailshot_customer_date"
         ],
         "Order_Items": [
             "item_id",
@@ -1923,9 +1541,7 @@
             "product_id",
             "item_status_code",
             "item_delivered_datetime",
-            "item_order_quantity",
-            "FOREIGN",
-            "FOREIGN"
+            "item_order_quantity"
         ]
     },
     "customers_card_transactions": {
@@ -1962,9 +1578,7 @@
             "transaction_date",
             "transaction_amount",
             "transaction_comment",
-            "other_transaction_details",
-            "FOREIGN",
-            "FOREIGN"
+            "other_transaction_details"
         ]
     },
     "customer_complaints": {
@@ -1994,8 +1608,7 @@
             "date_product_discontinued",
             "product_name",
             "product_description",
-            "product_price",
-            "4"
+            "product_price"
         ],
         "Complaints": [
             "complaint_id",
@@ -2006,10 +1619,7 @@
             "complaint_type_code",
             "date_complaint_raised",
             "date_complaint_closed",
-            "staff_id",
-            "FOREIGN",
-            "FOREIGN",
-            "FOREIGN"
+            "staff_id"
         ]
     },
     "customer_deliveries": {
@@ -2017,7 +1627,6 @@
             "product_id",
             "product_name",
             "product_price",
-            "4",
             "product_description"
         ],
         "Addresses": [
@@ -2038,36 +1647,28 @@
         ],
         "Regular_Orders": [
             "regular_order_id",
-            "distributer_id",
-            "FOREIGN"
+            "distributer_id"
         ],
         "Regular_Order_Products": [
             "regular_order_id",
-            "product_id",
-            "FOREIGN",
-            "FOREIGN"
+            "product_id"
         ],
         "Actual_Orders": [
             "actual_order_id",
             "order_status_code",
             "regular_order_id",
-            "actual_order_date",
-            "FOREIGN"
+            "actual_order_date"
         ],
         "Actual_Order_Products": [
             "actual_order_id",
-            "product_id",
-            "FOREIGN",
-            "FOREIGN"
+            "product_id"
         ],
         "Customer_Addresses": [
             "customer_id",
             "address_id",
             "date_from",
             "address_type",
-            "date_to",
-            "FOREIGN",
-            "FOREIGN"
+            "date_to"
         ],
         "Delivery_Routes": [
             "route_id",
@@ -2078,9 +1679,7 @@
             "location_code",
             "route_id",
             "location_address_id",
-            "location_name",
-            "FOREIGN",
-            "FOREIGN"
+            "location_name"
         ],
         "Trucks": [
             "truck_id",
@@ -2091,8 +1690,7 @@
             "employee_id",
             "employee_address_id",
             "employee_name",
-            "employee_phone",
-            "FOREIGN"
+            "employee_phone"
         ],
         "Order_Deliveries": [
             "location_code",
@@ -2100,11 +1698,7 @@
             "delivery_status_code",
             "driver_employee_id",
             "truck_id",
-            "delivery_date",
-            "FOREIGN",
-            "FOREIGN",
-            "FOREIGN",
-            "FOREIGN"
+            "delivery_date"
         ]
     },
     "debate": {
@@ -2113,27 +1707,19 @@
             "District",
             "Name",
             "Party",
-            "Age",
-            "PRIMARY"
+            "Age"
         ],
         "debate": [
             "Debate_ID",
             "Date",
             "Venue",
-            "Num_of_Audience",
-            "PRIMARY"
+            "Num_of_Audience"
         ],
         "debate_people": [
             "Debate_ID",
             "Affirmative",
             "Negative",
-            "If_Affirmative_Win",
-            "PRIMARY",
-            "Affirmativ",
-            "Negative",
-            "FOREIGN",
-            "FOREIGN",
-            "FOREIGN"
+            "If_Affirmative_Win"
         ]
     },
     "decoration_competition": {
@@ -2141,36 +1727,40 @@
             "College_ID",
             "Name",
             "Leader_Name",
-            "College_Location",
-            "PRIMARY"
+            "College_Location"
         ],
         "member": [
             "Member_ID",
             "Name",
             "Country",
-            "College_ID",
-            "PRIMARY",
-            "FOREIGN"
+            "College_ID"
         ],
         "round": [
             "Round_ID",
             "Member_ID",
             "Decoration_Theme",
-            "Rank_in_Round",
-            "PRIMARY",
-            "Round_ID",
-            "FOREIGN"
+            "Rank_in_Round"
         ]
     },
     "department_management": {
-        "IF": [
+        "department": [
+            "Department_ID",
+            "Name",
+            "Creation",
+            "Ranking",
+            "Budget_in_Billions",
+            "Num_Employees"
+        ],
+        "head": [
+            "head_ID",
+            "name",
+            "born_state",
+            "age"
+        ],
+        "management": [
             "department_ID",
             "head_ID",
-            "temporary_acting",
-            "PRIMARY",
-            "head_ID",
-            "FOREIGN",
-            "FOREIGN"
+            "temporary_acting"
         ]
     },
     "department_store": {
@@ -2205,35 +1795,25 @@
             "product_id",
             "product_type_code",
             "product_name",
-            "product_price",
-            "4"
+            "product_price"
         ],
         "Supplier_Addresses": [
             "supplier_id",
             "address_id",
             "date_from",
-            "date_to",
-            "PRIMARY",
-            "address_id",
-            "FOREIGN",
-            "FOREIGN"
+            "date_to"
         ],
         "Customer_Addresses": [
             "customer_id",
             "address_id",
             "date_from",
-            "date_to",
-            "PRIMARY",
-            "address_id",
-            "FOREIGN",
-            "FOREIGN"
+            "date_to"
         ],
         "Customer_Orders": [
             "order_id",
             "customer_id",
             "order_status_code",
-            "order_date",
-            "FOREIGN"
+            "order_date"
         ],
         "Department_Stores": [
             "dept_store_id",
@@ -2241,21 +1821,17 @@
             "store_name",
             "store_address",
             "store_phone",
-            "store_email",
-            "FOREIGN"
+            "store_email"
         ],
         "Departments": [
             "department_id",
             "dept_store_id",
-            "department_name",
-            "FOREIGN"
+            "department_name"
         ],
         "Order_Items": [
             "order_item_id",
             "order_id",
-            "product_id",
-            "FOREIGN",
-            "FOREIGN"
+            "product_id"
         ],
         "Product_Suppliers": [
             "product_id",
@@ -2263,23 +1839,14 @@
             "date_supplied_from",
             "date_supplied_to",
             "total_amount_purchased",
-            "total_value_purchased",
-            "4",
-            "PRIMARY",
-            "supplier_id",
-            "FOREIGN",
-            "FOREIGN"
+            "total_value_purchased"
         ],
         "Staff_Department_Assignments": [
             "staff_id",
             "department_id",
             "date_assigned_from",
             "job_title_code",
-            "date_assigned_to",
-            "PRIMARY",
-            "department_id",
-            "FOREIGN",
-            "FOREIGN"
+            "date_assigned_to"
         ]
     },
     "device": {
@@ -2289,25 +1856,19 @@
             "Carrier",
             "Package_Version",
             "Applications",
-            "Software_Platform",
-            "PRIMARY"
+            "Software_Platform"
         ],
         "shop": [
             "Shop_ID",
             "Shop_Name",
             "Location",
             "Open_Date",
-            "Open_Year",
-            "PRIMARY"
+            "Open_Year"
         ],
         "stock": [
             "Shop_ID",
             "Device_ID",
-            "Quantity",
-            "PRIMARY",
-            "Device_ID",
-            "FOREIGN",
-            "FOREIGN"
+            "Quantity"
         ]
     },
     "document_management": {
@@ -2320,8 +1881,7 @@
             "role_code",
             "user_name",
             "user_login",
-            "password",
-            "FOREIGN"
+            "password"
         ],
         "Document_Structures": [
             "document_structure_code",
@@ -2344,30 +1904,22 @@
             "document_structure_code",
             "document_type_code",
             "access_count",
-            "document_name",
-            "FOREIGN"
+            "document_name"
         ],
         "Document_Functional_Areas": [
             "document_code",
-            "functional_area_code",
-            "FOREIGN",
-            "FOREIGN"
+            "functional_area_code"
         ],
         "Document_Sections": [
             "section_id",
             "document_code",
             "section_sequence",
             "section_code",
-            "section_title",
-            "FOREIGN"
+            "section_title"
         ],
         "Document_Sections_Images": [
             "section_id",
-            "image_id",
-            "PRIMARY",
-            "image_id",
-            "FOREIGN",
-            "FOREIGN"
+            "image_id"
         ]
     },
     "dog_kennels": {
@@ -2378,8 +1930,7 @@
         "Charges": [
             "charge_id",
             "charge_type",
-            "charge_amount",
-            "4"
+            "charge_amount"
         ],
         "Sizes": [
             "size_code",
@@ -2414,11 +1965,7 @@
             "weight",
             "date_arrived",
             "date_adopted",
-            "date_departed",
-            "FOREIGN",
-            "FOREIGN",
-            "FOREIGN",
-            "FOREIGN"
+            "date_departed"
         ],
         "Professionals": [
             "professional_id",
@@ -2439,11 +1986,7 @@
             "professional_id",
             "treatment_type_code",
             "date_of_treatment",
-            "cost_of_treatment",
-            "4",
-            "FOREIGN",
-            "FOREIGN",
-            "FOREIGN"
+            "cost_of_treatment"
         ]
     },
     "dorm_1": {
@@ -2469,16 +2012,12 @@
         ],
         "Has_amenity": [
             "dormid",
-            "amenid",
-            "FOREIGN",
-            "FOREIGN"
+            "amenid"
         ],
         "Lives_in": [
             "stuid",
             "dormid",
-            "room_number",
-            "FOREIGN",
-            "FOREIGN"
+            "room_number"
         ]
     },
     "driving_school": {
@@ -2499,8 +2038,7 @@
             "last_name",
             "date_of_birth",
             "date_joined_staff",
-            "date_left_staff",
-            "FOREIGN"
+            "date_left_staff"
         ],
         "Vehicles": [
             "vehicle_id",
@@ -2517,17 +2055,13 @@
             "amount_outstanding",
             "email_address",
             "phone_number",
-            "cell_mobile_phone_number",
-            "FOREIGN"
+            "cell_mobile_phone_number"
         ],
         "Customer_Payments": [
             "customer_id",
             "datetime_payment",
             "payment_method_code",
-            "amount_payment",
-            "PRIMARY",
-            "datetime_payment",
-            "FOREIGN"
+            "amount_payment"
         ],
         "Lessons": [
             "lesson_id",
@@ -2537,10 +2071,7 @@
             "vehicle_id",
             "lesson_date",
             "lesson_time",
-            "price",
-            "FOREIGN",
-            "FOREIGN",
-            "FOREIGN"
+            "price"
         ]
     },
     "election": {
@@ -2548,8 +2079,7 @@
             "County_Id",
             "County_name",
             "Population",
-            "Zip_code",
-            "PRIMARY"
+            "Zip_code"
         ],
         "party": [
             "Party_ID",
@@ -2559,8 +2089,7 @@
             "Lieutenant_Governor",
             "Comptroller",
             "Attorney_General",
-            "US_Senate",
-            "PRIMARY"
+            "US_Senate"
         ],
         "election": [
             "Election_ID",
@@ -2569,10 +2098,7 @@
             "Delegate",
             "Party",
             "First_Elected",
-            "Committee",
-            "PRIMARY",
-            "FOREIGN",
-            "FOREIGN"
+            "Committee"
         ]
     },
     "election_representative": {
@@ -2583,17 +2109,14 @@
             "Votes",
             "Vote_Percent",
             "Seats",
-            "Place",
-            "PRIMARY",
-            "FOREIGN"
+            "Place"
         ],
         "representative": [
             "Representative_ID",
             "Name",
             "State",
             "Party",
-            "Lifespan",
-            "PRIMARY"
+            "Lifespan"
         ]
     },
     "employee_hire_evaluation": {
@@ -2601,8 +2124,7 @@
             "Employee_ID",
             "Name",
             "Age",
-            "City",
-            "PRIMARY"
+            "City"
         ],
         "shop": [
             "Shop_ID",
@@ -2610,25 +2132,18 @@
             "Location",
             "District",
             "Number_products",
-            "Manager_name",
-            "PRIMARY"
+            "Manager_name"
         ],
         "hiring": [
             "Shop_ID",
             "Employee_ID",
             "Start_from",
-            "Is_full_time",
-            "PRIMARY",
-            "FOREIGN",
-            "FOREIGN"
+            "Is_full_time"
         ],
         "evaluation": [
             "Employee_ID",
             "Year_awarded",
-            "Bonus",
-            "PRIMARY",
-            "Year_awarded",
-            "FOREIGN"
+            "Bonus"
         ]
     },
     "entertainment_awards": {
@@ -2638,23 +2153,17 @@
             "Chair_Name",
             "Location",
             "Year",
-            "Num_of_Audience",
-            "PRIMARY"
+            "Num_of_Audience"
         ],
         "artwork": [
             "Artwork_ID",
             "Type",
-            "Name",
-            "PRIMARY"
+            "Name"
         ],
         "nomination": [
             "Artwork_ID",
             "Festival_ID",
-            "Result",
-            "PRIMARY",
-            "Festival_ID",
-            "FOREIGN",
-            "FOREIGN"
+            "Result"
         ]
     },
     "entrepreneur": {
@@ -2663,17 +2172,14 @@
             "People_ID",
             "Company",
             "Money_Requested",
-            "Investor",
-            "PRIMARY",
-            "FOREIGN"
+            "Investor"
         ],
         "people": [
             "People_ID",
             "Name",
             "Height",
             "Weight",
-            "Date_of_Birth",
-            "PRIMARY"
+            "Date_of_Birth"
         ]
     },
     "e_government": {
@@ -2697,8 +2203,7 @@
             "service_id",
             "form_number",
             "form_name",
-            "form_description",
-            "FOREIGN"
+            "form_description"
         ],
         "Individuals": [
             "individual_id",
@@ -2725,42 +2230,28 @@
             "individual_id",
             "organization_id",
             "date_contact_from",
-            "date_contact_to",
-            "PRIMARY",
-            "organization_id",
-            "FOREIGN",
-            "FOREIGN"
+            "date_contact_to"
         ],
         "Party_Addresses": [
             "party_id",
             "address_id",
             "date_address_from",
             "address_type_code",
-            "date_address_to",
-            "PRIMARY",
-            "address_id",
-            "FOREIGN",
-            "FOREIGN"
+            "date_address_to"
         ],
         "Party_Forms": [
             "party_id",
             "form_id",
             "date_completion_started",
             "form_status_code",
-            "date_fully_completed",
-            "PRIMARY",
-            "form_id",
-            "FOREIGN",
-            "FOREIGN"
+            "date_fully_completed"
         ],
         "Party_Services": [
             "booking_id",
             "customer_id",
             "service_id",
             "service_datetime",
-            "booking_made_date",
-            "FOREIGN",
-            "FOREIGN"
+            "booking_made_date"
         ]
     },
     "e_learning": {
@@ -2794,24 +2285,19 @@
             "author_id",
             "subject_id",
             "course_name",
-            "course_description",
-            "FOREIGN",
-            "FOREIGN"
+            "course_description"
         ],
         "Student_Course_Enrolment": [
             "registration_id",
             "student_id",
             "course_id",
             "date_of_enrolment",
-            "date_of_completion",
-            "FOREIGN",
-            "FOREIGN"
+            "date_of_completion"
         ],
         "Student_Tests_Taken": [
             "registration_id",
             "date_test_taken",
-            "test_result",
-            "FOREIGN"
+            "test_result"
         ]
     },
     "farm": {
@@ -2821,8 +2307,7 @@
             "Status",
             "Area_km_2",
             "Population",
-            "Census_Ranking",
-            "PRIMARY"
+            "Census_Ranking"
         ],
         "farm": [
             "Farm_ID",
@@ -2834,26 +2319,19 @@
             "Bulls",
             "Cows",
             "Pigs",
-            "Sheep_and_Goats",
-            "PRIMARY"
+            "Sheep_and_Goats"
         ],
         "farm_competition": [
             "Competition_ID",
             "Year",
             "Theme",
             "Host_city_ID",
-            "Hosts",
-            "PRIMARY",
-            "FOREIGN"
+            "Hosts"
         ],
         "competition_record": [
             "Competition_ID",
             "Farm_ID",
-            "Rank",
-            "PRIMARY",
-            "Farm_ID",
-            "FOREIGN",
-            "FOREIGN"
+            "Rank"
         ]
     },
     "film_rank": {
@@ -2862,14 +2340,12 @@
             "Title",
             "Studio",
             "Director",
-            "Gross_in_dollar",
-            "PRIMARY"
+            "Gross_in_dollar"
         ],
         "market": [
             "Market_ID",
             "Country",
-            "Number_cities",
-            "PRIMARY"
+            "Number_cities"
         ],
         "film_market_estimation": [
             "Estimation_ID",
@@ -2878,36 +2354,33 @@
             "Film_ID",
             "Type",
             "Market_ID",
-            "Year",
-            "PRIMARY",
-            "FOREIGN",
-            "FOREIGN"
+            "Year"
         ]
     },
     "flight_1": {
+        "flight": [
+            "flno",
+            "origin",
+            "destination",
+            "distance",
+            "departure_date",
+            "arrival_date",
+            "price",
+            "aid"
+        ],
         "aircraft": [
             "aid",
-            "0)",
             "name",
-            "distance",
-            "0"
+            "distance"
         ],
         "employee": [
             "eid",
-            "0)",
             "name",
-            "salary",
-            "2"
+            "salary"
         ],
         "certificate": [
             "eid",
-            "0",
-            "aid",
-            "0",
-            "PRIMARY",
-            "aid",
-            "FOREIGN",
-            "FOREIGN"
+            "aid"
         ]
     },
     "flight_company": {
@@ -2917,8 +2390,7 @@
             "Country",
             "IATA",
             "ICAO",
-            "name",
-            "PRIMARY"
+            "name"
         ],
         "operate_company": [
             "id",
@@ -2926,8 +2398,7 @@
             "Type",
             "Principal_activities",
             "Incorporated_in",
-            "Group_Equity_Shareholding",
-            "PRIMARY"
+            "Group_Equity_Shareholding"
         ],
         "flight": [
             "id",
@@ -2937,10 +2408,7 @@
             "Velocity",
             "Altitude",
             "airport_id",
-            "company_id",
-            "PRIMARY",
-            "FOREIGN",
-            "FOREIGN"
+            "company_id"
         ]
     },
     "game_1": {
@@ -2962,17 +2430,14 @@
         "Plays_Games": [
             "StuID",
             "GameID",
-            "Hours_Played",
-            "FOREIGN",
-            "FOREIGN"
+            "Hours_Played"
         ],
         "SportsInfo": [
             "StuID",
             "SportName",
             "HoursPerWeek",
             "GamesPlayed",
-            "OnScholarship",
-            "FOREIGN"
+            "OnScholarship"
         ]
     },
     "game_injury": {
@@ -2982,8 +2447,7 @@
             "Home_Games",
             "Average_Attendance",
             "Total_Attendance",
-            "Capacity_Percentage",
-            "PRIMARY"
+            "Capacity_Percentage"
         ],
         "game": [
             "stadium_id",
@@ -2993,9 +2457,7 @@
             "Home_team",
             "Away_team",
             "Score",
-            "Competition",
-            "PRIMARY",
-            "FOREIGN"
+            "Competition"
         ],
         "injury_accident": [
             "game_id",
@@ -3003,9 +2465,7 @@
             "Player",
             "Injury",
             "Number_of_matches",
-            "Source",
-            "PRIMARY",
-            "FOREIGN"
+            "Source"
         ]
     },
     "gas_company": {
@@ -3018,8 +2478,7 @@
             "Sales_billion",
             "Profits_billion",
             "Assets_billion",
-            "Market_Value",
-            "PRIMARY"
+            "Market_Value"
         ],
         "gas_station": [
             "Station_ID",
@@ -3027,17 +2486,12 @@
             "Location",
             "Manager_Name",
             "Vice_Manager_Name",
-            "Representative_Name",
-            "PRIMARY"
+            "Representative_Name"
         ],
         "station_company": [
             "Station_ID",
             "Company_ID",
-            "Rank_of_the_Year",
-            "PRIMARY",
-            "Company_ID",
-            "FOREIGN",
-            "FOREIGN"
+            "Rank_of_the_Year"
         ]
     },
     "geo": {
@@ -3047,34 +2501,24 @@
             "area",
             "country_name",
             "capital",
-            "density",
-            "PRIMARY"
+            "density"
         ],
         "city": [
             "city_name",
             "population",
             "country_name",
-            "state_name",
-            "PRIMARY",
-            "state_name",
-            "FOREIGN"
+            "state_name"
         ],
         "border_info": [
             "state_name",
-            "border",
-            "PRIMARY",
-            "state_name",
-            "FOREIGN",
-            "FOREIGN"
+            "border"
         ],
         "highlow": [
             "state_name",
             "highest_elevation",
             "lowest_point",
             "highest_point",
-            "lowest_elevation",
-            "PRIMARY",
-            "FOREIGN"
+            "lowest_elevation"
         ],
         "lake": [
             "lake_name",
@@ -3086,18 +2530,13 @@
             "mountain_name",
             "mountain_altitude",
             "country_name",
-            "state_name",
-            "PRIMARY",
-            "state_name",
-            "FOREIGN"
+            "state_name"
         ],
         "river": [
             "river_name",
             "length",
             "country_name",
-            "traverse",
-            "PRIMARY",
-            "FOREIGN"
+            "traverse"
         ]
     },
     "gymnast": {
@@ -3109,17 +2548,14 @@
             "Vault_Points",
             "Parallel_Bars_Points",
             "Horizontal_Bar_Points",
-            "Total_Points",
-            "PRIMARY",
-            "FOREIGN"
+            "Total_Points"
         ],
         "people": [
             "People_ID",
             "Name",
             "Age",
             "Height",
-            "Hometown",
-            "PRIMARY"
+            "Hometown"
         ]
     },
     "hospital_1": {
@@ -3140,11 +2576,8 @@
         "Affiliated_With": [
             "Physician",
             "Department",
-            "PrimaryAffiliation",
             "CONSTRAINT",
-            "CONSTRAINT",
-            "PRIMARY",
-            "Department"
+            "CONSTRAINT"
         ],
         "Procedures": [
             "Code",
@@ -3157,9 +2590,7 @@
             "CertificationDate",
             "CertificationExpires",
             "CONSTRAINT",
-            "CONSTRAINT",
-            "PRIMARY",
-            "Treatment"
+            "CONSTRAINT"
         ],
         "Patient": [
             "SSN",
@@ -3202,10 +2633,6 @@
             "Date",
             "Appointment",
             "Dose",
-            "PRIMARY",
-            "Patien",
-            "Medicatio",
-            "Date",
             "CONSTRAINT",
             "CONSTRAINT",
             "CONSTRAINT",
@@ -3213,8 +2640,6 @@
         ],
         "Block": [
             "BlockFloor",
-            "BlockCode",
-            "PRIMARY",
             "BlockCode"
         ],
         "Room": [
@@ -3223,9 +2648,7 @@
             "BlockFloor",
             "BlockCode",
             "Unavailable",
-            "CONSTRAINT",
-            "BlockCode)",
-            "BlockCode"
+            "CONSTRAINT"
         ],
         "On_Call": [
             "Nurse",
@@ -3233,15 +2656,8 @@
             "BlockCode",
             "OnCallStart",
             "OnCallEnd",
-            "PRIMARY",
-            "BlockFloo",
-            "BlockCod",
-            "OnCallStar",
-            "OnCallEnd",
             "CONSTRAINT",
-            "CONSTRAINT",
-            "BlockCode)",
-            "BlockCode"
+            "CONSTRAINT"
         ],
         "Stay": [
             "StayID",
@@ -3259,10 +2675,6 @@
             "DateUndergoes",
             "Physician",
             "AssistingNurse",
-            "PRIMARY",
-            "Procedure",
-            "Sta",
-            "DateUndergoes",
             "CONSTRAINT",
             "CONSTRAINT",
             "CONSTRAINT",
@@ -3271,14 +2683,54 @@
         ]
     },
     "hr_1": {
-        "IF": [
+        "regions": [
+            "REGION_ID",
+            "REGION_NAME"
+        ],
+        "countries": [
+            "COUNTRY_ID",
+            "COUNTRY_NAME",
+            "REGION_ID"
+        ],
+        "departments": [
+            "DEPARTMENT_ID",
+            "DEPARTMENT_NAME",
+            "MANAGER_ID",
+            "LOCATION_ID"
+        ],
+        "jobs": [
             "JOB_ID",
             "JOB_TITLE",
             "MIN_SALARY",
-            "0)",
-            "MAX_SALARY",
-            "0)",
-            "PRIMARY"
+            "MAX_SALARY"
+        ],
+        "employees": [
+            "EMPLOYEE_ID",
+            "FIRST_NAME",
+            "LAST_NAME",
+            "EMAIL",
+            "PHONE_NUMBER",
+            "HIRE_DATE",
+            "JOB_ID",
+            "SALARY",
+            "COMMISSION_PCT",
+            "MANAGER_ID",
+            "DEPARTMENT_ID"
+        ],
+        "job_history": [
+            "EMPLOYEE_ID",
+            "START_DATE",
+            "END_DATE",
+            "JOB_ID",
+            "DEPARTMENT_ID"
+        ],
+        "locations": [
+            "LOCATION_ID",
+            "STREET_ADDRESS",
+            "POSTAL_CODE",
+            "CITY",
+            "STATE_PROVINCE",
+            "COUNTRY_ID"
         ]
     },
     "imdb": {
@@ -3288,42 +2740,32 @@
             "name",
             "nationality",
             "birth_city",
-            "birth_year",
-            "PRIMARY"
+            "birth_year"
         ],
         "copyright": [
             "id",
             "msid",
-            "cid",
-            "PRIMARY"
+            "cid"
         ],
         "cast": [
             "id",
             "msid",
             "aid",
-            "role",
-            "PRIMARY",
-            "FOREIGN",
-            "FOREIGN"
+            "role"
         ],
         "genre": [
             "gid",
-            "genre",
-            "PRIMARY"
+            "genre"
         ],
         "classification": [
             "id",
             "msid",
-            "gid",
-            "PRIMARY",
-            "FOREIGN",
-            "FOREIGN"
+            "gid"
         ],
         "company": [
             "id",
             "name",
-            "country_code",
-            "PRIMARY"
+            "country_code"
         ],
         "director": [
             "did",
@@ -3331,8 +2773,7 @@
             "name",
             "nationality",
             "birth_city",
-            "birth_year",
-            "PRIMARY"
+            "birth_year"
         ],
         "producer": [
             "pid",
@@ -3340,45 +2781,33 @@
             "name",
             "nationality",
             "birth_city",
-            "birth_year",
-            "PRIMARY"
+            "birth_year"
         ],
         "directed_by": [
             "id",
             "msid",
-            "did",
-            "PRIMARY",
-            "FOREIGN",
-            "FOREIGN"
+            "did"
         ],
         "keyword": [
             "id",
-            "keyword",
-            "PRIMARY"
+            "keyword"
         ],
         "made_by": [
             "id",
             "msid",
-            "pid",
-            "PRIMARY",
-            "FOREIGN",
-            "FOREIGN"
+            "pid"
         ],
         "movie": [
             "mid",
             "title",
             "release_year",
             "title_aka",
-            "budget",
-            "PRIMARY"
+            "budget"
         ],
         "tags": [
             "id",
             "msid",
-            "kid",
-            "PRIMARY",
-            "FOREIGN",
-            "FOREIGN"
+            "kid"
         ],
         "tv_series": [
             "sid",
@@ -3387,8 +2816,7 @@
             "num_of_seasons",
             "num_of_episodes",
             "title_aka",
-            "budget",
-            "PRIMARY"
+            "budget"
         ],
         "writer": [
             "wid",
@@ -3397,36 +2825,29 @@
             "nationality",
             "num_of_episodes",
             "birth_city",
-            "birth_year",
-            "PRIMARY"
+            "birth_year"
         ],
         "written_by": [
             "id",
             "msid",
-            "wid",
-            "FOREIGN",
-            "FOREIGN"
+            "wid"
         ]
     },
     "insurance_and_eClaims": {
         "Customers": [
             "Customer_ID",
-            "Customer_Details",
-            "PRIMARY"
+            "Customer_Details"
         ],
         "Staff": [
             "Staff_ID",
-            "Staff_Details",
-            "PRIMARY"
+            "Staff_Details"
         ],
         "Policies": [
             "Policy_ID",
             "Customer_ID",
             "Policy_Type_Code",
             "Start_Date",
-            "End_Date",
-            "PRIMARY",
-            "FOREIGN"
+            "End_Date"
         ],
         "Claim_Headers": [
             "Claim_Header_ID",
@@ -3436,112 +2857,81 @@
             "Date_of_Claim",
             "Date_of_Settlement",
             "Amount_Claimed",
-            "4",
-            "Amount_Piad",
-            "4",
-            "PRIMARY",
-            "FOREIGN"
+            "Amount_Piad"
         ],
         "Claims_Documents": [
             "Claim_ID",
             "Document_Type_Code",
             "Created_by_Staff_ID",
-            "Created_Date",
-            "PRIMARY",
-            "Document_Type_Code",
-            "FOREIGN",
-            "FOREIGN"
+            "Created_Date"
         ],
         "Claims_Processing_Stages": [
             "Claim_Stage_ID",
             "Next_Claim_Stage_ID",
             "Claim_Status_Name",
-            "Claim_Status_Description",
-            "PRIMARY"
+            "Claim_Status_Description"
         ],
         "Claims_Processing": [
             "Claim_Processing_ID",
             "Claim_ID",
             "Claim_Outcome_Code",
             "Claim_Stage_ID",
-            "Staff_ID",
-            "PRIMARY",
-            "FOREIGN",
-            "FOREIGN"
+            "Staff_ID"
         ]
     },
     "insurance_fnol": {
         "Customers": [
             "Customer_ID",
-            "Customer_name",
-            "PRIMARY"
+            "Customer_name"
         ],
         "Services": [
             "Service_ID",
-            "Service_name",
-            "PRIMARY"
+            "Service_name"
         ],
         "Available_Policies": [
             "Policy_ID",
             "policy_type_code",
             "Customer_Phone",
-            "PRIMARY",
             "UNIQUE"
         ],
         "Customers_Policies": [
             "Customer_ID",
             "Policy_ID",
             "Date_Opened",
-            "Date_Closed",
-            "PRIMARY",
-            "Policy_ID",
-            "FOREIGN",
-            "FOREIGN"
+            "Date_Closed"
         ],
         "First_Notification_of_Loss": [
             "FNOL_ID",
             "Customer_ID",
             "Policy_ID",
             "Service_ID",
-            "PRIMARY",
-            "UNIQUE",
-            "FOREIGN",
-            "FOREIGN",
-            "Policy_ID)",
-            "Policy_ID"
+            "UNIQUE"
         ],
         "Claims": [
             "Claim_ID",
             "FNOL_ID",
             "Effective_Date",
-            "PRIMARY",
-            "UNIQUE",
-            "FOREIGN"
+            "UNIQUE"
         ],
         "Settlements": [
             "Settlement_ID",
             "Claim_ID",
             "Effective_Date",
             "Settlement_Amount",
-            "PRIMARY",
-            "UNIQUE",
-            "FOREIGN"
+            "UNIQUE"
         ]
     },
     "insurance_policies": {
         "Customers": [
             "Customer_ID",
-            "Customer_Details",
-            "PRIMARY"
+            "Customer_Details"
         ],
         "Customer_Policies": [
             "Policy_ID",
             "Customer_ID",
             "Policy_Type_Code",
             "Start_Date",
-            "End_Date",
-            "PRIMARY",
-            "FOREIGN"
+            "End_Date"
         ],
         "Claims": [
             "Claim_ID",
@@ -3549,9 +2939,7 @@
             "Date_Claim_Made",
             "Date_Claim_Settled",
             "Amount_Claimed",
-            "Amount_Settled",
-            "PRIMARY",
-            "FOREIGN"
+            "Amount_Settled"
         ],
         "Settlements": [
             "Settlement_ID",
@@ -3560,29 +2948,32 @@
             "Date_Claim_Settled",
             "Amount_Claimed",
             "Amount_Settled",
-            "Customer_Policy_ID",
-            "PRIMARY",
-            "FOREIGN"
+            "Customer_Policy_ID"
         ],
         "Payments": [
             "Payment_ID",
             "Settlement_ID",
             "Payment_Method_Code",
             "Date_Payment_Made",
-            "Amount_Payment",
-            "PRIMARY",
-            "FOREIGN"
+            "Amount_Payment"
         ]
     },
     "journal_committee": {
-        "IF": [
+        "journal": [
+            "Journal_ID",
+            "Date",
+            "Theme",
+            "Sales"
+        ],
+        "editor": [
+            "Editor_ID",
+            "Name",
+            "Age"
+        ],
+        "journal_committee": [
             "Editor_ID",
             "Journal_ID",
-            "Work_Type",
-            "PRIMARY",
-            "Journal_ID",
-            "FOREIGN",
-            "FOREIGN"
+            "Work_Type"
         ]
     },
     "loan_1": {
@@ -3601,56 +2992,44 @@
             "no_of_loans",
             "credit_score",
             "branch_ID",
-            "state",
-            "FOREIGN"
+            "state"
         ],
         "loan": [
             "loan_ID",
             "loan_type",
             "cust_ID",
             "branch_ID",
-            "amount",
-            "FOREIGN",
-            "FOREIGN"
+            "amount"
         ]
     },
     "local_govt_and_lot": {
         "Customers": [
             "customer_id",
-            "customer_details",
-            "PRIMARY"
+            "customer_details"
         ],
         "Properties": [
             "property_id",
             "property_type_code",
             "property_address",
-            "other_details",
-            "PRIMARY"
+            "other_details"
         ],
         "Residents": [
             "resident_id",
             "property_id",
             "date_moved_in",
             "date_moved_out",
-            "other_details",
-            "PRIMARY",
-            "property_i",
-            "date_moved_in",
-            "FOREIGN"
+            "other_details"
         ],
         "Organizations": [
             "organization_id",
             "parent_organization_id",
-            "organization_details",
-            "PRIMARY"
+            "organization_details"
         ],
         "Services": [
             "service_id",
             "organization_id",
             "service_type_code",
-            "service_details",
-            "PRIMARY",
-            "FOREIGN"
+            "service_details"
         ],
         "Residents_Services": [
             "resident_id",
@@ -3659,24 +3038,14 @@
             "property_id",
             "date_requested",
             "date_provided",
-            "other_details",
-            "PRIMARY",
-            "service_id",
-            "FOREIGN",
-            "FOREIGN",
-            "property_i",
-            "date_moved_in)",
-            "property_i",
-            "date_moved_in"
+            "other_details"
         ],
         "Things": [
             "thing_id",
             "organization_id",
             "Type_of_Thing_Code",
             "service_type_code",
-            "service_details",
-            "PRIMARY",
-            "FOREIGN"
+            "service_details"
         ],
         "Customer_Events": [
             "Customer_Event_ID",
@@ -3684,15 +3053,7 @@
             "date_moved_in",
             "property_id",
             "resident_id",
-            "thing_id",
-            "PRIMARY",
-            "FOREIGN",
-            "FOREIGN",
-            "FOREIGN",
-            "property_i",
-            "date_moved_in)",
-            "property_i",
-            "date_moved_in"
+            "thing_id"
         ],
         "Customer_Event_Notes": [
             "Customer_Event_Note_ID",
@@ -3700,105 +3061,72 @@
             "service_type_code",
             "resident_id",
             "property_id",
-            "date_moved_in",
-            "PRIMARY",
-            "FOREIGN"
+            "date_moved_in"
         ],
         "Timed_Status_of_Things": [
             "thing_id",
             "Date_and_Date",
-            "Status_of_Thing_Code",
-            "PRIMARY",
-            "Date_and_Dat",
-            "Status_of_Thing_Code",
-            "FOREIGN"
+            "Status_of_Thing_Code"
         ],
         "Timed_Locations_of_Things": [
             "thing_id",
             "Date_and_Time",
-            "Location_Code",
-            "PRIMARY",
-            "Date_and_Tim",
-            "Location_Code",
-            "FOREIGN"
+            "Location_Code"
         ]
     },
     "local_govt_in_alabama": {
         "Services": [
             "Service_ID",
-            "Service_Type_Code",
-            "PRIMARY"
+            "Service_Type_Code"
         ],
         "Participants": [
             "Participant_ID",
             "Participant_Type_Code",
-            "Participant_Details",
-            "PRIMARY"
+            "Participant_Details"
         ],
         "Events": [
             "Event_ID",
             "Service_ID",
-            "Event_Details",
-            "PRIMARY",
-            "FOREIGN"
+            "Event_Details"
         ],
         "Participants_in_Events": [
             "Event_ID",
-            "Participant_ID",
-            "PRIMARY",
-            "Participant_ID",
-            "FOREIGN",
-            "FOREIGN"
+            "Participant_ID"
         ]
     },
     "local_govt_mdm": {
         "Customer_Master_Index": [
             "master_customer_id",
-            "cmi_details",
-            "PRIMARY"
+            "cmi_details"
         ],
         "CMI_Cross_References": [
             "cmi_cross_ref_id",
             "master_customer_id",
-            "source_system_code",
-            "PRIMARY",
-            "FOREIGN"
+            "source_system_code"
         ],
         "Council_Tax": [
             "council_tax_id",
-            "cmi_cross_ref_id",
-            "PRIMARY",
-            "FOREIGN"
+            "cmi_cross_ref_id"
         ],
         "Business_Rates": [
             "business_rates_id",
-            "cmi_cross_ref_id",
-            "PRIMARY",
-            "FOREIGN"
+            "cmi_cross_ref_id"
         ],
         "Benefits_Overpayments": [
             "council_tax_id",
-            "cmi_cross_ref_id",
-            "PRIMARY",
-            "FOREIGN"
+            "cmi_cross_ref_id"
         ],
         "Parking_Fines": [
             "council_tax_id",
-            "cmi_cross_ref_id",
-            "PRIMARY",
-            "FOREIGN"
+            "cmi_cross_ref_id"
         ],
         "Rent_Arrears": [
             "council_tax_id",
-            "cmi_cross_ref_id",
-            "PRIMARY",
-            "FOREIGN"
+            "cmi_cross_ref_id"
         ],
         "Electoral_Register": [
             "electoral_register_id",
-            "cmi_cross_ref_id",
-            "PRIMARY",
-            "FOREIGN"
+            "cmi_cross_ref_id"
         ]
     },
     "machine_repair": {
@@ -3806,8 +3134,7 @@
             "repair_ID",
             "name",
             "Launch_Date",
-            "Notes",
-            "PRIMARY"
+            "Notes"
         ],
         "machine": [
             "Machine_ID",
@@ -3816,37 +3143,34 @@
             "Team",
             "Machine_series",
             "value_points",
-            "quality_rank",
-            "PRIMARY"
+            "quality_rank"
         ],
         "technician": [
             "technician_id",
             "Name",
             "Team",
             "Starting_Year",
-            "Age",
-            "PRIMARY"
+            "Age"
         ],
         "repair_assignment": [
             "technician_id",
             "repair_ID",
-            "Machine_ID",
-            "PRIMARY",
-            "repair_I",
-            "Machine_ID",
-            "FOREIGN",
-            "FOREIGN",
-            "FOREIGN"
+            "Machine_ID"
         ]
     },
     "manufactory_1": {
+        "Manufacturers": [
+            "Code",
+            "Name",
+            "Headquarter",
+            "Founder",
+            "Revenue"
+        ],
         "Products": [
             "Code",
             "Name",
             "Price",
-            "Manufacturer",
-            "PRIMARY",
-            "FOREIGN"
+            "Manufacturer"
         ]
     },
     "manufacturer": {
@@ -3855,24 +3179,18 @@
             "Open_Year",
             "Name",
             "Num_of_Factories",
-            "Num_of_Shops",
-            "PRIMARY"
+            "Num_of_Shops"
         ],
         "furniture": [
             "Furniture_ID",
             "Name",
             "Num_of_Component",
-            "Market_Rate",
-            "PRIMARY"
+            "Market_Rate"
         ],
         "furniture_manufacte": [
             "Manufacturer_ID",
             "Furniture_ID",
-            "Price_in_Dollar",
-            "PRIMARY",
-            "Furniture_ID",
-            "FOREIGN",
-            "FOREIGN"
+            "Price_in_Dollar"
         ]
     },
     "match_season": {
@@ -3880,13 +3198,11 @@
             "Country_id",
             "Country_name",
             "Capital",
-            "Official_native_language",
-            "PRIMARY"
+            "Official_native_language"
         ],
         "team": [
             "Team_id",
-            "Name",
-            "PRIMARY"
+            "Name"
         ],
         "match_season": [
             "Season",
@@ -3896,10 +3212,7 @@
             "Team",
             "Draft_Pick_Number",
             "Draft_Class",
-            "College",
-            "PRIMARY",
-            "FOREIGN",
-            "FOREIGN"
+            "College"
         ],
         "player": [
             "Player_ID",
@@ -3908,9 +3221,7 @@
             "Total_WL",
             "Singles_WL",
             "Doubles_WL",
-            "Team",
-            "PRIMARY",
-            "FOREIGN"
+            "Team"
         ]
     },
     "medicine_enzyme_interaction": {
@@ -3918,8 +3229,7 @@
             "id",
             "name",
             "Trade_Name",
-            "FDA_approved",
-            "PRIMARY"
+            "FDA_approved"
         ],
         "enzyme": [
             "id",
@@ -3928,32 +3238,45 @@
             "Product",
             "Chromosome",
             "OMIM",
-            "Porphyria",
-            "PRIMARY"
+            "Porphyria"
         ],
         "medicine_enzyme_interaction": [
             "enzyme_id",
             "medicine_id",
-            "interaction_type",
-            "PRIMARY",
-            "medicine_id",
-            "FOREIGN",
-            "FOREIGN"
+            "interaction_type"
         ]
     },
     "mountain_photos": {
-        "IF": [
+        "mountain": [
+            "id",
+            "name",
+            "Height",
+            "Prominence",
+            "Range",
+            "Country"
+        ],
+        "camera_lens": [
+            "id",
+            "brand",
+            "name",
+            "focal_length_mm",
+            "max_aperture"
+        ],
+        "photos": [
             "id",
             "camera_lens_id",
             "mountain_id",
             "color",
-            "name",
-            "PRIMARY",
-            "FOREIGN",
-            "FOREIGN"
+            "name"
         ]
     },
     "movie_1": {
+        "Movie": [
+            "mID",
+            "title",
+            "year",
+            "director"
+        ],
         "Reviewer": [
             "rID",
             "name"
@@ -3962,9 +3285,7 @@
             "rID",
             "mID",
             "stars",
-            "ratingDate",
-            "FOREIGN",
-            "FOREIGN"
+            "ratingDate"
         ]
     },
     "museum_visit": {
@@ -3972,25 +3293,19 @@
             "Museum_ID",
             "Name",
             "Num_of_Staff",
-            "Open_Year",
-            "PRIMARY"
+            "Open_Year"
         ],
         "visitor": [
             "ID",
             "Name",
             "Level_of_membership",
-            "Age",
-            "PRIMARY"
+            "Age"
         ],
         "visit": [
             "Museum_ID",
             "visitor_ID",
             "Num_of_Ticket",
-            "Total_spent",
-            "PRIMARY",
-            "visitor_ID",
-            "FOREIGN",
-            "FOREIGN"
+            "Total_spent"
         ]
     },
     "musical": {
@@ -4001,8 +3316,7 @@
             "Award",
             "Category",
             "Nominee",
-            "Result",
-            "PRIMARY"
+            "Result"
         ],
         "actor": [
             "Actor_ID",
@@ -4010,28 +3324,28 @@
             "Musical_ID",
             "Character",
             "Duration",
-            "age",
-            "PRIMARY",
-            "FOREIGN"
+            "age"
         ]
     },
     "music_1": {
+        "genre": [
+            "g_name",
+            "rating",
+            "most_popular_in"
+        ],
         "artist": [
             "artist_name",
             "country",
             "gender",
             "preferred_genre",
-            "CONSTRAINT",
-            "FOREIGN"
+            "CONSTRAINT"
         ],
         "files": [
             "f_id",
             "artist_name",
             "file_size",
             "duration",
-            "formats",
-            "PRIMARY",
-            "FOREIGN"
+            "formats"
         ],
         "song": [
             "song_name",
@@ -4043,10 +3357,7 @@
             "languages",
             "releasedate",
             "resolution",
-            "CONSTRAINT",
-            "FOREIGN",
-            "FOREIGN",
-            "FOREIGN"
+            "CONSTRAINT"
         ]
     },
     "music_2": {
@@ -4069,39 +3380,22 @@
         "Instruments": [
             "SongId",
             "BandmateId",
-            "Instrument",
-            "PRIMARY",
-            "BandmateI",
-            "Instrument",
-            "FOREIGN",
-            "FOREIGN"
+            "Instrument"
         ],
         "Performance": [
             "SongId",
             "Bandmate",
-            "StagePosition",
-            "PRIMARY",
-            "Bandmate",
-            "FOREIGN",
-            "FOREIGN"
+            "StagePosition"
         ],
         "Tracklists": [
             "AlbumId",
             "Position",
-            "SongId",
-            "PRIMARY",
-            "Position",
-            "FOREIGN",
-            "FOREIGN"
+            "SongId"
         ],
         "Vocals": [
             "SongId",
             "Bandmate",
-            "Type",
-            "PRIMARY",
-            "Bandmate",
-            "FOREIGN",
-            "FOREIGN"
+            "Type"
         ]
     },
     "music_4": {
@@ -4110,8 +3404,7 @@
             "Artist",
             "Age",
             "Famous_Title",
-            "Famous_Release_date",
-            "PRIMARY"
+            "Famous_Release_date"
         ],
         "volume": [
             "Volume_ID",
@@ -4119,9 +3412,7 @@
             "Issue_Date",
             "Weeks_on_Top",
             "Song",
-            "Artist_ID",
-            "PRIMARY",
-            "FOREIGN"
+            "Artist_ID"
         ],
         "music_festival": [
             "ID",
@@ -4129,27 +3420,22 @@
             "Date_of_ceremony",
             "Category",
             "Volume",
-            "Result",
-            "PRIMARY",
-            "FOREIGN"
+            "Result"
         ]
     },
     "network_1": {
+        "Highschooler": [
+            "ID",
+            "name",
+            "grade"
+        ],
         "Friend": [
             "student_id",
-            "friend_id",
-            "PRIMARY",
-            "friend_id",
-            "FOREIGN",
-            "FOREIGN"
+            "friend_id"
         ],
         "Likes": [
             "student_id",
-            "liked_id",
-            "PRIMARY",
-            "liked_id",
-            "FOREIGN",
-            "FOREIGN"
+            "liked_id"
         ]
     },
     "network_2": {
@@ -4163,9 +3449,7 @@
         "PersonFriend": [
             "name",
             "friend",
-            "year",
-            "FOREIGN",
-            "FOREIGN"
+            "year"
         ]
     },
     "news_report": {
@@ -4174,25 +3458,19 @@
             "Date",
             "Venue",
             "Name",
-            "Event_Attendance",
-            "PRIMARY"
+            "Event_Attendance"
         ],
         "journalist": [
             "journalist_ID",
             "Name",
             "Nationality",
             "Age",
-            "Years_working",
-            "PRIMARY"
+            "Years_working"
         ],
         "news_report": [
             "journalist_ID",
             "Event_ID",
-            "Work_Type",
-            "PRIMARY",
-            "Event_ID",
-            "FOREIGN",
-            "FOREIGN"
+            "Work_Type"
         ]
     },
     "orchestra": {
@@ -4201,8 +3479,7 @@
             "Name",
             "Age",
             "Nationality",
-            "Year_of_Work",
-            "PRIMARY"
+            "Year_of_Work"
         ],
         "orchestra": [
             "Orchestra_ID",
@@ -4210,9 +3487,7 @@
             "Conductor_ID",
             "Record_Company",
             "Year_of_Founded",
-            "Major_Record_Format",
-            "PRIMARY",
-            "FOREIGN"
+            "Major_Record_Format"
         ],
         "performance": [
             "Performance_ID",
@@ -4221,17 +3496,14 @@
             "Date",
             "Official_ratings_(millions)",
             "Weekly_rank",
-            "Share",
-            "PRIMARY",
-            "FOREIGN"
+            "Share"
         ],
         "show": [
             "Show_ID",
             "Performance_ID",
             "If_first_show",
             "Result",
-            "Attendance",
-            "FOREIGN"
+            "Attendance"
         ]
     },
     "party_host": {
@@ -4241,24 +3513,18 @@
             "Location",
             "First_year",
             "Last_year",
-            "Number_of_hosts",
-            "PRIMARY"
+            "Number_of_hosts"
         ],
         "host": [
             "Host_ID",
             "Name",
             "Nationality",
-            "Age",
-            "PRIMARY"
+            "Age"
         ],
         "party_host": [
             "Party_ID",
             "Host_ID",
-            "Is_Main_in_Charge",
-            "PRIMARY",
-            "Host_ID",
-            "FOREIGN",
-            "FOREIGN"
+            "Is_Main_in_Charge"
         ]
     },
     "party_people": {
@@ -4268,8 +3534,7 @@
             "Date",
             "Label",
             "Format",
-            "Catalogue",
-            "PRIMARY"
+            "Catalogue"
         ],
         "party": [
             "Party_ID",
@@ -4277,26 +3542,19 @@
             "Took_office",
             "Left_office",
             "Region_ID",
-            "Party_name",
-            "PRIMARY",
-            "FOREIGN"
+            "Party_name"
         ],
         "member": [
             "Member_ID",
             "Member_Name",
             "Party_ID",
-            "In_office",
-            "PRIMARY",
-            "FOREIGN"
+            "In_office"
         ],
         "party_events": [
             "Event_ID",
             "Event_Name",
             "Party_ID",
-            "Member_in_charge_ID",
-            "PRIMARY",
-            "FOREIGN",
-            "FOREIGN"
+            "Member_in_charge_ID"
         ]
     },
     "performance_attendance": {
@@ -4304,25 +3562,19 @@
             "Member_ID",
             "Name",
             "Nationality",
-            "Role",
-            "PRIMARY"
+            "Role"
         ],
         "performance": [
             "Performance_ID",
             "Date",
             "Host",
             "Location",
-            "Attendance",
-            "PRIMARY"
+            "Attendance"
         ],
         "member_attendance": [
             "Member_ID",
             "Performance_ID",
-            "Num_of_Pieces",
-            "PRIMARY",
-            "Performance_ID",
-            "FOREIGN",
-            "FOREIGN"
+            "Num_of_Pieces"
         ]
     },
     "perpetrator": {
@@ -4334,17 +3586,14 @@
             "Location",
             "Country",
             "Killed",
-            "Injured",
-            "PRIMARY",
-            "FOREIGN"
+            "Injured"
         ],
         "people": [
             "People_ID",
             "Name",
             "Height",
             "Weight",
-            "Hom",
-            "PRIMARY"
+            "Hom"
         ]
     },
     "pets_1": {
@@ -4360,9 +3609,7 @@
         ],
         "Has_Pet": [
             "StuID",
-            "PetID",
-            "FOREIGN",
-            "FOREIGN"
+            "PetID"
         ],
         "Pets": [
             "PetID",
@@ -4372,17 +3619,32 @@
         ]
     },
     "phone_1": {
-        "IF": [
+        "chip_model": [
+            "Model_name",
+            "Launch_year",
+            "RAM_MiB",
+            "ROM_MiB",
+            "Slots",
+            "WiFi",
+            "Bluetooth"
+        ],
+        "screen_mode": [
+            "Graphics_mode",
+            "Char_cells",
+            "Pixels",
+            "Hardware_colours",
+            "used_kb",
+            "map",
+            "Type"
+        ],
+        "phone": [
             "Company_name",
             "Hardware_Model_name",
             "Accreditation_type",
             "Accreditation_level",
             "Date",
             "chip_model",
-            "screen_mode",
-            "PRIMARY",
-            "FOREIGN",
-            "FOREIGN"
+            "screen_mode"
         ]
     },
     "phone_market": {
@@ -4391,25 +3653,19 @@
             "Phone_ID",
             "Memory_in_G",
             "Carrier",
-            "Price",
-            "PRIMARY"
+            "Price"
         ],
         "market": [
             "Market_ID",
             "District",
             "Num_of_employees",
             "Num_of_shops",
-            "Ranking",
-            "PRIMARY"
+            "Ranking"
         ],
         "phone_market": [
             "Market_ID",
             "Phone_ID",
-            "Num_of_stock",
-            "PRIMARY",
-            "Phone_ID",
-            "FOREIGN",
-            "FOREIGN"
+            "Num_of_stock"
         ]
     },
     "pilot_record": {
@@ -4420,8 +3676,7 @@
             "Model",
             "Fleet_Series",
             "Powertrain",
-            "Fuel_Propulsion",
-            "PRIMARY"
+            "Fuel_Propulsion"
         ],
         "pilot": [
             "Pilot_ID",
@@ -4431,19 +3686,13 @@
             "Nationality",
             "Position",
             "Join_Year",
-            "Team",
-            "PRIMARY"
+            "Team"
         ],
         "pilot_record": [
             "Record_ID",
             "Pilot_ID",
             "Aircraft_ID",
-            "Date",
-            "PRIMARY",
-            "Aircraft_I",
-            "Date",
-            "FOREIGN",
-            "FOREIGN"
+            "Date"
         ]
     },
     "poker_player": {
@@ -4453,25 +3702,21 @@
             "Final_Table_Made",
             "Best_Finish",
             "Money_Rank",
-            "Earnings",
-            "PRIMARY",
-            "FOREIGN"
+            "Earnings"
         ],
         "people": [
             "People_ID",
             "Nationality",
             "Name",
             "Birth_Date",
-            "Height",
-            "PRIMARY"
+            "Height"
         ]
     },
     "products_for_hire": {
         "Discount_Coupons": [
             "coupon_id",
             "date_issued",
-            "coupon_amount",
-            "4"
+            "coupon_amount"
         ],
         "Customers": [
             "customer_id",
@@ -4481,8 +3726,7 @@
             "last_name",
             "gender_mf",
             "date_became_customer",
-            "date_last_hire",
-            "FOREIGN"
+            "date_last_hire"
         ],
         "Bookings": [
             "booking_id",
@@ -4493,20 +3737,14 @@
             "booking_end_date",
             "count_hired",
             "amount_payable",
-            "4",
             "amount_of_discount",
-            "4",
             "amount_outstanding",
-            "4",
-            "amount_of_refund",
-            "4",
-            "FOREIGN"
+            "amount_of_refund"
         ],
         "Products_for_Hire": [
             "product_id",
             "product_type_code",
             "daily_hire_cost",
-            "4",
             "product_name",
             "product_description"
         ],
@@ -4518,11 +3756,7 @@
             "amount_paid_in_full_yn",
             "payment_date",
             "amount_due",
-            "4",
-            "amount_paid",
-            "4",
-            "FOREIGN",
-            "FOREIGN"
+            "amount_paid"
         ],
         "Products_Booked": [
             "booking_id",
@@ -4530,19 +3764,13 @@
             "returned_yn",
             "returned_late_yn",
             "booked_count",
-            "booked_amount",
-            "PRIMARY",
-            "product_id",
-            "FOREIGN",
-            "FOREIGN"
+            "booked_amount"
         ],
         "View_Product_Availability": [
             "product_id",
             "booking_id",
             "status_date",
-            "available_yn",
-            "FOREIGN",
-            "FOREIGN"
+            "available_yn"
         ]
     },
     "products_gen_characteristics": {
@@ -4564,8 +3792,7 @@
             "characteristic_type_code",
             "characteristic_data_type",
             "characteristic_name",
-            "other_characteristic_details",
-            "FOREIGN"
+            "other_characteristic_details"
         ],
         "Products": [
             "product_id",
@@ -4575,16 +3802,12 @@
             "typical_buying_price",
             "typical_selling_price",
             "product_description",
-            "other_product_details",
-            "FOREIGN",
-            "FOREIGN"
+            "other_product_details"
         ],
         "Product_Characteristics": [
             "product_id",
             "characteristic_id",
-            "product_characteristic_value",
-            "FOREIGN",
-            "FOREIGN"
+            "product_characteristic_value"
         ]
     },
     "product_catalog": {
@@ -4603,8 +3826,7 @@
         "Catalog_Structure": [
             "catalog_level_number",
             "catalog_id",
-            "catalog_level_name",
-            "FOREIGN"
+            "catalog_level_name"
         ],
         "Catalog_Contents": [
             "catalog_entry_id",
@@ -4620,16 +3842,13 @@
             "capacity",
             "length",
             "height",
-            "width",
-            "FOREIGN"
+            "width"
         ],
         "Catalog_Contents_Additional_Attributes": [
             "catalog_entry_id",
             "catalog_level_number",
             "attribute_id",
-            "attribute_value",
-            "FOREIGN",
-            "FOREIGN"
+            "attribute_value"
         ]
     },
     "program_share": {
@@ -4638,35 +3857,25 @@
             "Name",
             "Origin",
             "Launch",
-            "Owner",
-            "PRIMARY"
+            "Owner"
         ],
         "channel": [
             "Channel_ID",
             "Name",
             "Owner",
             "Share_in_percent",
-            "Rating_in_percent",
-            "PRIMARY"
+            "Rating_in_percent"
         ],
         "broadcast": [
             "Channel_ID",
             "Program_ID",
-            "Time_of_day",
-            "PRIMARY",
-            "Program_ID",
-            "FOREIGN",
-            "FOREIGN"
+            "Time_of_day"
         ],
         "broadcast_share": [
             "Channel_ID",
             "Program_ID",
             "Date",
-            "Share_in_percent",
-            "PRIMARY",
-            "Program_ID",
-            "FOREIGN",
-            "FOREIGN"
+            "Share_in_percent"
         ]
     },
     "protein_institute": {
@@ -4676,8 +3885,7 @@
             "Street_address",
             "Years_as_tallest",
             "Height_feet",
-            "Floors",
-            "PRIMARY"
+            "Floors"
         ],
         "Institution": [
             "Institution_id",
@@ -4688,9 +3896,7 @@
             "Enrollment",
             "Team",
             "Primary_Conference",
-            "building_id",
-            "PRIMARY",
-            "FOREIGN"
+            "building_id"
         ],
         "protein": [
             "common_name",
@@ -4699,9 +3905,7 @@
             "accession_number",
             "sequence_length",
             "sequence_identity_to_human_protein",
-            "Institution_id",
-            "PRIMARY",
-            "FOREIGN"
+            "Institution_id"
         ]
     },
     "race_track": {
@@ -4710,17 +3914,14 @@
             "Name",
             "Class",
             "Date",
-            "Track_ID",
-            "PRIMARY",
-            "FOREIGN"
+            "Track_ID"
         ],
         "track": [
             "Track_ID",
             "Name",
             "Location",
             "Seating",
-            "Year_Opened",
-            "PRIMARY"
+            "Year_Opened"
         ]
     },
     "railway": {
@@ -4731,8 +3932,7 @@
             "Built",
             "Wheels",
             "Location",
-            "ObjectNumber",
-            "PRIMARY"
+            "ObjectNumber"
         ],
         "train": [
             "Train_ID",
@@ -4740,9 +3940,7 @@
             "Name",
             "From",
             "Arrival",
-            "Railway_ID",
-            "PRIMARY",
-            "FOREIGN"
+            "Railway_ID"
         ],
         "manager": [
             "Manager_ID",
@@ -4750,17 +3948,12 @@
             "Country",
             "Working_year_starts",
             "Age",
-            "Level",
-            "PRIMARY"
+            "Level"
         ],
         "railway_manage": [
             "Railway_ID",
             "Manager_ID",
-            "From_Year",
-            "PRIMARY",
-            "Manager_ID",
-            "FOREIGN",
-            "FOREIGN"
+            "From_Year"
         ]
     },
     "real_estate_properties": {
@@ -4776,8 +3969,7 @@
             "feature_id",
             "feature_type_code",
             "feature_name",
-            "feature_description",
-            "FOREIGN"
+            "feature_description"
         ],
         "Properties": [
             "property_id",
@@ -4788,11 +3980,8 @@
             "property_address",
             "room_count",
             "vendor_requested_price",
-            "4",
             "buyer_offered_price",
-            "4",
             "agreed_selling_price",
-            "4",
             "apt_feature_1",
             "apt_feature_2",
             "apt_feature_3",
@@ -4808,41 +3997,32 @@
             "shp_feature_1",
             "shp_feature_2",
             "shp_feature_3",
-            "other_property_details",
-            "FOREIGN"
+            "other_property_details"
         ],
         "Other_Property_Features": [
             "property_id",
             "feature_id",
-            "property_feature_description",
-            "FOREIGN",
-            "FOREIGN"
+            "property_feature_description"
         ]
     },
     "restaurants": {
         "GEOGRAPHIC": [
             "CITY_NAME",
             "COUNTY",
-            "REGION",
-            "PRIMARY"
+            "REGION"
         ],
         "RESTAURANT": [
             "ID",
             "NAME",
             "FOOD_TYPE",
             "CITY_NAME",
-            "RATING",
-            "PRIMARY",
-            "FOREIGN"
+            "RATING"
         ],
         "LOCATION": [
             "RESTAURANT_ID",
             "HOUSE_NUMBER",
             "STREET_NAME",
-            "CITY_NAME",
-            "PRIMARY",
-            "FOREIGN",
-            "FOREIGN"
+            "CITY_NAME"
         ]
     },
     "restaurant_1": {
@@ -4864,9 +4044,7 @@
         ],
         "Type_Of_Restaurant": [
             "ResID",
-            "ResTypeID",
-            "FOREIGN",
-            "FOREIGN"
+            "ResTypeID"
         ],
         "Restaurant_Type": [
             "ResTypeID",
@@ -4877,23 +4055,46 @@
             "StuID",
             "ResID",
             "Time",
-            "Spent",
-            "FOREIGN",
-            "FOREIGN"
+            "Spent"
         ]
     },
     "riding_club": {
-        "IF": [
+        "player": [
+            "Player_ID",
+            "Sponsor_name",
+            "Player_name",
+            "Gender",
+            "Residence",
+            "Occupation",
+            "Votes",
+            "Rank"
+        ],
+        "club": [
+            "Club_ID",
+            "Club_name",
+            "Region",
+            "Start_year"
+        ],
+        "coach": [
+            "Coach_ID",
+            "Coach_name",
+            "Gender",
+            "Club_ID",
+            "Rank"
+        ],
+        "player_coach": [
+            "Player_ID",
+            "Coach_ID",
+            "Starting_year"
+        ],
+        "match_result": [
             "Rank",
             "Club_ID",
             "Gold",
             "Big_Silver",
             "Small_Silver",
             "Bronze",
-            "Points",
-            "PRIMARY",
-            "Club_ID",
-            "FOREIGN"
+            "Points"
         ]
     },
     "roller_coaster": {
@@ -4906,44 +4107,36 @@
             "Height",
             "Speed",
             "Opened",
-            "Status",
-            "PRIMARY",
-            "FOREIGN"
+            "Status"
         ],
         "country": [
             "Country_ID",
             "Name",
             "Population",
             "Area",
-            "Languages",
-            "PRIMARY"
+            "Languages"
         ]
     },
     "scholar": {
         "venue": [
             "venueId",
-            "venueName",
-            "PRIMARY"
+            "venueName"
         ],
         "author": [
             "authorId",
-            "authorName",
-            "PRIMARY"
+            "authorName"
         ],
         "dataset": [
             "datasetId",
-            "datasetName",
-            "PRIMARY"
+            "datasetName"
         ],
         "journal": [
             "journalId",
-            "journalName",
-            "PRIMARY"
+            "journalName"
         ],
         "keyphrase": [
             "keyphraseId",
-            "keyphraseName",
-            "PRIMARY"
+            "keyphraseName"
         ],
         "paper": [
             "paperId",
@@ -4952,40 +4145,23 @@
             "year",
             "numCiting",
             "numCitedBy",
-            "journalId",
-            "PRIMARY",
-            "FOREIGN",
-            "FOREIGN"
+            "journalId"
         ],
         "cite": [
             "citingPaperId",
-            "citedPaperId",
-            "PRIMARY",
-            "citedPaperId",
-            "FOREIGN",
-            "FOREIGN"
+            "citedPaperId"
         ],
         "paperDataset": [
             "paperId",
-            "datasetId",
-            "PRIMARY",
-            "paperId"
+            "datasetId"
         ],
         "paperKeyphrase": [
             "paperId",
-            "keyphraseId",
-            "PRIMARY",
-            "paperId",
-            "FOREIGN",
-            "FOREIGN"
+            "keyphraseId"
         ],
         "writes": [
             "paperId",
-            "authorId",
-            "PRIMARY",
-            "authorId",
-            "FOREIGN",
-            "FOREIGN"
+            "authorId"
         ]
     },
     "school_bus": {
@@ -4994,26 +4170,20 @@
             "Name",
             "Party",
             "Home_city",
-            "Age",
-            "PRIMARY"
+            "Age"
         ],
         "school": [
             "School_ID",
             "Grade",
             "School",
             "Location",
-            "Type",
-            "PRIMARY"
+            "Type"
         ],
         "school_bus": [
             "School_ID",
             "Driver_ID",
             "Years_Working",
-            "If_full_time",
-            "PRIMARY",
-            "Driver_ID",
-            "FOREIGN",
-            "FOREIGN"
+            "If_full_time"
         ]
     },
     "school_finance": {
@@ -5025,8 +4195,7 @@
             "Enrollment",
             "IHSAA_Class",
             "IHSAA_Football_Class",
-            "County",
-            "PRIMARY"
+            "County"
         ],
         "budget": [
             "School_id",
@@ -5035,18 +4204,13 @@
             "total_budget_percent_budgeted",
             "Invested",
             "total_budget_percent_invested",
-            "Budget_invested_percent",
-            "PRIMARY",
-            "YEAR",
-            "FOREIGN"
+            "Budget_invested_percent"
         ],
         "endowment": [
             "endowment_id",
             "School_id",
             "donator_name",
-            "amount",
-            "PRIMARY",
-            "FOREIGN"
+            "amount"
         ]
     },
     "school_player": {
@@ -5060,8 +4224,7 @@
             "Boys_or_Girls",
             "Day_or_Boarding",
             "Year_Entered_Competition",
-            "School_Colors",
-            "PRIMARY"
+            "School_Colors"
         ],
         "school_details": [
             "School_ID",
@@ -5069,18 +4232,13 @@
             "Colors",
             "League",
             "Class",
-            "Division",
-            "PRIMARY",
-            "FOREIGN"
+            "Division"
         ],
         "school_performance": [
             "School_Id",
             "School_Year",
             "Class_A",
-            "Class_AA",
-            "PRIMARY",
-            "School_Year",
-            "FOREIGN"
+            "Class_AA"
         ],
         "player": [
             "Player_ID",
@@ -5088,30 +4246,22 @@
             "Team",
             "Age",
             "Position",
-            "School_ID",
-            "PRIMARY",
-            "FOREIGN"
+            "School_ID"
         ]
     },
     "scientist_1": {
         "Scientists": [
             "SSN",
-            "Name",
-            "PRIMARY"
+            "Name"
         ],
         "Projects": [
             "Code",
             "Name",
-            "Hours",
-            "PRIMARY"
+            "Hours"
         ],
         "AssignedTo": [
             "Scientist",
-            "Project",
-            "PRIMARY",
-            "Project",
-            "FOREIGN",
-            "FOREIGN"
+            "Project"
         ]
     },
     "ship_1": {
@@ -5121,9 +4271,7 @@
             "Ship_ID",
             "age",
             "Class",
-            "Rank",
-            "PRIMARY",
-            "FOREIGN"
+            "Rank"
         ],
         "Ship": [
             "Ship_ID",
@@ -5131,8 +4279,7 @@
             "Type",
             "Built_Year",
             "Class",
-            "Flag",
-            "PRIMARY"
+            "Flag"
         ]
     },
     "ship_mission": {
@@ -5143,17 +4290,14 @@
             "Launched_Year",
             "Location",
             "Speed_knots",
-            "Fate",
-            "PRIMARY",
-            "FOREIGN"
+            "Fate"
         ],
         "ship": [
             "Ship_ID",
             "Name",
             "Type",
             "Nationality",
-            "Tonnage",
-            "PRIMARY"
+            "Tonnage"
         ]
     },
     "shop_membership": {
@@ -5162,8 +4306,7 @@
             "Card_Number",
             "Name",
             "Hometown",
-            "Level",
-            "PRIMARY"
+            "Level"
         ],
         "branch": [
             "Branch_ID",
@@ -5171,27 +4314,18 @@
             "Open_year",
             "Address_road",
             "City",
-            "membership_amount",
-            "PRIMARY"
+            "membership_amount"
         ],
         "membership_register_branch": [
             "Member_ID",
             "Branch_ID",
-            "Register_Year",
-            "PRIMARY",
-            "FOREIGN",
-            "FOREIGN"
+            "Register_Year"
         ],
         "purchase": [
             "Member_ID",
             "Branch_ID",
             "Year",
-            "Total_pounds",
-            "PRIMARY",
-            "Branch_I",
-            "Year",
-            "FOREIGN",
-            "FOREIGN"
+            "Total_pounds"
         ]
     },
     "singer": {
@@ -5200,88 +4334,67 @@
             "Name",
             "Birth_Year",
             "Net_Worth_Millions",
-            "Citizenship",
-            "PRIMARY"
+            "Citizenship"
         ],
         "song": [
             "Song_ID",
             "Title",
             "Singer_ID",
             "Sales",
-            "Highest_Position",
-            "PRIMARY",
-            "FOREIGN"
+            "Highest_Position"
         ]
     },
     "soccer_2": {
         "College": [
             "cName",
             "state",
-            "enr",
-            "0",
-            "PRIMARY"
+            "enr"
         ],
         "Player": [
             "pID",
-            "0)",
             "pName",
             "yCard",
-            "HS",
-            "0",
-            "PRIMARY"
+            "HS"
         ],
         "Tryout": [
             "pID",
-            "0",
             "cName",
             "pPos",
-            "decision",
-            "PRIMARY",
-            "cName",
-            "FOREIGN",
-            "FOREIGN"
+            "decision"
         ]
     },
     "solvency_ii": {
         "Addresses": [
             "Address_ID",
             "address_details",
-            "PRIMARY",
             "UNIQUE"
         ],
         "Locations": [
             "Location_ID",
-            "Other_Details",
-            "PRIMARY"
+            "Other_Details"
         ],
         "Products": [
             "Product_ID",
             "Product_Type_Code",
             "Product_Name",
             "Product_Price",
-            "4",
-            "PRIMARY",
             "UNIQUE"
         ],
         "Parties": [
             "Party_ID",
-            "Party_Details",
-            "PRIMARY"
+            "Party_Details"
         ],
         "Assets": [
             "Asset_ID",
-            "Other_Details",
-            "PRIMARY"
+            "Other_Details"
         ],
         "Channels": [
             "Channel_ID",
-            "Other_Details",
-            "PRIMARY"
+            "Other_Details"
         ],
         "Finances": [
             "Finance_ID",
-            "Other_Details",
-            "PRIMARY"
+            "Other_Details"
         ],
         "Events": [
             "Event_ID",
@@ -5290,42 +4403,25 @@
             "Event_Type_Code",
             "Finance_ID",
             "Location_ID",
-            "PRIMARY",
-            "UNIQUE",
-            "FOREIGN",
-            "FOREIGN",
-            "FOREIGN"
+            "UNIQUE"
         ],
         "Products_in_Events": [
             "Product_in_Event_ID",
             "Event_ID",
-            "Product_ID",
-            "PRIMARY",
-            "FOREIGN",
-            "FOREIGN"
+            "Product_ID"
         ],
         "Parties_in_Events": [
             "Party_ID",
             "Event_ID",
-            "Role_Code",
-            "PRIMARY",
-            "Event_ID",
-            "FOREIGN",
-            "FOREIGN"
+            "Role_Code"
         ],
         "Agreements": [
             "Document_ID",
-            "Event_ID",
-            "PRIMARY",
-            "FOREIGN"
+            "Event_ID"
         ],
         "Assets_in_Events": [
             "Asset_ID",
-            "Event_ID",
-            "PRIMARY",
-            "Event_ID",
-            "FOREIGN",
-            "FOREIGN"
+            "Event_ID"
         ]
     },
     "sports_competition": {
@@ -5333,8 +4429,7 @@
             "Club_ID",
             "name",
             "Region",
-            "Start_year",
-            "PRIMARY"
+            "Start_year"
         ],
         "club_rank": [
             "Rank",
@@ -5342,10 +4437,7 @@
             "Gold",
             "Silver",
             "Bronze",
-            "Total",
-            "PRIMARY",
-            "Club_ID",
-            "FOREIGN"
+            "Total"
         ],
         "player": [
             "Player_ID",
@@ -5355,28 +4447,19 @@
             "Apps",
             "Tries",
             "Goals",
-            "Points",
-            "PRIMARY",
-            "FOREIGN"
+            "Points"
         ],
         "competition": [
             "Competition_ID",
             "Year",
             "Competition_type",
-            "Country",
-            "PRIMARY"
+            "Country"
         ],
         "competition_result": [
             "Competition_ID",
             "Club_ID_1",
             "Club_ID_2",
-            "Score",
-            "PRIMARY",
-            "Club_ID_",
-            "Club_ID_2",
-            "FOREIGN",
-            "FOREIGN",
-            "FOREIGN"
+            "Score"
         ]
     },
     "station_weather": {
@@ -5387,23 +4470,17 @@
             "origin",
             "destination",
             "time",
-            "interval",
-            "PRIMARY"
+            "interval"
         ],
         "station": [
             "id",
             "network_name",
             "services",
-            "local_authority",
-            "PRIMARY"
+            "local_authority"
         ],
         "route": [
             "train_id",
-            "station_id",
-            "PRIMARY",
-            "station_id",
-            "FOREIGN",
-            "FOREIGN"
+            "station_id"
         ],
         "weekly_weather": [
             "station_id",
@@ -5411,10 +4488,7 @@
             "high_temperature",
             "low_temperature",
             "precipitation",
-            "wind_speed_mph",
-            "PRIMARY",
-            "day_of_week",
-            "FOREIGN"
+            "wind_speed_mph"
         ]
     },
     "store_product": {
@@ -5425,8 +4499,7 @@
             "dpi",
             "pages_per_minute_color",
             "max_page_size",
-            "interface",
-            "PRIMARY"
+            "interface"
         ],
         "store": [
             "Store_ID",
@@ -5434,31 +4507,22 @@
             "Type",
             "Area_size",
             "Number_of_product_category",
-            "Ranking",
-            "PRIMARY"
+            "Ranking"
         ],
         "district": [
             "District_ID",
             "District_name",
             "Headquartered_City",
             "City_Population",
-            "City_Area",
-            "PRIMARY"
+            "City_Area"
         ],
         "store_product": [
             "Store_ID",
-            "Product_ID",
-            "PRIMARY",
-            "Product_ID",
-            "FOREIGN",
-            "FOREIGN"
+            "Product_ID"
         ],
         "store_district": [
             "Store_ID",
-            "District_ID",
-            "PRIMARY",
-            "FOREIGN",
-            "FOREIGN"
+            "District_ID"
         ]
     },
     "storm_record": {
@@ -5468,23 +4532,17 @@
             "Dates_active",
             "Max_speed",
             "Damage_millions_USD",
-            "Number_Deaths",
-            "PRIMARY"
+            "Number_Deaths"
         ],
         "region": [
             "Region_id",
             "Region_code",
-            "Region_name",
-            "PRIMARY"
+            "Region_name"
         ],
         "affected_region": [
             "Region_id",
             "Storm_ID",
-            "Number_city_affected",
-            "PRIMARY",
-            "Storm_ID",
-            "FOREIGN",
-            "FOREIGN"
+            "Number_city_affected"
         ]
     },
     "student_assessment": {
@@ -5495,8 +4553,7 @@
             "city",
             "zip_postcode",
             "state_province_county",
-            "country",
-            "PRIMARY"
+            "country"
         ],
         "People": [
             "person_id",
@@ -5506,65 +4563,44 @@
             "cell_mobile_number",
             "email_address",
             "login_name",
-            "password",
-            "PRIMARY"
+            "password"
         ],
         "Students": [
             "student_id",
-            "student_details",
-            "PRIMARY",
-            "FOREIGN"
+            "student_details"
         ],
         "Courses": [
             "course_id",
             "course_name",
             "course_description",
-            "other_details",
-            "PRIMARY"
+            "other_details"
         ],
         "People_Addresses": [
             "person_address_id",
             "person_id",
             "address_id",
             "date_from",
-            "date_to",
-            "PRIMARY",
-            "FOREIGN",
-            "FOREIGN"
+            "date_to"
         ],
         "Student_Course_Registrations": [
             "student_id",
             "course_id",
-            "registration_date",
-            "PRIMARY",
-            "course_id",
-            "FOREIGN",
-            "FOREIGN"
+            "registration_date"
         ],
         "Student_Course_Attendance": [
             "student_id",
             "course_id",
-            "date_of_attendance",
-            "PRIMARY",
-            "course_id",
-            "FOREIGN",
-            "course_id)",
-            "course_id"
+            "date_of_attendance"
         ],
         "Candidates": [
             "candidate_id",
-            "candidate_details",
-            "PRIMARY",
-            "FOREIGN"
+            "candidate_details"
         ],
         "Candidate_Assessments": [
             "candidate_id",
             "qualification",
             "assessment_date",
-            "asessment_outcome_code",
-            "PRIMARY",
-            "qualification",
-            "FOREIGN"
+            "asessment_outcome_code"
         ]
     },
     "student_transcripts_tracking": {
@@ -5596,16 +4632,14 @@
             "department_id",
             "degree_summary_name",
             "degree_summary_description",
-            "other_details",
-            "FOREIGN"
+            "other_details"
         ],
         "Sections": [
             "section_id",
             "course_id",
             "section_name",
             "section_description",
-            "other_details",
-            "FOREIGN"
+            "other_details"
         ],
         "Semesters": [
             "semester_id",
@@ -5625,26 +4659,19 @@
             "ssn",
             "date_first_registered",
             "date_left",
-            "other_student_details",
-            "FOREIGN",
-            "FOREIGN"
+            "other_student_details"
         ],
         "Student_Enrolment": [
             "student_enrolment_id",
             "degree_program_id",
             "semester_id",
             "student_id",
-            "other_details",
-            "FOREIGN",
-            "FOREIGN",
-            "FOREIGN"
+            "other_details"
         ],
         "Student_Enrolment_Courses": [
             "student_course_id",
             "course_id",
-            "student_enrolment_id",
-            "FOREIGN",
-            "FOREIGN"
+            "student_enrolment_id"
         ],
         "Transcripts": [
             "transcript_id",
@@ -5653,9 +4680,7 @@
         ],
         "Transcript_Contents": [
             "student_course_id",
-            "transcript_id",
-            "FOREIGN",
-            "FOREIGN"
+            "transcript_id"
         ]
     },
     "swimming": {
@@ -5670,8 +4695,7 @@
             "meter_500",
             "meter_600",
             "meter_700",
-            "Time",
-            "PRIMARY"
+            "Time"
         ],
         "stadium": [
             "ID",
@@ -5679,26 +4703,19 @@
             "Capacity",
             "City",
             "Country",
-            "Opening_year",
-            "PRIMARY"
+            "Opening_year"
         ],
         "event": [
             "ID",
             "Name",
             "Stadium_ID",
-            "Year",
-            "PRIMARY",
-            "FOREIGN"
+            "Year"
         ],
         "record": [
             "ID",
             "Result",
             "Swimmer_ID",
-            "Event_ID",
-            "PRIMARY",
-            "Event_ID",
-            "FOREIGN",
-            "FOREIGN"
+            "Event_ID"
         ]
     },
     "theme_gallery": {
@@ -5707,25 +4724,19 @@
             "Name",
             "Country",
             "Year_Join",
-            "Age",
-            "PRIMARY"
+            "Age"
         ],
         "exhibition": [
             "Exhibition_ID",
             "Year",
             "Theme",
             "Artist_ID",
-            "Ticket_Price",
-            "PRIMARY",
-            "FOREIGN"
+            "Ticket_Price"
         ],
         "exhibition_record": [
             "Exhibition_ID",
             "Date",
-            "Attendance",
-            "PRIMARY",
-            "Date",
-            "FOREIGN"
+            "Attendance"
         ]
     },
     "tracking_grants_for_research": {
@@ -5739,19 +4750,15 @@
             "grant_id",
             "sent_date",
             "response_received_date",
-            "other_details",
-            "FOREIGN",
-            "FOREIGN"
+            "other_details"
         ],
         "Grants": [
             "grant_id",
             "organisation_id",
             "grant_amount",
-            "4)",
             "grant_start_date",
             "grant_end_date",
-            "other_details",
-            "FOREIGN"
+            "other_details"
         ],
         "Organisation_Types": [
             "organisation_type",
@@ -5760,15 +4767,12 @@
         "Organisations": [
             "organisation_id",
             "organisation_type",
-            "organisation_details",
-            "FOREIGN"
+            "organisation_details"
         ],
         "Project_Outcomes": [
             "project_id",
             "outcome_code",
-            "outcome_details",
-            "FOREIGN",
-            "FOREIGN"
+            "outcome_details"
         ],
         "Project_Staff": [
             "staff_id",
@@ -5776,15 +4780,12 @@
             "role_code",
             "date_from",
             "date_to",
-            "other_details",
-            "FOREIGN",
-            "FOREIGN"
+            "other_details"
         ],
         "Projects": [
             "project_id",
             "organisation_id",
-            "project_details",
-            "FOREIGN"
+            "project_details"
         ],
         "Research_Outcomes": [
             "outcome_code",
@@ -5793,8 +4794,7 @@
         "Research_Staff": [
             "staff_id",
             "employer_organisation_id",
-            "staff_details",
-            "FOREIGN"
+            "staff_details"
         ],
         "Staff_Roles": [
             "role_code",
@@ -5804,8 +4804,7 @@
             "task_id",
             "project_id",
             "task_details",
-            "e",
-            "FOREIGN"
+            "e"
         ]
     },
     "tracking_orders": {
@@ -5824,8 +4823,7 @@
             "customer_id",
             "order_status",
             "date_order_placed",
-            "order_details",
-            "FOREIGN"
+            "order_details"
         ],
         "Products": [
             "product_id",
@@ -5837,9 +4835,7 @@
             "product_id",
             "order_id",
             "order_item_status",
-            "order_item_details",
-            "FOREIGN",
-            "FOREIGN"
+            "order_item_details"
         ],
         "Shipments": [
             "shipment_id",
@@ -5847,15 +4843,11 @@
             "invoice_number",
             "shipment_tracking_number",
             "shipment_date",
-            "other_shipment_details",
-            "FOREIGN",
-            "FOREIGN"
+            "other_shipment_details"
         ],
         "Shipment_Items": [
             "shipment_id",
-            "order_item_id",
-            "FOREIGN",
-            "FOREIGN"
+            "order_item_id"
         ]
     },
     "tracking_share_transactions": {
@@ -5866,8 +4858,7 @@
         "Lots": [
             "lot_id",
             "investor_id",
-            "lot_details",
-            "FOREIGN"
+            "lot_details"
         ],
         "Ref_Transaction_Types": [
             "transaction_type_code",
@@ -5879,27 +4870,20 @@
             "transaction_type_code",
             "date_of_transaction",
             "amount_of_transaction",
-            "4",
             "share_count",
-            "other_details",
-            "FOREIGN",
-            "FOREIGN"
+            "other_details"
         ],
         "Sales": [
             "sales_transaction_id",
-            "sales_details",
-            "FOREIGN"
+            "sales_details"
         ],
         "Purchases": [
             "purchase_transaction_id",
-            "purchase_details",
-            "FOREIGN"
+            "purchase_details"
         ],
         "Transactions_Lots": [
             "transaction_id",
-            "lot_id",
-            "FOREIGN",
-            "FOREIGN"
+            "lot_id"
         ]
     },
     "tracking_software_problems": {
@@ -5916,11 +4900,7 @@
             "log_entry_date",
             "log_entry_description",
             "log_entry_fix",
-            "other_log_details",
-            "FOREIGN",
-            "FOREIGN",
-            "FOREIGN",
-            "FOREIGN"
+            "other_log_details"
         ],
         "Problem_Status_Codes": [
             "problem_status_code",
@@ -5945,10 +4925,7 @@
             "date_problem_reported",
             "date_problem_closed",
             "problem_description",
-            "other_problem_details",
-            "FOREIGN",
-            "FOREIGN",
-            "FOREIGN"
+            "other_problem_details"
         ]
     },
     "train_station": {
@@ -5960,36 +4937,50 @@
             "Total_Passengers",
             "Location",
             "Main_Services",
-            "Number_of_Platforms",
-            "PRIMARY"
+            "Number_of_Platforms"
         ],
         "train": [
             "Train_ID",
             "Name",
             "Time",
-            "Service",
-            "PRIMARY"
+            "Service"
         ],
         "train_station": [
             "Train_ID",
-            "Station_ID",
-            "PRIMARY",
-            "Station_ID",
-            "FOREIGN",
-            "FOREIGN"
+            "Station_ID"
         ]
     },
     "tvshow": {
-        "IF": [
+        "TV_Channel": [
+            "id",
+            "series_name",
+            "Country",
+            "Language",
+            "Content",
+            "Pixel_aspect_ratio_PAR",
+            "Hight_definition_TV",
+            "Pay_per_view_PPV",
+            "Package_Option"
+        ],
+        "TV_series": [
+            "id",
+            "Episode",
+            "Air_Date",
+            "Rating",
+            "Share",
+            "18_49_Rating_Share",
+            "Viewers_m",
+            "Weekly_Rank",
+            "Channel"
+        ],
+        "Cartoon": [
             "id",
             "Title",
             "Directed_by",
             "Written_by",
             "Original_air_date",
             "Production_code",
-            "Channel",
-            "PRIMARY",
-            "FOREIGN"
+            "Channel"
         ]
     },
     "university_basketball": {
@@ -6005,9 +4996,7 @@
             "All_Games_Percent",
             "All_Home",
             "All_Road",
-            "All_Neutral",
-            "PRIMARY",
-            "FOREIGN"
+            "All_Neutral"
         ],
         "university": [
             "School_ID",
@@ -6017,8 +5006,7 @@
             "Affiliation",
             "Enrollment",
             "Nickname",
-            "Primary_conference",
-            "PRIMARY"
+            "Primary_conference"
         ]
     },
     "voter_2": {
@@ -6041,14 +5029,7 @@
             "Secretary_Vote",
             "Treasurer_Vote",
             "Class_President_Vote",
-            "Class_Senator_Vote",
-            "FOREIGN",
-            "FOREIGN",
-            "FOREIGN",
-            "FOREIGN",
-            "FOREIGN",
-            "FOREIGN",
-            "FOREIGN"
+            "Class_Senator_Vote"
         ]
     },
     "wedding": {
@@ -6057,28 +5038,20 @@
             "Name",
             "Country",
             "Is_Male",
-            "Age",
-            "PRIMARY"
+            "Age"
         ],
         "church": [
             "Church_ID",
             "Name",
             "Organized_by",
             "Open_Date",
-            "Continuation_of",
-            "PRIMARY"
+            "Continuation_of"
         ],
         "wedding": [
             "Church_ID",
             "Male_ID",
             "Female_ID",
-            "Year",
-            "PRIMARY",
-            "Male_I",
-            "Female_ID",
-            "FOREIGN",
-            "FOREIGN",
-            "FOREIGN"
+            "Year"
         ]
     },
     "workshop_paper": {
@@ -6086,24 +5059,18 @@
             "Workshop_ID",
             "Date",
             "Venue",
-            "Name",
-            "PRIMARY"
+            "Name"
         ],
         "submission": [
             "Submission_ID",
             "Scores",
             "Author",
-            "College",
-            "PRIMARY"
+            "College"
         ],
         "Acceptance": [
             "Submission_ID",
             "Workshop_ID",
-            "Result",
-            "PRIMARY",
-            "Workshop_ID",
-            "FOREIGN",
-            "FOREIGN"
+            "Result"
         ]
     },
     "wrestler": {
@@ -6113,8 +5080,7 @@
             "Reign",
             "Days_held",
             "Location",
-            "Event",
-            "PRIMARY"
+            "Event"
         ],
         "Elimination": [
             "Elimination_ID",
@@ -6122,9 +5088,7 @@
             "Team",
             "Eliminated_By",
             "Elimination_Move",
-            "Time",
-            "PRIMARY",
-            "FOREIGN"
+            "Time"
         ]
     },
     "yelp": {
@@ -6139,36 +5103,28 @@
             "review_count",
             "is_open",
             "rating",
-            "state",
-            "PRIMARY"
+            "state"
         ],
         "category": [
             "id",
             "business_id",
-            "category_name",
-            "PRIMARY",
-            "FOREIGN"
+            "category_name"
         ],
         "user": [
             "uid",
             "user_id",
-            "name",
-            "PRIMARY"
+            "name"
         ],
         "checkin": [
             "cid",
             "business_id",
             "count",
-            "day",
-            "PRIMARY",
-            "FOREIGN"
+            "day"
         ],
         "neighbourhood": [
             "id",
             "business_id",
-            "neighbourhood_name",
-            "PRIMARY",
-            "FOREIGN"
+            "neighbourhood_name"
         ],
         "review": [
             "rid",
@@ -6177,10 +5133,7 @@
             "rating",
             "text",
             "year",
-            "month",
-            "PRIMARY",
-            "FOREIGN",
-            "FOREIGN"
+            "month"
         ],
         "tip": [
             "tip_id",
@@ -6189,10 +5142,7 @@
             "user_id",
             "likes",
             "year",
-            "month",
-            "PRIMARY",
-            "FOREIGN",
-            "FOREIGN"
+            "month"
         ]
     }
 }

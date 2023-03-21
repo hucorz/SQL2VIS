@@ -1,8 +1,5 @@
 import os
-import ijson
-import random
 from pathlib import Path
-from pprint import pprint
 from collections import defaultdict
 
 import sqlparse
@@ -11,9 +8,18 @@ from tqdm import tqdm
 
 
 def extract_table_name(sql):
-    beg = sql.upper().find("TABLE")+6
-    end = sql.find(" ", beg)
-    table_name = sql[beg: end].strip()
+    # beg = sql.upper().find("TABLE")+6
+    # end = sql.find(" ", beg)
+    # table_name = sql[beg: end].strip()
+    # if table_name.startswith('"'):
+    #     table_name = table_name[1:-1]
+    # return table_name
+
+    # 某些 CREATE 语句是像这样的：CREATE TABLE IF NOT EXISTS "department" (
+    end = sql.find('(')
+    sql = sql[:end].strip()
+    beg = sql.rfind(' ')
+    table_name = sql[beg+1:].strip()
     if table_name.startswith('"'):
         table_name = table_name[1:-1]
     return table_name
@@ -26,8 +32,15 @@ def extract_attr_list(sql):
         if attr.startswith('"'):
             attr = attr[1:-1]
         return attr
+    def filter_fun(str):
+        # 过滤掉 primary key 和 foreign key
+        if str.strip().upper().startswith("FOREIGN") or str.strip().upper().startswith("PRIMARY"):
+            return False
+        return True
+
     beg = sql.find('(')
-    attr_list = sql[beg+1:-1].split(',')
+    attr_list = sql[beg+1:-1].strip().split('\n')
+    attr_list = filter(filter_fun, attr_list)
     attr_list = [fun(attr) for attr in attr_list]
     return attr_list
 
@@ -43,10 +56,15 @@ for db in tqdm(db_list):
                 continue
             else:
                 sql_list = sqlparse.split(f.read())
+
             for sql in sql_list:
+                if sql.upper().find("CREATE TABLE") != -1:
+                    sql = sql[sql.upper().find("CREATE"):] # CREATE 语句前可能有注释
                 if sql.strip().upper().startswith("CREATE"):
                     sql = sql.replace(r"`", '"')
-                    new_sql = sqlglot.transpile(sql, write='sqlite')[0]
+                    if (db == "flight_1"):
+                        print()
+                    new_sql = sqlglot.transpile(sql, write='sqlite', pretty=True)[0]
                     # print(new_sql)
 
                     # table name
@@ -60,15 +78,11 @@ for db in tqdm(db_list):
                     extractedDB[db][table_name] = attr_list
     except FileNotFoundError as e: # 没有 schema.sql
         pass
+    except RuntimeError as e:
+        print()
 
 import json
 # print(extractedDB)
 with open('extractedDB.json', 'w') as json_file:
     json_file.write(json.dumps(extractedDB, indent=4))
 
-# with open(f'./spider/train_spider.json', 'r') as f:
-#     objects = ijson.items(f, 'item')
-#     for obj in objects:
-#         print(obj['question'])
-#         print(obj['query'])
-#         break
