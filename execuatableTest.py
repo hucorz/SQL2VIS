@@ -1,50 +1,81 @@
+import os
 import ijson
 import json
 import random
-from pprint import pprint
+import logging
 from collections import defaultdict
 
-# prompts.json
-questions = defaultdict(list)
-with open(f'./spider/train_spider.json', 'r') as f:
-    objects = ijson.items(f, 'item')
-    for obj in objects:
-        question = obj['question']
-        query = obj['query']
-        db_id = obj['db_id']
-        questions[db_id].append({'question': question,'query': query})
+from tqdm import tqdm
+import sqlglot
+
+from language_model import OpenAIModel
+
+logging.basicConfig(format='%(message)s\n',
+                    level=logging.ERROR,
+                    filename='execuatableTest.log',
+                    filemode='w')
+
+# 生成 prompts.json
+# questions = defaultdict(list)
+# with open(f'./spider/train_spider.json', 'r') as f:
+#     objects = ijson.items(f, 'item')
+#     for obj in objects:
+#         question = obj['question']
+#         query = obj['query']
+#         db_id = obj['db_id']
+#         questions[db_id].append({'question': question,'query': query})
 
 # with open('prompts.json', 'w') as json_file:
 #     json_file.write(json.dumps(questions, indent=4))
 
 
+with open('prompts.json', 'r') as json_file:
+    questions = json.load(json_file)
+
 with open(f'./extractedDB.json', 'r') as f:
     extractedDB = json.load(f)
 
 prompt_head = "Here are Mysql tables, with their properties:\n\n"
-for db_id, val_list in questions.items():
+
+os.environ["http_proxy"] = "http://127.0.0.1:7890"
+os.environ["https_proxy"] = "http://127.0.0.1:7890"
+api_key = os.environ.get('OPENAI_API_KEY')
+gpt3 = OpenAIModel(model="text-davinci-003", prompt_template=prompt_head, api_key=api_key, temperature=0.)
+
+for db_id, val_list in tqdm(questions.items()):
+    err_cnt = 0
     try:
         db = extractedDB[db_id]
-
-        '''
-        类似这样 Flights(id, source_airport, destination_airport, depart_time)
-        '''
-        prompt_db = ""
-        for table, attr_list in db.items():
-            prompt_db += f"{table}({', '.join(attr_list)})\n"
-        prompt_db += "\n"
-
-        for val in val_list:
-            prompt_question = "Create a SQL request to "
-            if question.strip().endswith("?"):
-                prompt_question += "answer "
-            question = val["question"]
-            prompt_question += question
-
-
-            prompt = prompt_head + prompt_db + prompt_question
-            if random.randint(1, 100) < 3:
-                print(prompt)
-                print('****************************************************************************')
     except KeyError:
-        pass
+        continue
+
+    '''
+    prompt_db 是类似这样 Flights(id, source_airport, destination_airport, depart_time)
+    '''
+    prompt_db = ""
+    for table, attr_list in db.items():
+        prompt_db += f"{table}({', '.join(attr_list)})\n"
+    prompt_db += "\n"
+
+    for val in val_list:
+        question = val["question"]
+        prompt_question = "Create a SQL request to "
+        if question.strip().endswith("?"):
+            prompt_question += "answer "
+        prompt_question += question
+
+
+        prompt = prompt_head + prompt_db + prompt_question
+        # if random.randint(1, 100) < 3:
+        #     print(prompt)
+        #     print('****************************************************************************')
+
+        prompt_rest = prompt_db + prompt_question
+        continuation = gpt3.predict_unconstrained(prompt_rest, max_tokens=320, stop=[';'])
+        # print(continuation, end='\n\n\n')
+        try:
+            sqlglot.transpile(continuation)
+        except sqlglot.errors.ParseError:
+            err_cnt += 1
+    total = len(val_list)
+    logging.error(f'{db_id}:{total-err_cnt} / {total}')
