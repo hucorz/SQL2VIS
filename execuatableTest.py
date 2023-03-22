@@ -40,6 +40,7 @@ prompt_head = "Here are Mysql tables, with their properties:\n\n"
 os.environ["http_proxy"] = "http://127.0.0.1:7890"
 os.environ["https_proxy"] = "http://127.0.0.1:7890"
 api_key = os.environ.get('OPENAI_API_KEY')
+print(api_key)
 gpt3 = OpenAIModel(model="text-davinci-003", prompt_template=prompt_head, api_key=api_key, temperature=0.)
 
 for db_id, val_list in tqdm(questions.items()):
@@ -57,6 +58,8 @@ for db_id, val_list in tqdm(questions.items()):
         prompt_db += f"{table}({', '.join(attr_list)})\n"
     prompt_db += "\n"
 
+
+
     for val in val_list:
         question = val["question"]
         prompt_question = "Create a SQL request to "
@@ -72,6 +75,11 @@ for db_id, val_list in tqdm(questions.items()):
 
         prompt_rest = prompt_db + prompt_question
         continuation = gpt3.predict_unconstrained(prompt_rest, max_tokens=320, stop=[';'])
+
+        with open(f'./sql/{db_id}.sql', 'a') as f:
+            p = r'/*' + prompt + r'*/'
+            f.write(p + '\n' + continuation + '\n\n')
+
         # print(continuation, end='\n\n\n')
         try:
             sqlglot.transpile(continuation)

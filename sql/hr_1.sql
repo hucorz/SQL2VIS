@@ -1,0 +1,2250 @@
+/*Here are Mysql tables, with their properties:
+
+regions(REGION_ID, REGION_NAME)
+countries(COUNTRY_ID, COUNTRY_NAME, REGION_ID)
+departments(DEPARTMENT_ID, DEPARTMENT_NAME, MANAGER_ID, LOCATION_ID)
+jobs(JOB_ID, JOB_TITLE, MIN_SALARY, MAX_SALARY)
+employees(EMPLOYEE_ID, FIRST_NAME, LAST_NAME, EMAIL, PHONE_NUMBER, HIRE_DATE, JOB_ID, SALARY, COMMISSION_PCT, MANAGER_ID, DEPARTMENT_ID)
+job_history(EMPLOYEE_ID, START_DATE, END_DATE, JOB_ID, DEPARTMENT_ID)
+locations(LOCATION_ID, STREET_ADDRESS, POSTAL_CODE, CITY, STATE_PROVINCE, COUNTRY_ID)
+
+Create a SQL request to Display the first name and department name for each employee.*/
+
+
+SELECT e.FIRST_NAME, d.DEPARTMENT_NAME
+FROM employees e
+INNER JOIN departments d
+ON e.DEPARTMENT_ID = d.DEPARTMENT_ID
+
+/*Here are Mysql tables, with their properties:
+
+regions(REGION_ID, REGION_NAME)
+countries(COUNTRY_ID, COUNTRY_NAME, REGION_ID)
+departments(DEPARTMENT_ID, DEPARTMENT_NAME, MANAGER_ID, LOCATION_ID)
+jobs(JOB_ID, JOB_TITLE, MIN_SALARY, MAX_SALARY)
+employees(EMPLOYEE_ID, FIRST_NAME, LAST_NAME, EMAIL, PHONE_NUMBER, HIRE_DATE, JOB_ID, SALARY, COMMISSION_PCT, MANAGER_ID, DEPARTMENT_ID)
+job_history(EMPLOYEE_ID, START_DATE, END_DATE, JOB_ID, DEPARTMENT_ID)
+locations(LOCATION_ID, STREET_ADDRESS, POSTAL_CODE, CITY, STATE_PROVINCE, COUNTRY_ID)
+
+Create a SQL request to answer What are the first name and department name of all employees?*/
+
+
+SELECT e.FIRST_NAME, d.DEPARTMENT_NAME
+FROM employees e
+INNER JOIN departments d
+ON e.DEPARTMENT_ID = d.DEPARTMENT_ID
+
+/*Here are Mysql tables, with their properties:
+
+regions(REGION_ID, REGION_NAME)
+countries(COUNTRY_ID, COUNTRY_NAME, REGION_ID)
+departments(DEPARTMENT_ID, DEPARTMENT_NAME, MANAGER_ID, LOCATION_ID)
+jobs(JOB_ID, JOB_TITLE, MIN_SALARY, MAX_SALARY)
+employees(EMPLOYEE_ID, FIRST_NAME, LAST_NAME, EMAIL, PHONE_NUMBER, HIRE_DATE, JOB_ID, SALARY, COMMISSION_PCT, MANAGER_ID, DEPARTMENT_ID)
+job_history(EMPLOYEE_ID, START_DATE, END_DATE, JOB_ID, DEPARTMENT_ID)
+locations(LOCATION_ID, STREET_ADDRESS, POSTAL_CODE, CITY, STATE_PROVINCE, COUNTRY_ID)
+
+Create a SQL request to List the full name (first and last name), and salary for those employees who earn below 6000.*/
+
+
+SELECT FIRST_NAME, LAST_NAME, SALARY 
+FROM employees 
+WHERE SALARY < 6000
+
+/*Here are Mysql tables, with their properties:
+
+regions(REGION_ID, REGION_NAME)
+countries(COUNTRY_ID, COUNTRY_NAME, REGION_ID)
+departments(DEPARTMENT_ID, DEPARTMENT_NAME, MANAGER_ID, LOCATION_ID)
+jobs(JOB_ID, JOB_TITLE, MIN_SALARY, MAX_SALARY)
+employees(EMPLOYEE_ID, FIRST_NAME, LAST_NAME, EMAIL, PHONE_NUMBER, HIRE_DATE, JOB_ID, SALARY, COMMISSION_PCT, MANAGER_ID, DEPARTMENT_ID)
+job_history(EMPLOYEE_ID, START_DATE, END_DATE, JOB_ID, DEPARTMENT_ID)
+locations(LOCATION_ID, STREET_ADDRESS, POSTAL_CODE, CITY, STATE_PROVINCE, COUNTRY_ID)
+
+Create a SQL request to answer What are the full names and salaries for any employees earning less than 6000?*/
+
+
+SELECT FIRST_NAME, LAST_NAME, SALARY 
+FROM employees 
+WHERE SALARY < 6000
+
+/*Here are Mysql tables, with their properties:
+
+regions(REGION_ID, REGION_NAME)
+countries(COUNTRY_ID, COUNTRY_NAME, REGION_ID)
+departments(DEPARTMENT_ID, DEPARTMENT_NAME, MANAGER_ID, LOCATION_ID)
+jobs(JOB_ID, JOB_TITLE, MIN_SALARY, MAX_SALARY)
+employees(EMPLOYEE_ID, FIRST_NAME, LAST_NAME, EMAIL, PHONE_NUMBER, HIRE_DATE, JOB_ID, SALARY, COMMISSION_PCT, MANAGER_ID, DEPARTMENT_ID)
+job_history(EMPLOYEE_ID, START_DATE, END_DATE, JOB_ID, DEPARTMENT_ID)
+locations(LOCATION_ID, STREET_ADDRESS, POSTAL_CODE, CITY, STATE_PROVINCE, COUNTRY_ID)
+
+Create a SQL request to Display the first name, and department number for all employees whose last name is "McEwen".*/
+
+
+SELECT FIRST_NAME, DEPARTMENT_ID 
+FROM employees 
+WHERE LAST_NAME = 'McEwen'
+
+/*Here are Mysql tables, with their properties:
+
+regions(REGION_ID, REGION_NAME)
+countries(COUNTRY_ID, COUNTRY_NAME, REGION_ID)
+departments(DEPARTMENT_ID, DEPARTMENT_NAME, MANAGER_ID, LOCATION_ID)
+jobs(JOB_ID, JOB_TITLE, MIN_SALARY, MAX_SALARY)
+employees(EMPLOYEE_ID, FIRST_NAME, LAST_NAME, EMAIL, PHONE_NUMBER, HIRE_DATE, JOB_ID, SALARY, COMMISSION_PCT, MANAGER_ID, DEPARTMENT_ID)
+job_history(EMPLOYEE_ID, START_DATE, END_DATE, JOB_ID, DEPARTMENT_ID)
+locations(LOCATION_ID, STREET_ADDRESS, POSTAL_CODE, CITY, STATE_PROVINCE, COUNTRY_ID)
+
+Create a SQL request to answer What are the first names and department numbers for employees with last name McEwen?*/
+
+
+SELECT FIRST_NAME, DEPARTMENT_ID 
+FROM employees 
+WHERE LAST_NAME = 'McEwen'
+
+/*Here are Mysql tables, with their properties:
+
+regions(REGION_ID, REGION_NAME)
+countries(COUNTRY_ID, COUNTRY_NAME, REGION_ID)
+departments(DEPARTMENT_ID, DEPARTMENT_NAME, MANAGER_ID, LOCATION_ID)
+jobs(JOB_ID, JOB_TITLE, MIN_SALARY, MAX_SALARY)
+employees(EMPLOYEE_ID, FIRST_NAME, LAST_NAME, EMAIL, PHONE_NUMBER, HIRE_DATE, JOB_ID, SALARY, COMMISSION_PCT, MANAGER_ID, DEPARTMENT_ID)
+job_history(EMPLOYEE_ID, START_DATE, END_DATE, JOB_ID, DEPARTMENT_ID)
+locations(LOCATION_ID, STREET_ADDRESS, POSTAL_CODE, CITY, STATE_PROVINCE, COUNTRY_ID)
+
+Create a SQL request to Return all the information for all employees without any department number.*/
+
+
+SELECT * 
+FROM employees 
+WHERE DEPARTMENT_ID IS NULL
+
+/*Here are Mysql tables, with their properties:
+
+regions(REGION_ID, REGION_NAME)
+countries(COUNTRY_ID, COUNTRY_NAME, REGION_ID)
+departments(DEPARTMENT_ID, DEPARTMENT_NAME, MANAGER_ID, LOCATION_ID)
+jobs(JOB_ID, JOB_TITLE, MIN_SALARY, MAX_SALARY)
+employees(EMPLOYEE_ID, FIRST_NAME, LAST_NAME, EMAIL, PHONE_NUMBER, HIRE_DATE, JOB_ID, SALARY, COMMISSION_PCT, MANAGER_ID, DEPARTMENT_ID)
+job_history(EMPLOYEE_ID, START_DATE, END_DATE, JOB_ID, DEPARTMENT_ID)
+locations(LOCATION_ID, STREET_ADDRESS, POSTAL_CODE, CITY, STATE_PROVINCE, COUNTRY_ID)
+
+Create a SQL request to answer What are all the employees without a department number?*/
+
+
+SELECT e.EMPLOYEE_ID, e.FIRST_NAME, e.LAST_NAME
+FROM employees e
+WHERE e.DEPARTMENT_ID IS NULL
+
+/*Here are Mysql tables, with their properties:
+
+regions(REGION_ID, REGION_NAME)
+countries(COUNTRY_ID, COUNTRY_NAME, REGION_ID)
+departments(DEPARTMENT_ID, DEPARTMENT_NAME, MANAGER_ID, LOCATION_ID)
+jobs(JOB_ID, JOB_TITLE, MIN_SALARY, MAX_SALARY)
+employees(EMPLOYEE_ID, FIRST_NAME, LAST_NAME, EMAIL, PHONE_NUMBER, HIRE_DATE, JOB_ID, SALARY, COMMISSION_PCT, MANAGER_ID, DEPARTMENT_ID)
+job_history(EMPLOYEE_ID, START_DATE, END_DATE, JOB_ID, DEPARTMENT_ID)
+locations(LOCATION_ID, STREET_ADDRESS, POSTAL_CODE, CITY, STATE_PROVINCE, COUNTRY_ID)
+
+Create a SQL request to Display all the information about the department Marketing.*/
+
+
+SELECT departments.DEPARTMENT_ID, departments.DEPARTMENT_NAME, departments.MANAGER_ID, departments.LOCATION_ID, locations.STREET_ADDRESS, locations.POSTAL_CODE, locations.CITY, locations.STATE_PROVINCE, countries.COUNTRY_NAME, regions.REGION_NAME
+FROM departments
+INNER JOIN locations ON departments.LOCATION_ID = locations.LOCATION_ID
+INNER JOIN countries ON locations.COUNTRY_ID = countries.COUNTRY_ID
+INNER JOIN regions ON countries.REGION_ID = regions.REGION_ID
+WHERE departments.DEPARTMENT_NAME = 'Marketing'
+
+/*Here are Mysql tables, with their properties:
+
+regions(REGION_ID, REGION_NAME)
+countries(COUNTRY_ID, COUNTRY_NAME, REGION_ID)
+departments(DEPARTMENT_ID, DEPARTMENT_NAME, MANAGER_ID, LOCATION_ID)
+jobs(JOB_ID, JOB_TITLE, MIN_SALARY, MAX_SALARY)
+employees(EMPLOYEE_ID, FIRST_NAME, LAST_NAME, EMAIL, PHONE_NUMBER, HIRE_DATE, JOB_ID, SALARY, COMMISSION_PCT, MANAGER_ID, DEPARTMENT_ID)
+job_history(EMPLOYEE_ID, START_DATE, END_DATE, JOB_ID, DEPARTMENT_ID)
+locations(LOCATION_ID, STREET_ADDRESS, POSTAL_CODE, CITY, STATE_PROVINCE, COUNTRY_ID)
+
+Create a SQL request to answer What is all the information about the Marketing department?*/
+
+
+SELECT d.DEPARTMENT_ID, d.DEPARTMENT_NAME, d.MANAGER_ID, d.LOCATION_ID, l.STREET_ADDRESS, l.POSTAL_CODE, l.CITY, l.STATE_PROVINCE, c.COUNTRY_ID, c.COUNTRY_NAME, r.REGION_ID, r.REGION_NAME
+FROM departments d
+INNER JOIN locations l ON d.LOCATION_ID = l.LOCATION_ID
+INNER JOIN countries c ON l.COUNTRY_ID = c.COUNTRY_ID
+INNER JOIN regions r ON c.REGION_ID = r.REGION_ID
+WHERE d.DEPARTMENT_NAME = 'Marketing'
+
+/*Here are Mysql tables, with their properties:
+
+regions(REGION_ID, REGION_NAME)
+countries(COUNTRY_ID, COUNTRY_NAME, REGION_ID)
+departments(DEPARTMENT_ID, DEPARTMENT_NAME, MANAGER_ID, LOCATION_ID)
+jobs(JOB_ID, JOB_TITLE, MIN_SALARY, MAX_SALARY)
+employees(EMPLOYEE_ID, FIRST_NAME, LAST_NAME, EMAIL, PHONE_NUMBER, HIRE_DATE, JOB_ID, SALARY, COMMISSION_PCT, MANAGER_ID, DEPARTMENT_ID)
+job_history(EMPLOYEE_ID, START_DATE, END_DATE, JOB_ID, DEPARTMENT_ID)
+locations(LOCATION_ID, STREET_ADDRESS, POSTAL_CODE, CITY, STATE_PROVINCE, COUNTRY_ID)
+
+Create a SQL request to answer when is the hire date for those employees whose first name does not containing the letter M?*/
+
+
+SELECT FIRST_NAME, HIRE_DATE
+FROM employees
+WHERE FIRST_NAME NOT LIKE '%M%'
+
+/*Here are Mysql tables, with their properties:
+
+regions(REGION_ID, REGION_NAME)
+countries(COUNTRY_ID, COUNTRY_NAME, REGION_ID)
+departments(DEPARTMENT_ID, DEPARTMENT_NAME, MANAGER_ID, LOCATION_ID)
+jobs(JOB_ID, JOB_TITLE, MIN_SALARY, MAX_SALARY)
+employees(EMPLOYEE_ID, FIRST_NAME, LAST_NAME, EMAIL, PHONE_NUMBER, HIRE_DATE, JOB_ID, SALARY, COMMISSION_PCT, MANAGER_ID, DEPARTMENT_ID)
+job_history(EMPLOYEE_ID, START_DATE, END_DATE, JOB_ID, DEPARTMENT_ID)
+locations(LOCATION_ID, STREET_ADDRESS, POSTAL_CODE, CITY, STATE_PROVINCE, COUNTRY_ID)
+
+Create a SQL request to answer On what dates were employees without the letter M in their first names hired?*/
+
+
+SELECT HIRE_DATE 
+FROM employees 
+WHERE FIRST_NAME NOT LIKE 'M%'
+
+/*Here are Mysql tables, with their properties:
+
+regions(REGION_ID, REGION_NAME)
+countries(COUNTRY_ID, COUNTRY_NAME, REGION_ID)
+departments(DEPARTMENT_ID, DEPARTMENT_NAME, MANAGER_ID, LOCATION_ID)
+jobs(JOB_ID, JOB_TITLE, MIN_SALARY, MAX_SALARY)
+employees(EMPLOYEE_ID, FIRST_NAME, LAST_NAME, EMAIL, PHONE_NUMBER, HIRE_DATE, JOB_ID, SALARY, COMMISSION_PCT, MANAGER_ID, DEPARTMENT_ID)
+job_history(EMPLOYEE_ID, START_DATE, END_DATE, JOB_ID, DEPARTMENT_ID)
+locations(LOCATION_ID, STREET_ADDRESS, POSTAL_CODE, CITY, STATE_PROVINCE, COUNTRY_ID)
+
+Create a SQL request to display the full name (first and last), hire date, salary, and department number for those employees whose first name does not containing the letter M.*/
+
+
+SELECT FIRST_NAME, LAST_NAME, HIRE_DATE, SALARY, DEPARTMENT_ID
+FROM employees
+WHERE FIRST_NAME NOT LIKE '%M%'
+
+/*Here are Mysql tables, with their properties:
+
+regions(REGION_ID, REGION_NAME)
+countries(COUNTRY_ID, COUNTRY_NAME, REGION_ID)
+departments(DEPARTMENT_ID, DEPARTMENT_NAME, MANAGER_ID, LOCATION_ID)
+jobs(JOB_ID, JOB_TITLE, MIN_SALARY, MAX_SALARY)
+employees(EMPLOYEE_ID, FIRST_NAME, LAST_NAME, EMAIL, PHONE_NUMBER, HIRE_DATE, JOB_ID, SALARY, COMMISSION_PCT, MANAGER_ID, DEPARTMENT_ID)
+job_history(EMPLOYEE_ID, START_DATE, END_DATE, JOB_ID, DEPARTMENT_ID)
+locations(LOCATION_ID, STREET_ADDRESS, POSTAL_CODE, CITY, STATE_PROVINCE, COUNTRY_ID)
+
+Create a SQL request to answer What are the full name, hire date, salary, and department id for employees without the letter M in their first name?*/
+
+
+SELECT FIRST_NAME, LAST_NAME, HIRE_DATE, SALARY, DEPARTMENT_ID
+FROM employees
+WHERE FIRST_NAME NOT LIKE '%M%'
+
+/*Here are Mysql tables, with their properties:
+
+regions(REGION_ID, REGION_NAME)
+countries(COUNTRY_ID, COUNTRY_NAME, REGION_ID)
+departments(DEPARTMENT_ID, DEPARTMENT_NAME, MANAGER_ID, LOCATION_ID)
+jobs(JOB_ID, JOB_TITLE, MIN_SALARY, MAX_SALARY)
+employees(EMPLOYEE_ID, FIRST_NAME, LAST_NAME, EMAIL, PHONE_NUMBER, HIRE_DATE, JOB_ID, SALARY, COMMISSION_PCT, MANAGER_ID, DEPARTMENT_ID)
+job_history(EMPLOYEE_ID, START_DATE, END_DATE, JOB_ID, DEPARTMENT_ID)
+locations(LOCATION_ID, STREET_ADDRESS, POSTAL_CODE, CITY, STATE_PROVINCE, COUNTRY_ID)
+
+Create a SQL request to display the full name (first and last), hire date, salary, and department number for those employees whose first name does not containing the letter M and make the result set in ascending order by department number.*/
+
+
+SELECT FIRST_NAME, LAST_NAME, HIRE_DATE, SALARY, DEPARTMENT_ID
+FROM employees
+WHERE FIRST_NAME NOT LIKE '%M%'
+ORDER BY DEPARTMENT_ID ASC
+
+/*Here are Mysql tables, with their properties:
+
+regions(REGION_ID, REGION_NAME)
+countries(COUNTRY_ID, COUNTRY_NAME, REGION_ID)
+departments(DEPARTMENT_ID, DEPARTMENT_NAME, MANAGER_ID, LOCATION_ID)
+jobs(JOB_ID, JOB_TITLE, MIN_SALARY, MAX_SALARY)
+employees(EMPLOYEE_ID, FIRST_NAME, LAST_NAME, EMAIL, PHONE_NUMBER, HIRE_DATE, JOB_ID, SALARY, COMMISSION_PCT, MANAGER_ID, DEPARTMENT_ID)
+job_history(EMPLOYEE_ID, START_DATE, END_DATE, JOB_ID, DEPARTMENT_ID)
+locations(LOCATION_ID, STREET_ADDRESS, POSTAL_CODE, CITY, STATE_PROVINCE, COUNTRY_ID)
+
+Create a SQL request to answer What are the full name, hire data, salary and department id for employees without the letter M in their first name, ordered by ascending department id?*/
+
+
+SELECT FIRST_NAME, LAST_NAME, HIRE_DATE, SALARY, DEPARTMENT_ID
+FROM employees
+WHERE FIRST_NAME NOT LIKE 'M%'
+ORDER BY DEPARTMENT_ID ASC
+
+/*Here are Mysql tables, with their properties:
+
+regions(REGION_ID, REGION_NAME)
+countries(COUNTRY_ID, COUNTRY_NAME, REGION_ID)
+departments(DEPARTMENT_ID, DEPARTMENT_NAME, MANAGER_ID, LOCATION_ID)
+jobs(JOB_ID, JOB_TITLE, MIN_SALARY, MAX_SALARY)
+employees(EMPLOYEE_ID, FIRST_NAME, LAST_NAME, EMAIL, PHONE_NUMBER, HIRE_DATE, JOB_ID, SALARY, COMMISSION_PCT, MANAGER_ID, DEPARTMENT_ID)
+job_history(EMPLOYEE_ID, START_DATE, END_DATE, JOB_ID, DEPARTMENT_ID)
+locations(LOCATION_ID, STREET_ADDRESS, POSTAL_CODE, CITY, STATE_PROVINCE, COUNTRY_ID)
+
+Create a SQL request to answer what is the phone number of employees whose salary is in the range of 8000 and 12000?*/
+
+
+SELECT PHONE_NUMBER 
+FROM employees 
+WHERE SALARY BETWEEN 8000 AND 12000
+
+/*Here are Mysql tables, with their properties:
+
+regions(REGION_ID, REGION_NAME)
+countries(COUNTRY_ID, COUNTRY_NAME, REGION_ID)
+departments(DEPARTMENT_ID, DEPARTMENT_NAME, MANAGER_ID, LOCATION_ID)
+jobs(JOB_ID, JOB_TITLE, MIN_SALARY, MAX_SALARY)
+employees(EMPLOYEE_ID, FIRST_NAME, LAST_NAME, EMAIL, PHONE_NUMBER, HIRE_DATE, JOB_ID, SALARY, COMMISSION_PCT, MANAGER_ID, DEPARTMENT_ID)
+job_history(EMPLOYEE_ID, START_DATE, END_DATE, JOB_ID, DEPARTMENT_ID)
+locations(LOCATION_ID, STREET_ADDRESS, POSTAL_CODE, CITY, STATE_PROVINCE, COUNTRY_ID)
+
+Create a SQL request to Return the phone numbers of employees with salaries between 8000 and 12000.*/
+
+
+SELECT PHONE_NUMBER 
+FROM employees 
+WHERE SALARY BETWEEN 8000 AND 12000
+
+/*Here are Mysql tables, with their properties:
+
+regions(REGION_ID, REGION_NAME)
+countries(COUNTRY_ID, COUNTRY_NAME, REGION_ID)
+departments(DEPARTMENT_ID, DEPARTMENT_NAME, MANAGER_ID, LOCATION_ID)
+jobs(JOB_ID, JOB_TITLE, MIN_SALARY, MAX_SALARY)
+employees(EMPLOYEE_ID, FIRST_NAME, LAST_NAME, EMAIL, PHONE_NUMBER, HIRE_DATE, JOB_ID, SALARY, COMMISSION_PCT, MANAGER_ID, DEPARTMENT_ID)
+job_history(EMPLOYEE_ID, START_DATE, END_DATE, JOB_ID, DEPARTMENT_ID)
+locations(LOCATION_ID, STREET_ADDRESS, POSTAL_CODE, CITY, STATE_PROVINCE, COUNTRY_ID)
+
+Create a SQL request to display all the information of employees whose salary is in the range of 8000 and 12000 and commission is not null or department number does not equal to 40.*/
+
+
+SELECT * 
+FROM employees 
+WHERE salary BETWEEN 8000 AND 12000 
+AND commission_pct IS NOT NULL 
+AND department_id != 40
+
+/*Here are Mysql tables, with their properties:
+
+regions(REGION_ID, REGION_NAME)
+countries(COUNTRY_ID, COUNTRY_NAME, REGION_ID)
+departments(DEPARTMENT_ID, DEPARTMENT_NAME, MANAGER_ID, LOCATION_ID)
+jobs(JOB_ID, JOB_TITLE, MIN_SALARY, MAX_SALARY)
+employees(EMPLOYEE_ID, FIRST_NAME, LAST_NAME, EMAIL, PHONE_NUMBER, HIRE_DATE, JOB_ID, SALARY, COMMISSION_PCT, MANAGER_ID, DEPARTMENT_ID)
+job_history(EMPLOYEE_ID, START_DATE, END_DATE, JOB_ID, DEPARTMENT_ID)
+locations(LOCATION_ID, STREET_ADDRESS, POSTAL_CODE, CITY, STATE_PROVINCE, COUNTRY_ID)
+
+Create a SQL request to Return all information about employees with salaries between 8000 and 12000 for which commission is not null or where their department id is not 40.*/
+
+
+SELECT * 
+FROM employees 
+WHERE (salary BETWEEN 8000 AND 12000 AND commission_pct IS NOT NULL) 
+OR department_id != 40
+
+/*Here are Mysql tables, with their properties:
+
+regions(REGION_ID, REGION_NAME)
+countries(COUNTRY_ID, COUNTRY_NAME, REGION_ID)
+departments(DEPARTMENT_ID, DEPARTMENT_NAME, MANAGER_ID, LOCATION_ID)
+jobs(JOB_ID, JOB_TITLE, MIN_SALARY, MAX_SALARY)
+employees(EMPLOYEE_ID, FIRST_NAME, LAST_NAME, EMAIL, PHONE_NUMBER, HIRE_DATE, JOB_ID, SALARY, COMMISSION_PCT, MANAGER_ID, DEPARTMENT_ID)
+job_history(EMPLOYEE_ID, START_DATE, END_DATE, JOB_ID, DEPARTMENT_ID)
+locations(LOCATION_ID, STREET_ADDRESS, POSTAL_CODE, CITY, STATE_PROVINCE, COUNTRY_ID)
+
+Create a SQL request to answer What are the full name (first and last name) and salary for all employees who does not have any value for commission?*/
+
+
+SELECT FIRST_NAME, LAST_NAME, SALARY 
+FROM employees 
+WHERE COMMISSION_PCT IS NULL
+
+/*Here are Mysql tables, with their properties:
+
+regions(REGION_ID, REGION_NAME)
+countries(COUNTRY_ID, COUNTRY_NAME, REGION_ID)
+departments(DEPARTMENT_ID, DEPARTMENT_NAME, MANAGER_ID, LOCATION_ID)
+jobs(JOB_ID, JOB_TITLE, MIN_SALARY, MAX_SALARY)
+employees(EMPLOYEE_ID, FIRST_NAME, LAST_NAME, EMAIL, PHONE_NUMBER, HIRE_DATE, JOB_ID, SALARY, COMMISSION_PCT, MANAGER_ID, DEPARTMENT_ID)
+job_history(EMPLOYEE_ID, START_DATE, END_DATE, JOB_ID, DEPARTMENT_ID)
+locations(LOCATION_ID, STREET_ADDRESS, POSTAL_CODE, CITY, STATE_PROVINCE, COUNTRY_ID)
+
+Create a SQL request to Return the full names and salaries of employees with null commissions.*/
+
+
+SELECT CONCAT(FIRST_NAME, ' ', LAST_NAME) AS Full_Name, SALARY 
+FROM employees 
+WHERE COMMISSION_PCT IS NULL
+
+/*Here are Mysql tables, with their properties:
+
+regions(REGION_ID, REGION_NAME)
+countries(COUNTRY_ID, COUNTRY_NAME, REGION_ID)
+departments(DEPARTMENT_ID, DEPARTMENT_NAME, MANAGER_ID, LOCATION_ID)
+jobs(JOB_ID, JOB_TITLE, MIN_SALARY, MAX_SALARY)
+employees(EMPLOYEE_ID, FIRST_NAME, LAST_NAME, EMAIL, PHONE_NUMBER, HIRE_DATE, JOB_ID, SALARY, COMMISSION_PCT, MANAGER_ID, DEPARTMENT_ID)
+job_history(EMPLOYEE_ID, START_DATE, END_DATE, JOB_ID, DEPARTMENT_ID)
+locations(LOCATION_ID, STREET_ADDRESS, POSTAL_CODE, CITY, STATE_PROVINCE, COUNTRY_ID)
+
+Create a SQL request to Display the first and last name, and salary for those employees whose first name is ending with the letter m.*/
+
+
+SELECT FIRST_NAME, LAST_NAME, SALARY 
+FROM employees 
+WHERE FIRST_NAME LIKE '%m'
+
+/*Here are Mysql tables, with their properties:
+
+regions(REGION_ID, REGION_NAME)
+countries(COUNTRY_ID, COUNTRY_NAME, REGION_ID)
+departments(DEPARTMENT_ID, DEPARTMENT_NAME, MANAGER_ID, LOCATION_ID)
+jobs(JOB_ID, JOB_TITLE, MIN_SALARY, MAX_SALARY)
+employees(EMPLOYEE_ID, FIRST_NAME, LAST_NAME, EMAIL, PHONE_NUMBER, HIRE_DATE, JOB_ID, SALARY, COMMISSION_PCT, MANAGER_ID, DEPARTMENT_ID)
+job_history(EMPLOYEE_ID, START_DATE, END_DATE, JOB_ID, DEPARTMENT_ID)
+locations(LOCATION_ID, STREET_ADDRESS, POSTAL_CODE, CITY, STATE_PROVINCE, COUNTRY_ID)
+
+Create a SQL request to Return the full names and salaries for employees with first names that end with the letter m.*/
+
+
+SELECT CONCAT(FIRST_NAME, ' ', LAST_NAME) AS Full_Name, SALARY
+FROM employees
+WHERE FIRST_NAME LIKE '%m'
+
+/*Here are Mysql tables, with their properties:
+
+regions(REGION_ID, REGION_NAME)
+countries(COUNTRY_ID, COUNTRY_NAME, REGION_ID)
+departments(DEPARTMENT_ID, DEPARTMENT_NAME, MANAGER_ID, LOCATION_ID)
+jobs(JOB_ID, JOB_TITLE, MIN_SALARY, MAX_SALARY)
+employees(EMPLOYEE_ID, FIRST_NAME, LAST_NAME, EMAIL, PHONE_NUMBER, HIRE_DATE, JOB_ID, SALARY, COMMISSION_PCT, MANAGER_ID, DEPARTMENT_ID)
+job_history(EMPLOYEE_ID, START_DATE, END_DATE, JOB_ID, DEPARTMENT_ID)
+locations(LOCATION_ID, STREET_ADDRESS, POSTAL_CODE, CITY, STATE_PROVINCE, COUNTRY_ID)
+
+Create a SQL request to Find job id and date of hire for those employees who was hired between November 5th, 2007 and July 5th, 2009.*/
+
+
+SELECT JOB_ID, HIRE_DATE 
+FROM employees 
+WHERE HIRE_DATE BETWEEN '2007-11-05' AND '2009-07-05'
+
+/*Here are Mysql tables, with their properties:
+
+regions(REGION_ID, REGION_NAME)
+countries(COUNTRY_ID, COUNTRY_NAME, REGION_ID)
+departments(DEPARTMENT_ID, DEPARTMENT_NAME, MANAGER_ID, LOCATION_ID)
+jobs(JOB_ID, JOB_TITLE, MIN_SALARY, MAX_SALARY)
+employees(EMPLOYEE_ID, FIRST_NAME, LAST_NAME, EMAIL, PHONE_NUMBER, HIRE_DATE, JOB_ID, SALARY, COMMISSION_PCT, MANAGER_ID, DEPARTMENT_ID)
+job_history(EMPLOYEE_ID, START_DATE, END_DATE, JOB_ID, DEPARTMENT_ID)
+locations(LOCATION_ID, STREET_ADDRESS, POSTAL_CODE, CITY, STATE_PROVINCE, COUNTRY_ID)
+
+Create a SQL request to answer What are the job ids and dates of hire for employees hired after November 5th, 2007 and before July 5th, 2009?*/
+
+
+SELECT JOB_ID, HIRE_DATE 
+FROM employees 
+WHERE HIRE_DATE BETWEEN '2007-11-05' AND '2009-07-05'
+
+/*Here are Mysql tables, with their properties:
+
+regions(REGION_ID, REGION_NAME)
+countries(COUNTRY_ID, COUNTRY_NAME, REGION_ID)
+departments(DEPARTMENT_ID, DEPARTMENT_NAME, MANAGER_ID, LOCATION_ID)
+jobs(JOB_ID, JOB_TITLE, MIN_SALARY, MAX_SALARY)
+employees(EMPLOYEE_ID, FIRST_NAME, LAST_NAME, EMAIL, PHONE_NUMBER, HIRE_DATE, JOB_ID, SALARY, COMMISSION_PCT, MANAGER_ID, DEPARTMENT_ID)
+job_history(EMPLOYEE_ID, START_DATE, END_DATE, JOB_ID, DEPARTMENT_ID)
+locations(LOCATION_ID, STREET_ADDRESS, POSTAL_CODE, CITY, STATE_PROVINCE, COUNTRY_ID)
+
+Create a SQL request to answer What are the first and last name for those employees who works either in department 70 or 90?*/
+
+
+SELECT FIRST_NAME, LAST_NAME 
+FROM employees 
+WHERE DEPARTMENT_ID IN (70, 90)
+
+/*Here are Mysql tables, with their properties:
+
+regions(REGION_ID, REGION_NAME)
+countries(COUNTRY_ID, COUNTRY_NAME, REGION_ID)
+departments(DEPARTMENT_ID, DEPARTMENT_NAME, MANAGER_ID, LOCATION_ID)
+jobs(JOB_ID, JOB_TITLE, MIN_SALARY, MAX_SALARY)
+employees(EMPLOYEE_ID, FIRST_NAME, LAST_NAME, EMAIL, PHONE_NUMBER, HIRE_DATE, JOB_ID, SALARY, COMMISSION_PCT, MANAGER_ID, DEPARTMENT_ID)
+job_history(EMPLOYEE_ID, START_DATE, END_DATE, JOB_ID, DEPARTMENT_ID)
+locations(LOCATION_ID, STREET_ADDRESS, POSTAL_CODE, CITY, STATE_PROVINCE, COUNTRY_ID)
+
+Create a SQL request to answer What are the full names of employees who with in department 70 or 90?*/
+
+
+SELECT CONCAT(FIRST_NAME, ' ', LAST_NAME) AS 'Full Name'
+FROM employees
+WHERE DEPARTMENT_ID IN (70, 90)
+
+/*Here are Mysql tables, with their properties:
+
+regions(REGION_ID, REGION_NAME)
+countries(COUNTRY_ID, COUNTRY_NAME, REGION_ID)
+departments(DEPARTMENT_ID, DEPARTMENT_NAME, MANAGER_ID, LOCATION_ID)
+jobs(JOB_ID, JOB_TITLE, MIN_SALARY, MAX_SALARY)
+employees(EMPLOYEE_ID, FIRST_NAME, LAST_NAME, EMAIL, PHONE_NUMBER, HIRE_DATE, JOB_ID, SALARY, COMMISSION_PCT, MANAGER_ID, DEPARTMENT_ID)
+job_history(EMPLOYEE_ID, START_DATE, END_DATE, JOB_ID, DEPARTMENT_ID)
+locations(LOCATION_ID, STREET_ADDRESS, POSTAL_CODE, CITY, STATE_PROVINCE, COUNTRY_ID)
+
+Create a SQL request to Find the salary and manager number for those employees who is working under a manager.*/
+
+
+SELECT e.SALARY, e.MANAGER_ID 
+FROM employees e 
+WHERE e.MANAGER_ID IS NOT NULL
+
+/*Here are Mysql tables, with their properties:
+
+regions(REGION_ID, REGION_NAME)
+countries(COUNTRY_ID, COUNTRY_NAME, REGION_ID)
+departments(DEPARTMENT_ID, DEPARTMENT_NAME, MANAGER_ID, LOCATION_ID)
+jobs(JOB_ID, JOB_TITLE, MIN_SALARY, MAX_SALARY)
+employees(EMPLOYEE_ID, FIRST_NAME, LAST_NAME, EMAIL, PHONE_NUMBER, HIRE_DATE, JOB_ID, SALARY, COMMISSION_PCT, MANAGER_ID, DEPARTMENT_ID)
+job_history(EMPLOYEE_ID, START_DATE, END_DATE, JOB_ID, DEPARTMENT_ID)
+locations(LOCATION_ID, STREET_ADDRESS, POSTAL_CODE, CITY, STATE_PROVINCE, COUNTRY_ID)
+
+Create a SQL request to answer What are the salaries and manager ids for employees who have managers?*/
+
+
+SELECT e.SALARY, e.MANAGER_ID 
+FROM employees e 
+WHERE e.MANAGER_ID IS NOT NULL
+
+/*Here are Mysql tables, with their properties:
+
+regions(REGION_ID, REGION_NAME)
+countries(COUNTRY_ID, COUNTRY_NAME, REGION_ID)
+departments(DEPARTMENT_ID, DEPARTMENT_NAME, MANAGER_ID, LOCATION_ID)
+jobs(JOB_ID, JOB_TITLE, MIN_SALARY, MAX_SALARY)
+employees(EMPLOYEE_ID, FIRST_NAME, LAST_NAME, EMAIL, PHONE_NUMBER, HIRE_DATE, JOB_ID, SALARY, COMMISSION_PCT, MANAGER_ID, DEPARTMENT_ID)
+job_history(EMPLOYEE_ID, START_DATE, END_DATE, JOB_ID, DEPARTMENT_ID)
+locations(LOCATION_ID, STREET_ADDRESS, POSTAL_CODE, CITY, STATE_PROVINCE, COUNTRY_ID)
+
+Create a SQL request to display all the details from Employees table for those employees who was hired before 2002-06-21.*/
+
+
+SELECT * FROM Employees WHERE HIRE_DATE < '2002-06-21'
+
+/*Here are Mysql tables, with their properties:
+
+regions(REGION_ID, REGION_NAME)
+countries(COUNTRY_ID, COUNTRY_NAME, REGION_ID)
+departments(DEPARTMENT_ID, DEPARTMENT_NAME, MANAGER_ID, LOCATION_ID)
+jobs(JOB_ID, JOB_TITLE, MIN_SALARY, MAX_SALARY)
+employees(EMPLOYEE_ID, FIRST_NAME, LAST_NAME, EMAIL, PHONE_NUMBER, HIRE_DATE, JOB_ID, SALARY, COMMISSION_PCT, MANAGER_ID, DEPARTMENT_ID)
+job_history(EMPLOYEE_ID, START_DATE, END_DATE, JOB_ID, DEPARTMENT_ID)
+locations(LOCATION_ID, STREET_ADDRESS, POSTAL_CODE, CITY, STATE_PROVINCE, COUNTRY_ID)
+
+Create a SQL request to answer What is all the information about employees hired before June 21, 2002?*/
+
+
+SELECT * 
+FROM employees 
+WHERE HIRE_DATE < '2002-06-21'
+
+/*Here are Mysql tables, with their properties:
+
+regions(REGION_ID, REGION_NAME)
+countries(COUNTRY_ID, COUNTRY_NAME, REGION_ID)
+departments(DEPARTMENT_ID, DEPARTMENT_NAME, MANAGER_ID, LOCATION_ID)
+jobs(JOB_ID, JOB_TITLE, MIN_SALARY, MAX_SALARY)
+employees(EMPLOYEE_ID, FIRST_NAME, LAST_NAME, EMAIL, PHONE_NUMBER, HIRE_DATE, JOB_ID, SALARY, COMMISSION_PCT, MANAGER_ID, DEPARTMENT_ID)
+job_history(EMPLOYEE_ID, START_DATE, END_DATE, JOB_ID, DEPARTMENT_ID)
+locations(LOCATION_ID, STREET_ADDRESS, POSTAL_CODE, CITY, STATE_PROVINCE, COUNTRY_ID)
+
+Create a SQL request to display all the information for all employees who have the letters D or S in their first name and also arrange the result in descending order by salary.*/
+
+
+SELECT * 
+FROM employees 
+WHERE FIRST_NAME LIKE '%D%' OR FIRST_NAME LIKE '%S%' 
+ORDER BY SALARY DESC
+
+/*Here are Mysql tables, with their properties:
+
+regions(REGION_ID, REGION_NAME)
+countries(COUNTRY_ID, COUNTRY_NAME, REGION_ID)
+departments(DEPARTMENT_ID, DEPARTMENT_NAME, MANAGER_ID, LOCATION_ID)
+jobs(JOB_ID, JOB_TITLE, MIN_SALARY, MAX_SALARY)
+employees(EMPLOYEE_ID, FIRST_NAME, LAST_NAME, EMAIL, PHONE_NUMBER, HIRE_DATE, JOB_ID, SALARY, COMMISSION_PCT, MANAGER_ID, DEPARTMENT_ID)
+job_history(EMPLOYEE_ID, START_DATE, END_DATE, JOB_ID, DEPARTMENT_ID)
+locations(LOCATION_ID, STREET_ADDRESS, POSTAL_CODE, CITY, STATE_PROVINCE, COUNTRY_ID)
+
+Create a SQL request to answer What is all the information about employees with D or S in their first name, ordered by salary descending?*/
+
+
+SELECT * 
+FROM employees 
+WHERE FIRST_NAME LIKE '%D%' OR FIRST_NAME LIKE '%S%' 
+ORDER BY SALARY DESC
+
+/*Here are Mysql tables, with their properties:
+
+regions(REGION_ID, REGION_NAME)
+countries(COUNTRY_ID, COUNTRY_NAME, REGION_ID)
+departments(DEPARTMENT_ID, DEPARTMENT_NAME, MANAGER_ID, LOCATION_ID)
+jobs(JOB_ID, JOB_TITLE, MIN_SALARY, MAX_SALARY)
+employees(EMPLOYEE_ID, FIRST_NAME, LAST_NAME, EMAIL, PHONE_NUMBER, HIRE_DATE, JOB_ID, SALARY, COMMISSION_PCT, MANAGER_ID, DEPARTMENT_ID)
+job_history(EMPLOYEE_ID, START_DATE, END_DATE, JOB_ID, DEPARTMENT_ID)
+locations(LOCATION_ID, STREET_ADDRESS, POSTAL_CODE, CITY, STATE_PROVINCE, COUNTRY_ID)
+
+Create a SQL request to display those employees who joined after 7th September, 1987.*/
+
+
+SELECT * FROM employees
+WHERE HIRE_DATE > '1987-09-07' 
+
+/*Here are Mysql tables, with their properties:
+
+regions(REGION_ID, REGION_NAME)
+countries(COUNTRY_ID, COUNTRY_NAME, REGION_ID)
+departments(DEPARTMENT_ID, DEPARTMENT_NAME, MANAGER_ID, LOCATION_ID)
+jobs(JOB_ID, JOB_TITLE, MIN_SALARY, MAX_SALARY)
+employees(EMPLOYEE_ID, FIRST_NAME, LAST_NAME, EMAIL, PHONE_NUMBER, HIRE_DATE, JOB_ID, SALARY, COMMISSION_PCT, MANAGER_ID, DEPARTMENT_ID)
+job_history(EMPLOYEE_ID, START_DATE, END_DATE, JOB_ID, DEPARTMENT_ID)
+locations(LOCATION_ID, STREET_ADDRESS, POSTAL_CODE, CITY, STATE_PROVINCE, COUNTRY_ID)
+
+Create a SQL request to answer Which employees were hired after September 7th, 1987?*/
+
+
+SELECT * 
+FROM employees 
+WHERE HIRE_DATE > '1987-09-07'
+
+/*Here are Mysql tables, with their properties:
+
+regions(REGION_ID, REGION_NAME)
+countries(COUNTRY_ID, COUNTRY_NAME, REGION_ID)
+departments(DEPARTMENT_ID, DEPARTMENT_NAME, MANAGER_ID, LOCATION_ID)
+jobs(JOB_ID, JOB_TITLE, MIN_SALARY, MAX_SALARY)
+employees(EMPLOYEE_ID, FIRST_NAME, LAST_NAME, EMAIL, PHONE_NUMBER, HIRE_DATE, JOB_ID, SALARY, COMMISSION_PCT, MANAGER_ID, DEPARTMENT_ID)
+job_history(EMPLOYEE_ID, START_DATE, END_DATE, JOB_ID, DEPARTMENT_ID)
+locations(LOCATION_ID, STREET_ADDRESS, POSTAL_CODE, CITY, STATE_PROVINCE, COUNTRY_ID)
+
+Create a SQL request to display the job title of jobs which minimum salary is greater than 9000.*/
+
+
+SELECT JOB_TITLE 
+FROM jobs 
+WHERE MIN_SALARY > 9000
+
+/*Here are Mysql tables, with their properties:
+
+regions(REGION_ID, REGION_NAME)
+countries(COUNTRY_ID, COUNTRY_NAME, REGION_ID)
+departments(DEPARTMENT_ID, DEPARTMENT_NAME, MANAGER_ID, LOCATION_ID)
+jobs(JOB_ID, JOB_TITLE, MIN_SALARY, MAX_SALARY)
+employees(EMPLOYEE_ID, FIRST_NAME, LAST_NAME, EMAIL, PHONE_NUMBER, HIRE_DATE, JOB_ID, SALARY, COMMISSION_PCT, MANAGER_ID, DEPARTMENT_ID)
+job_history(EMPLOYEE_ID, START_DATE, END_DATE, JOB_ID, DEPARTMENT_ID)
+locations(LOCATION_ID, STREET_ADDRESS, POSTAL_CODE, CITY, STATE_PROVINCE, COUNTRY_ID)
+
+Create a SQL request to answer Which job titles correspond to jobs with salaries over 9000?*/
+
+
+SELECT JOB_TITLE 
+FROM jobs 
+WHERE MAX_SALARY > 9000
+
+/*Here are Mysql tables, with their properties:
+
+regions(REGION_ID, REGION_NAME)
+countries(COUNTRY_ID, COUNTRY_NAME, REGION_ID)
+departments(DEPARTMENT_ID, DEPARTMENT_NAME, MANAGER_ID, LOCATION_ID)
+jobs(JOB_ID, JOB_TITLE, MIN_SALARY, MAX_SALARY)
+employees(EMPLOYEE_ID, FIRST_NAME, LAST_NAME, EMAIL, PHONE_NUMBER, HIRE_DATE, JOB_ID, SALARY, COMMISSION_PCT, MANAGER_ID, DEPARTMENT_ID)
+job_history(EMPLOYEE_ID, START_DATE, END_DATE, JOB_ID, DEPARTMENT_ID)
+locations(LOCATION_ID, STREET_ADDRESS, POSTAL_CODE, CITY, STATE_PROVINCE, COUNTRY_ID)
+
+Create a SQL request to display job Title, the difference between minimum and maximum salaries for those jobs which max salary within the range 12000 to 18000.*/
+
+
+SELECT JOB_TITLE, MAX_SALARY - MIN_SALARY AS SALARY_DIFFERENCE
+FROM jobs
+WHERE MAX_SALARY BETWEEN 12000 AND 18000
+
+/*Here are Mysql tables, with their properties:
+
+regions(REGION_ID, REGION_NAME)
+countries(COUNTRY_ID, COUNTRY_NAME, REGION_ID)
+departments(DEPARTMENT_ID, DEPARTMENT_NAME, MANAGER_ID, LOCATION_ID)
+jobs(JOB_ID, JOB_TITLE, MIN_SALARY, MAX_SALARY)
+employees(EMPLOYEE_ID, FIRST_NAME, LAST_NAME, EMAIL, PHONE_NUMBER, HIRE_DATE, JOB_ID, SALARY, COMMISSION_PCT, MANAGER_ID, DEPARTMENT_ID)
+job_history(EMPLOYEE_ID, START_DATE, END_DATE, JOB_ID, DEPARTMENT_ID)
+locations(LOCATION_ID, STREET_ADDRESS, POSTAL_CODE, CITY, STATE_PROVINCE, COUNTRY_ID)
+
+Create a SQL request to answer What are the job titles, and range of salaries for jobs with maximum salary between 12000 and 18000?*/
+
+
+SELECT JOB_TITLE, MIN_SALARY, MAX_SALARY
+FROM jobs
+WHERE MAX_SALARY BETWEEN 12000 AND 18000
+
+/*Here are Mysql tables, with their properties:
+
+regions(REGION_ID, REGION_NAME)
+countries(COUNTRY_ID, COUNTRY_NAME, REGION_ID)
+departments(DEPARTMENT_ID, DEPARTMENT_NAME, MANAGER_ID, LOCATION_ID)
+jobs(JOB_ID, JOB_TITLE, MIN_SALARY, MAX_SALARY)
+employees(EMPLOYEE_ID, FIRST_NAME, LAST_NAME, EMAIL, PHONE_NUMBER, HIRE_DATE, JOB_ID, SALARY, COMMISSION_PCT, MANAGER_ID, DEPARTMENT_ID)
+job_history(EMPLOYEE_ID, START_DATE, END_DATE, JOB_ID, DEPARTMENT_ID)
+locations(LOCATION_ID, STREET_ADDRESS, POSTAL_CODE, CITY, STATE_PROVINCE, COUNTRY_ID)
+
+Create a SQL request to display the emails of the employees who have no commission percentage and salary within the range 7000 to 12000 and works in that department which number is 50.*/
+
+
+SELECT e.EMAIL
+FROM employees e
+INNER JOIN departments d ON e.DEPARTMENT_ID = d.DEPARTMENT_ID
+WHERE e.COMMISSION_PCT IS NULL
+AND e.SALARY BETWEEN 7000 AND 12000
+AND d.DEPARTMENT_ID = 50
+
+/*Here are Mysql tables, with their properties:
+
+regions(REGION_ID, REGION_NAME)
+countries(COUNTRY_ID, COUNTRY_NAME, REGION_ID)
+departments(DEPARTMENT_ID, DEPARTMENT_NAME, MANAGER_ID, LOCATION_ID)
+jobs(JOB_ID, JOB_TITLE, MIN_SALARY, MAX_SALARY)
+employees(EMPLOYEE_ID, FIRST_NAME, LAST_NAME, EMAIL, PHONE_NUMBER, HIRE_DATE, JOB_ID, SALARY, COMMISSION_PCT, MANAGER_ID, DEPARTMENT_ID)
+job_history(EMPLOYEE_ID, START_DATE, END_DATE, JOB_ID, DEPARTMENT_ID)
+locations(LOCATION_ID, STREET_ADDRESS, POSTAL_CODE, CITY, STATE_PROVINCE, COUNTRY_ID)
+
+Create a SQL request to answer What are the emails of employees with null commission, salary between 7000 and 12000, and who work in department 50?*/
+
+
+SELECT e.EMAIL 
+FROM employees e 
+INNER JOIN departments d ON e.DEPARTMENT_ID = d.DEPARTMENT_ID 
+WHERE e.COMMISSION_PCT IS NULL 
+AND e.SALARY BETWEEN 7000 AND 12000 
+AND d.DEPARTMENT_ID = 50
+
+/*Here are Mysql tables, with their properties:
+
+regions(REGION_ID, REGION_NAME)
+countries(COUNTRY_ID, COUNTRY_NAME, REGION_ID)
+departments(DEPARTMENT_ID, DEPARTMENT_NAME, MANAGER_ID, LOCATION_ID)
+jobs(JOB_ID, JOB_TITLE, MIN_SALARY, MAX_SALARY)
+employees(EMPLOYEE_ID, FIRST_NAME, LAST_NAME, EMAIL, PHONE_NUMBER, HIRE_DATE, JOB_ID, SALARY, COMMISSION_PCT, MANAGER_ID, DEPARTMENT_ID)
+job_history(EMPLOYEE_ID, START_DATE, END_DATE, JOB_ID, DEPARTMENT_ID)
+locations(LOCATION_ID, STREET_ADDRESS, POSTAL_CODE, CITY, STATE_PROVINCE, COUNTRY_ID)
+
+Create a SQL request to display the employee ID for each employee and the date on which he ended his previous job.*/
+
+
+SELECT e.EMPLOYEE_ID, jh.END_DATE
+FROM employees e
+INNER JOIN job_history jh
+ON e.EMPLOYEE_ID = jh.EMPLOYEE_ID
+
+/*Here are Mysql tables, with their properties:
+
+regions(REGION_ID, REGION_NAME)
+countries(COUNTRY_ID, COUNTRY_NAME, REGION_ID)
+departments(DEPARTMENT_ID, DEPARTMENT_NAME, MANAGER_ID, LOCATION_ID)
+jobs(JOB_ID, JOB_TITLE, MIN_SALARY, MAX_SALARY)
+employees(EMPLOYEE_ID, FIRST_NAME, LAST_NAME, EMAIL, PHONE_NUMBER, HIRE_DATE, JOB_ID, SALARY, COMMISSION_PCT, MANAGER_ID, DEPARTMENT_ID)
+job_history(EMPLOYEE_ID, START_DATE, END_DATE, JOB_ID, DEPARTMENT_ID)
+locations(LOCATION_ID, STREET_ADDRESS, POSTAL_CODE, CITY, STATE_PROVINCE, COUNTRY_ID)
+
+Create a SQL request to answer What are the employee ids for each employee and final dates of employment at their last job?*/
+
+
+SELECT e.EMPLOYEE_ID, jh.END_DATE
+FROM employees e
+INNER JOIN job_history jh
+ON e.EMPLOYEE_ID = jh.EMPLOYEE_ID
+WHERE jh.END_DATE = (SELECT MAX(END_DATE) FROM job_history WHERE EMPLOYEE_ID = e.EMPLOYEE_ID)
+GROUP BY e.EMPLOYEE_ID
+
+/*Here are Mysql tables, with their properties:
+
+regions(REGION_ID, REGION_NAME)
+countries(COUNTRY_ID, COUNTRY_NAME, REGION_ID)
+departments(DEPARTMENT_ID, DEPARTMENT_NAME, MANAGER_ID, LOCATION_ID)
+jobs(JOB_ID, JOB_TITLE, MIN_SALARY, MAX_SALARY)
+employees(EMPLOYEE_ID, FIRST_NAME, LAST_NAME, EMAIL, PHONE_NUMBER, HIRE_DATE, JOB_ID, SALARY, COMMISSION_PCT, MANAGER_ID, DEPARTMENT_ID)
+job_history(EMPLOYEE_ID, START_DATE, END_DATE, JOB_ID, DEPARTMENT_ID)
+locations(LOCATION_ID, STREET_ADDRESS, POSTAL_CODE, CITY, STATE_PROVINCE, COUNTRY_ID)
+
+Create a SQL request to display those departments where more than ten employees work who got a commission percentage.*/
+
+
+SELECT d.DEPARTMENT_NAME
+FROM departments d
+INNER JOIN employees e ON d.DEPARTMENT_ID = e.DEPARTMENT_ID
+WHERE e.COMMISSION_PCT > 0
+GROUP BY d.DEPARTMENT_NAME
+HAVING COUNT(e.EMPLOYEE_ID) > 10
+
+/*Here are Mysql tables, with their properties:
+
+regions(REGION_ID, REGION_NAME)
+countries(COUNTRY_ID, COUNTRY_NAME, REGION_ID)
+departments(DEPARTMENT_ID, DEPARTMENT_NAME, MANAGER_ID, LOCATION_ID)
+jobs(JOB_ID, JOB_TITLE, MIN_SALARY, MAX_SALARY)
+employees(EMPLOYEE_ID, FIRST_NAME, LAST_NAME, EMAIL, PHONE_NUMBER, HIRE_DATE, JOB_ID, SALARY, COMMISSION_PCT, MANAGER_ID, DEPARTMENT_ID)
+job_history(EMPLOYEE_ID, START_DATE, END_DATE, JOB_ID, DEPARTMENT_ID)
+locations(LOCATION_ID, STREET_ADDRESS, POSTAL_CODE, CITY, STATE_PROVINCE, COUNTRY_ID)
+
+Create a SQL request to answer What are the department ids for which more than 10 employees had a commission?*/
+
+
+SELECT DEPARTMENT_ID
+FROM employees
+WHERE COMMISSION_PCT > 0
+GROUP BY DEPARTMENT_ID
+HAVING COUNT(*) > 10
+
+/*Here are Mysql tables, with their properties:
+
+regions(REGION_ID, REGION_NAME)
+countries(COUNTRY_ID, COUNTRY_NAME, REGION_ID)
+departments(DEPARTMENT_ID, DEPARTMENT_NAME, MANAGER_ID, LOCATION_ID)
+jobs(JOB_ID, JOB_TITLE, MIN_SALARY, MAX_SALARY)
+employees(EMPLOYEE_ID, FIRST_NAME, LAST_NAME, EMAIL, PHONE_NUMBER, HIRE_DATE, JOB_ID, SALARY, COMMISSION_PCT, MANAGER_ID, DEPARTMENT_ID)
+job_history(EMPLOYEE_ID, START_DATE, END_DATE, JOB_ID, DEPARTMENT_ID)
+locations(LOCATION_ID, STREET_ADDRESS, POSTAL_CODE, CITY, STATE_PROVINCE, COUNTRY_ID)
+
+Create a SQL request to Find the ids of the departments where any manager is managing 4 or more employees.*/
+
+
+SELECT DEPARTMENT_ID
+FROM departments d
+INNER JOIN employees e ON d.MANAGER_ID = e.MANAGER_ID
+GROUP BY DEPARTMENT_ID
+HAVING COUNT(*) >= 4
+
+/*Here are Mysql tables, with their properties:
+
+regions(REGION_ID, REGION_NAME)
+countries(COUNTRY_ID, COUNTRY_NAME, REGION_ID)
+departments(DEPARTMENT_ID, DEPARTMENT_NAME, MANAGER_ID, LOCATION_ID)
+jobs(JOB_ID, JOB_TITLE, MIN_SALARY, MAX_SALARY)
+employees(EMPLOYEE_ID, FIRST_NAME, LAST_NAME, EMAIL, PHONE_NUMBER, HIRE_DATE, JOB_ID, SALARY, COMMISSION_PCT, MANAGER_ID, DEPARTMENT_ID)
+job_history(EMPLOYEE_ID, START_DATE, END_DATE, JOB_ID, DEPARTMENT_ID)
+locations(LOCATION_ID, STREET_ADDRESS, POSTAL_CODE, CITY, STATE_PROVINCE, COUNTRY_ID)
+
+Create a SQL request to answer What are department ids for departments with managers managing more than 3 employees?*/
+
+
+SELECT DEPARTMENT_ID
+FROM departments d
+INNER JOIN employees e ON d.MANAGER_ID = e.MANAGER_ID
+GROUP BY DEPARTMENT_ID
+HAVING COUNT(*) > 3
+
+/*Here are Mysql tables, with their properties:
+
+regions(REGION_ID, REGION_NAME)
+countries(COUNTRY_ID, COUNTRY_NAME, REGION_ID)
+departments(DEPARTMENT_ID, DEPARTMENT_NAME, MANAGER_ID, LOCATION_ID)
+jobs(JOB_ID, JOB_TITLE, MIN_SALARY, MAX_SALARY)
+employees(EMPLOYEE_ID, FIRST_NAME, LAST_NAME, EMAIL, PHONE_NUMBER, HIRE_DATE, JOB_ID, SALARY, COMMISSION_PCT, MANAGER_ID, DEPARTMENT_ID)
+job_history(EMPLOYEE_ID, START_DATE, END_DATE, JOB_ID, DEPARTMENT_ID)
+locations(LOCATION_ID, STREET_ADDRESS, POSTAL_CODE, CITY, STATE_PROVINCE, COUNTRY_ID)
+
+Create a SQL request to display the average salary of employees for each department who gets a commission percentage.*/
+
+
+SELECT d.DEPARTMENT_NAME, AVG(e.SALARY)
+FROM departments d
+INNER JOIN employees e ON d.DEPARTMENT_ID = e.DEPARTMENT_ID
+WHERE e.COMMISSION_PCT IS NOT NULL
+GROUP BY d.DEPARTMENT_NAME
+
+/*Here are Mysql tables, with their properties:
+
+regions(REGION_ID, REGION_NAME)
+countries(COUNTRY_ID, COUNTRY_NAME, REGION_ID)
+departments(DEPARTMENT_ID, DEPARTMENT_NAME, MANAGER_ID, LOCATION_ID)
+jobs(JOB_ID, JOB_TITLE, MIN_SALARY, MAX_SALARY)
+employees(EMPLOYEE_ID, FIRST_NAME, LAST_NAME, EMAIL, PHONE_NUMBER, HIRE_DATE, JOB_ID, SALARY, COMMISSION_PCT, MANAGER_ID, DEPARTMENT_ID)
+job_history(EMPLOYEE_ID, START_DATE, END_DATE, JOB_ID, DEPARTMENT_ID)
+locations(LOCATION_ID, STREET_ADDRESS, POSTAL_CODE, CITY, STATE_PROVINCE, COUNTRY_ID)
+
+Create a SQL request to answer What is the average salary of employees who have a commission percentage that is not null?*/
+
+
+SELECT AVG(SALARY)
+FROM employees
+WHERE COMMISSION_PCT IS NOT NULL
+
+/*Here are Mysql tables, with their properties:
+
+regions(REGION_ID, REGION_NAME)
+countries(COUNTRY_ID, COUNTRY_NAME, REGION_ID)
+departments(DEPARTMENT_ID, DEPARTMENT_NAME, MANAGER_ID, LOCATION_ID)
+jobs(JOB_ID, JOB_TITLE, MIN_SALARY, MAX_SALARY)
+employees(EMPLOYEE_ID, FIRST_NAME, LAST_NAME, EMAIL, PHONE_NUMBER, HIRE_DATE, JOB_ID, SALARY, COMMISSION_PCT, MANAGER_ID, DEPARTMENT_ID)
+job_history(EMPLOYEE_ID, START_DATE, END_DATE, JOB_ID, DEPARTMENT_ID)
+locations(LOCATION_ID, STREET_ADDRESS, POSTAL_CODE, CITY, STATE_PROVINCE, COUNTRY_ID)
+
+Create a SQL request to display the country ID and number of cities for each country.*/
+
+
+SELECT countries.COUNTRY_ID, COUNT(locations.CITY) AS 'Number of Cities'
+FROM countries
+INNER JOIN locations ON countries.COUNTRY_ID = locations.COUNTRY_ID
+GROUP BY countries.COUNTRY_ID
+
+/*Here are Mysql tables, with their properties:
+
+regions(REGION_ID, REGION_NAME)
+countries(COUNTRY_ID, COUNTRY_NAME, REGION_ID)
+departments(DEPARTMENT_ID, DEPARTMENT_NAME, MANAGER_ID, LOCATION_ID)
+jobs(JOB_ID, JOB_TITLE, MIN_SALARY, MAX_SALARY)
+employees(EMPLOYEE_ID, FIRST_NAME, LAST_NAME, EMAIL, PHONE_NUMBER, HIRE_DATE, JOB_ID, SALARY, COMMISSION_PCT, MANAGER_ID, DEPARTMENT_ID)
+job_history(EMPLOYEE_ID, START_DATE, END_DATE, JOB_ID, DEPARTMENT_ID)
+locations(LOCATION_ID, STREET_ADDRESS, POSTAL_CODE, CITY, STATE_PROVINCE, COUNTRY_ID)
+
+Create a SQL request to Give the country id and corresponding count of cities in each country.*/
+
+
+SELECT c.COUNTRY_ID, COUNT(l.CITY) 
+FROM countries c 
+INNER JOIN locations l 
+ON c.COUNTRY_ID = l.COUNTRY_ID 
+GROUP BY c.COUNTRY_ID
+
+/*Here are Mysql tables, with their properties:
+
+regions(REGION_ID, REGION_NAME)
+countries(COUNTRY_ID, COUNTRY_NAME, REGION_ID)
+departments(DEPARTMENT_ID, DEPARTMENT_NAME, MANAGER_ID, LOCATION_ID)
+jobs(JOB_ID, JOB_TITLE, MIN_SALARY, MAX_SALARY)
+employees(EMPLOYEE_ID, FIRST_NAME, LAST_NAME, EMAIL, PHONE_NUMBER, HIRE_DATE, JOB_ID, SALARY, COMMISSION_PCT, MANAGER_ID, DEPARTMENT_ID)
+job_history(EMPLOYEE_ID, START_DATE, END_DATE, JOB_ID, DEPARTMENT_ID)
+locations(LOCATION_ID, STREET_ADDRESS, POSTAL_CODE, CITY, STATE_PROVINCE, COUNTRY_ID)
+
+Create a SQL request to display job ID for those jobs that were done by two or more for more than 300 days.*/
+
+
+SELECT JOB_ID
+FROM job_history
+GROUP BY JOB_ID
+HAVING COUNT(EMPLOYEE_ID) > 1 AND SUM(DATEDIFF(END_DATE, START_DATE)) > 300
+
+/*Here are Mysql tables, with their properties:
+
+regions(REGION_ID, REGION_NAME)
+countries(COUNTRY_ID, COUNTRY_NAME, REGION_ID)
+departments(DEPARTMENT_ID, DEPARTMENT_NAME, MANAGER_ID, LOCATION_ID)
+jobs(JOB_ID, JOB_TITLE, MIN_SALARY, MAX_SALARY)
+employees(EMPLOYEE_ID, FIRST_NAME, LAST_NAME, EMAIL, PHONE_NUMBER, HIRE_DATE, JOB_ID, SALARY, COMMISSION_PCT, MANAGER_ID, DEPARTMENT_ID)
+job_history(EMPLOYEE_ID, START_DATE, END_DATE, JOB_ID, DEPARTMENT_ID)
+locations(LOCATION_ID, STREET_ADDRESS, POSTAL_CODE, CITY, STATE_PROVINCE, COUNTRY_ID)
+
+Create a SQL request to answer What are the job ids for jobs done more than once for a period of more than 300 days?*/
+
+
+SELECT JOB_ID
+FROM job_history
+GROUP BY JOB_ID
+HAVING COUNT(*) > 1 AND MAX(END_DATE) - MIN(START_DATE) > 300
+
+/*Here are Mysql tables, with their properties:
+
+regions(REGION_ID, REGION_NAME)
+countries(COUNTRY_ID, COUNTRY_NAME, REGION_ID)
+departments(DEPARTMENT_ID, DEPARTMENT_NAME, MANAGER_ID, LOCATION_ID)
+jobs(JOB_ID, JOB_TITLE, MIN_SALARY, MAX_SALARY)
+employees(EMPLOYEE_ID, FIRST_NAME, LAST_NAME, EMAIL, PHONE_NUMBER, HIRE_DATE, JOB_ID, SALARY, COMMISSION_PCT, MANAGER_ID, DEPARTMENT_ID)
+job_history(EMPLOYEE_ID, START_DATE, END_DATE, JOB_ID, DEPARTMENT_ID)
+locations(LOCATION_ID, STREET_ADDRESS, POSTAL_CODE, CITY, STATE_PROVINCE, COUNTRY_ID)
+
+Create a SQL request to display the ID for those employees who did two or more jobs in the past.*/
+
+
+SELECT EMPLOYEE_ID
+FROM job_history
+GROUP BY EMPLOYEE_ID
+HAVING COUNT(*) >= 2
+
+/*Here are Mysql tables, with their properties:
+
+regions(REGION_ID, REGION_NAME)
+countries(COUNTRY_ID, COUNTRY_NAME, REGION_ID)
+departments(DEPARTMENT_ID, DEPARTMENT_NAME, MANAGER_ID, LOCATION_ID)
+jobs(JOB_ID, JOB_TITLE, MIN_SALARY, MAX_SALARY)
+employees(EMPLOYEE_ID, FIRST_NAME, LAST_NAME, EMAIL, PHONE_NUMBER, HIRE_DATE, JOB_ID, SALARY, COMMISSION_PCT, MANAGER_ID, DEPARTMENT_ID)
+job_history(EMPLOYEE_ID, START_DATE, END_DATE, JOB_ID, DEPARTMENT_ID)
+locations(LOCATION_ID, STREET_ADDRESS, POSTAL_CODE, CITY, STATE_PROVINCE, COUNTRY_ID)
+
+Create a SQL request to answer What are the employee ids for employees who have held two or more jobs?*/
+
+
+SELECT EMPLOYEE_ID
+FROM job_history
+GROUP BY EMPLOYEE_ID
+HAVING COUNT(*) >= 2
+
+/*Here are Mysql tables, with their properties:
+
+regions(REGION_ID, REGION_NAME)
+countries(COUNTRY_ID, COUNTRY_NAME, REGION_ID)
+departments(DEPARTMENT_ID, DEPARTMENT_NAME, MANAGER_ID, LOCATION_ID)
+jobs(JOB_ID, JOB_TITLE, MIN_SALARY, MAX_SALARY)
+employees(EMPLOYEE_ID, FIRST_NAME, LAST_NAME, EMAIL, PHONE_NUMBER, HIRE_DATE, JOB_ID, SALARY, COMMISSION_PCT, MANAGER_ID, DEPARTMENT_ID)
+job_history(EMPLOYEE_ID, START_DATE, END_DATE, JOB_ID, DEPARTMENT_ID)
+locations(LOCATION_ID, STREET_ADDRESS, POSTAL_CODE, CITY, STATE_PROVINCE, COUNTRY_ID)
+
+Create a SQL request to Find employee with ID and name of the country presently where (s)he is working.*/
+
+
+SELECT e.EMPLOYEE_ID, c.COUNTRY_NAME 
+FROM employees e 
+INNER JOIN departments d ON e.DEPARTMENT_ID = d.DEPARTMENT_ID 
+INNER JOIN locations l ON d.LOCATION_ID = l.LOCATION_ID 
+INNER JOIN countries c ON l.COUNTRY_ID = c.COUNTRY_ID
+
+/*Here are Mysql tables, with their properties:
+
+regions(REGION_ID, REGION_NAME)
+countries(COUNTRY_ID, COUNTRY_NAME, REGION_ID)
+departments(DEPARTMENT_ID, DEPARTMENT_NAME, MANAGER_ID, LOCATION_ID)
+jobs(JOB_ID, JOB_TITLE, MIN_SALARY, MAX_SALARY)
+employees(EMPLOYEE_ID, FIRST_NAME, LAST_NAME, EMAIL, PHONE_NUMBER, HIRE_DATE, JOB_ID, SALARY, COMMISSION_PCT, MANAGER_ID, DEPARTMENT_ID)
+job_history(EMPLOYEE_ID, START_DATE, END_DATE, JOB_ID, DEPARTMENT_ID)
+locations(LOCATION_ID, STREET_ADDRESS, POSTAL_CODE, CITY, STATE_PROVINCE, COUNTRY_ID)
+
+Create a SQL request to answer What are all the employee ids and the names of the countries in which they work?*/
+
+
+SELECT e.EMPLOYEE_ID, c.COUNTRY_NAME
+FROM employees e
+INNER JOIN departments d ON e.DEPARTMENT_ID = d.DEPARTMENT_ID
+INNER JOIN locations l ON d.LOCATION_ID = l.LOCATION_ID
+INNER JOIN countries c ON l.COUNTRY_ID = c.COUNTRY_ID
+
+/*Here are Mysql tables, with their properties:
+
+regions(REGION_ID, REGION_NAME)
+countries(COUNTRY_ID, COUNTRY_NAME, REGION_ID)
+departments(DEPARTMENT_ID, DEPARTMENT_NAME, MANAGER_ID, LOCATION_ID)
+jobs(JOB_ID, JOB_TITLE, MIN_SALARY, MAX_SALARY)
+employees(EMPLOYEE_ID, FIRST_NAME, LAST_NAME, EMAIL, PHONE_NUMBER, HIRE_DATE, JOB_ID, SALARY, COMMISSION_PCT, MANAGER_ID, DEPARTMENT_ID)
+job_history(EMPLOYEE_ID, START_DATE, END_DATE, JOB_ID, DEPARTMENT_ID)
+locations(LOCATION_ID, STREET_ADDRESS, POSTAL_CODE, CITY, STATE_PROVINCE, COUNTRY_ID)
+
+Create a SQL request to display the department name and number of employees in each of the department.*/
+
+
+SELECT departments.DEPARTMENT_NAME, COUNT(employees.EMPLOYEE_ID) AS 'Number of Employees'
+FROM departments
+INNER JOIN employees ON departments.DEPARTMENT_ID = employees.DEPARTMENT_ID
+GROUP BY departments.DEPARTMENT_NAME
+
+/*Here are Mysql tables, with their properties:
+
+regions(REGION_ID, REGION_NAME)
+countries(COUNTRY_ID, COUNTRY_NAME, REGION_ID)
+departments(DEPARTMENT_ID, DEPARTMENT_NAME, MANAGER_ID, LOCATION_ID)
+jobs(JOB_ID, JOB_TITLE, MIN_SALARY, MAX_SALARY)
+employees(EMPLOYEE_ID, FIRST_NAME, LAST_NAME, EMAIL, PHONE_NUMBER, HIRE_DATE, JOB_ID, SALARY, COMMISSION_PCT, MANAGER_ID, DEPARTMENT_ID)
+job_history(EMPLOYEE_ID, START_DATE, END_DATE, JOB_ID, DEPARTMENT_ID)
+locations(LOCATION_ID, STREET_ADDRESS, POSTAL_CODE, CITY, STATE_PROVINCE, COUNTRY_ID)
+
+Create a SQL request to Give the name of each department and the number of employees in each.*/
+
+
+SELECT d.DEPARTMENT_NAME, COUNT(e.EMPLOYEE_ID) AS 'Number of Employees'
+FROM departments d
+INNER JOIN employees e ON d.DEPARTMENT_ID = e.DEPARTMENT_ID
+GROUP BY d.DEPARTMENT_NAME
+
+/*Here are Mysql tables, with their properties:
+
+regions(REGION_ID, REGION_NAME)
+countries(COUNTRY_ID, COUNTRY_NAME, REGION_ID)
+departments(DEPARTMENT_ID, DEPARTMENT_NAME, MANAGER_ID, LOCATION_ID)
+jobs(JOB_ID, JOB_TITLE, MIN_SALARY, MAX_SALARY)
+employees(EMPLOYEE_ID, FIRST_NAME, LAST_NAME, EMAIL, PHONE_NUMBER, HIRE_DATE, JOB_ID, SALARY, COMMISSION_PCT, MANAGER_ID, DEPARTMENT_ID)
+job_history(EMPLOYEE_ID, START_DATE, END_DATE, JOB_ID, DEPARTMENT_ID)
+locations(LOCATION_ID, STREET_ADDRESS, POSTAL_CODE, CITY, STATE_PROVINCE, COUNTRY_ID)
+
+Create a SQL request to answer Can you return all detailed info of jobs which was done by any of the employees who is presently earning a salary on and above 12000?*/
+
+
+SELECT j.JOB_ID, j.JOB_TITLE, j.MIN_SALARY, j.MAX_SALARY
+FROM jobs j
+INNER JOIN employees e ON j.JOB_ID = e.JOB_ID
+INNER JOIN job_history jh ON e.EMPLOYEE_ID = jh.EMPLOYEE_ID
+WHERE e.SALARY >= 12000
+
+/*Here are Mysql tables, with their properties:
+
+regions(REGION_ID, REGION_NAME)
+countries(COUNTRY_ID, COUNTRY_NAME, REGION_ID)
+departments(DEPARTMENT_ID, DEPARTMENT_NAME, MANAGER_ID, LOCATION_ID)
+jobs(JOB_ID, JOB_TITLE, MIN_SALARY, MAX_SALARY)
+employees(EMPLOYEE_ID, FIRST_NAME, LAST_NAME, EMAIL, PHONE_NUMBER, HIRE_DATE, JOB_ID, SALARY, COMMISSION_PCT, MANAGER_ID, DEPARTMENT_ID)
+job_history(EMPLOYEE_ID, START_DATE, END_DATE, JOB_ID, DEPARTMENT_ID)
+locations(LOCATION_ID, STREET_ADDRESS, POSTAL_CODE, CITY, STATE_PROVINCE, COUNTRY_ID)
+
+Create a SQL request to answer What is all the job history info done by employees earning a salary greater than or equal to 12000?*/
+
+
+SELECT e.EMPLOYEE_ID, e.FIRST_NAME, e.LAST_NAME, jh.START_DATE, jh.END_DATE, jh.JOB_ID, jh.DEPARTMENT_ID
+FROM employees e
+INNER JOIN job_history jh ON e.EMPLOYEE_ID = jh.EMPLOYEE_ID
+INNER JOIN jobs j ON e.JOB_ID = j.JOB_ID
+WHERE e.SALARY >= 12000
+
+/*Here are Mysql tables, with their properties:
+
+regions(REGION_ID, REGION_NAME)
+countries(COUNTRY_ID, COUNTRY_NAME, REGION_ID)
+departments(DEPARTMENT_ID, DEPARTMENT_NAME, MANAGER_ID, LOCATION_ID)
+jobs(JOB_ID, JOB_TITLE, MIN_SALARY, MAX_SALARY)
+employees(EMPLOYEE_ID, FIRST_NAME, LAST_NAME, EMAIL, PHONE_NUMBER, HIRE_DATE, JOB_ID, SALARY, COMMISSION_PCT, MANAGER_ID, DEPARTMENT_ID)
+job_history(EMPLOYEE_ID, START_DATE, END_DATE, JOB_ID, DEPARTMENT_ID)
+locations(LOCATION_ID, STREET_ADDRESS, POSTAL_CODE, CITY, STATE_PROVINCE, COUNTRY_ID)
+
+Create a SQL request to display job title and average salary of employees.*/
+
+
+SELECT j.JOB_TITLE, AVG(e.SALARY)
+FROM jobs j
+INNER JOIN employees e
+ON j.JOB_ID = e.JOB_ID
+GROUP BY j.JOB_TITLE
+
+/*Here are Mysql tables, with their properties:
+
+regions(REGION_ID, REGION_NAME)
+countries(COUNTRY_ID, COUNTRY_NAME, REGION_ID)
+departments(DEPARTMENT_ID, DEPARTMENT_NAME, MANAGER_ID, LOCATION_ID)
+jobs(JOB_ID, JOB_TITLE, MIN_SALARY, MAX_SALARY)
+employees(EMPLOYEE_ID, FIRST_NAME, LAST_NAME, EMAIL, PHONE_NUMBER, HIRE_DATE, JOB_ID, SALARY, COMMISSION_PCT, MANAGER_ID, DEPARTMENT_ID)
+job_history(EMPLOYEE_ID, START_DATE, END_DATE, JOB_ID, DEPARTMENT_ID)
+locations(LOCATION_ID, STREET_ADDRESS, POSTAL_CODE, CITY, STATE_PROVINCE, COUNTRY_ID)
+
+Create a SQL request to answer What is the average salary for each job title?*/
+
+
+SELECT JOB_TITLE, AVG(SALARY)
+FROM jobs
+JOIN employees ON jobs.JOB_ID = employees.JOB_ID
+GROUP BY JOB_TITLE
+
+/*Here are Mysql tables, with their properties:
+
+regions(REGION_ID, REGION_NAME)
+countries(COUNTRY_ID, COUNTRY_NAME, REGION_ID)
+departments(DEPARTMENT_ID, DEPARTMENT_NAME, MANAGER_ID, LOCATION_ID)
+jobs(JOB_ID, JOB_TITLE, MIN_SALARY, MAX_SALARY)
+employees(EMPLOYEE_ID, FIRST_NAME, LAST_NAME, EMAIL, PHONE_NUMBER, HIRE_DATE, JOB_ID, SALARY, COMMISSION_PCT, MANAGER_ID, DEPARTMENT_ID)
+job_history(EMPLOYEE_ID, START_DATE, END_DATE, JOB_ID, DEPARTMENT_ID)
+locations(LOCATION_ID, STREET_ADDRESS, POSTAL_CODE, CITY, STATE_PROVINCE, COUNTRY_ID)
+
+Create a SQL request to answer What is the full name ( first name and last name ) for those employees who gets more salary than the employee whose id is 163?*/
+
+
+SELECT FIRST_NAME, LAST_NAME 
+FROM employees 
+WHERE SALARY > (SELECT SALARY FROM employees WHERE EMPLOYEE_ID = 163) 
+
+/*Here are Mysql tables, with their properties:
+
+regions(REGION_ID, REGION_NAME)
+countries(COUNTRY_ID, COUNTRY_NAME, REGION_ID)
+departments(DEPARTMENT_ID, DEPARTMENT_NAME, MANAGER_ID, LOCATION_ID)
+jobs(JOB_ID, JOB_TITLE, MIN_SALARY, MAX_SALARY)
+employees(EMPLOYEE_ID, FIRST_NAME, LAST_NAME, EMAIL, PHONE_NUMBER, HIRE_DATE, JOB_ID, SALARY, COMMISSION_PCT, MANAGER_ID, DEPARTMENT_ID)
+job_history(EMPLOYEE_ID, START_DATE, END_DATE, JOB_ID, DEPARTMENT_ID)
+locations(LOCATION_ID, STREET_ADDRESS, POSTAL_CODE, CITY, STATE_PROVINCE, COUNTRY_ID)
+
+Create a SQL request to Provide the full names of employees earning more than the employee with id 163.*/
+
+
+SELECT CONCAT(FIRST_NAME, ' ', LAST_NAME) AS Full_Name 
+FROM employees 
+WHERE SALARY > (SELECT SALARY FROM employees WHERE EMPLOYEE_ID = 163) 
+ORDER BY SALARY DESC
+
+/*Here are Mysql tables, with their properties:
+
+regions(REGION_ID, REGION_NAME)
+countries(COUNTRY_ID, COUNTRY_NAME, REGION_ID)
+departments(DEPARTMENT_ID, DEPARTMENT_NAME, MANAGER_ID, LOCATION_ID)
+jobs(JOB_ID, JOB_TITLE, MIN_SALARY, MAX_SALARY)
+employees(EMPLOYEE_ID, FIRST_NAME, LAST_NAME, EMAIL, PHONE_NUMBER, HIRE_DATE, JOB_ID, SALARY, COMMISSION_PCT, MANAGER_ID, DEPARTMENT_ID)
+job_history(EMPLOYEE_ID, START_DATE, END_DATE, JOB_ID, DEPARTMENT_ID)
+locations(LOCATION_ID, STREET_ADDRESS, POSTAL_CODE, CITY, STATE_PROVINCE, COUNTRY_ID)
+
+Create a SQL request to return the smallest salary for every departments.*/
+
+
+SELECT DEPARTMENT_ID, MIN(SALARY) AS MIN_SALARY
+FROM employees
+GROUP BY DEPARTMENT_ID
+
+/*Here are Mysql tables, with their properties:
+
+regions(REGION_ID, REGION_NAME)
+countries(COUNTRY_ID, COUNTRY_NAME, REGION_ID)
+departments(DEPARTMENT_ID, DEPARTMENT_NAME, MANAGER_ID, LOCATION_ID)
+jobs(JOB_ID, JOB_TITLE, MIN_SALARY, MAX_SALARY)
+employees(EMPLOYEE_ID, FIRST_NAME, LAST_NAME, EMAIL, PHONE_NUMBER, HIRE_DATE, JOB_ID, SALARY, COMMISSION_PCT, MANAGER_ID, DEPARTMENT_ID)
+job_history(EMPLOYEE_ID, START_DATE, END_DATE, JOB_ID, DEPARTMENT_ID)
+locations(LOCATION_ID, STREET_ADDRESS, POSTAL_CODE, CITY, STATE_PROVINCE, COUNTRY_ID)
+
+Create a SQL request to answer What is the minimum salary in each department?*/
+
+
+SELECT d.DEPARTMENT_NAME, MIN(e.SALARY)
+FROM departments d
+INNER JOIN employees e ON d.DEPARTMENT_ID = e.DEPARTMENT_ID
+GROUP BY d.DEPARTMENT_NAME
+
+/*Here are Mysql tables, with their properties:
+
+regions(REGION_ID, REGION_NAME)
+countries(COUNTRY_ID, COUNTRY_NAME, REGION_ID)
+departments(DEPARTMENT_ID, DEPARTMENT_NAME, MANAGER_ID, LOCATION_ID)
+jobs(JOB_ID, JOB_TITLE, MIN_SALARY, MAX_SALARY)
+employees(EMPLOYEE_ID, FIRST_NAME, LAST_NAME, EMAIL, PHONE_NUMBER, HIRE_DATE, JOB_ID, SALARY, COMMISSION_PCT, MANAGER_ID, DEPARTMENT_ID)
+job_history(EMPLOYEE_ID, START_DATE, END_DATE, JOB_ID, DEPARTMENT_ID)
+locations(LOCATION_ID, STREET_ADDRESS, POSTAL_CODE, CITY, STATE_PROVINCE, COUNTRY_ID)
+
+Create a SQL request to Find the first name and last name and department id for those employees who earn such amount of salary which is the smallest salary of any of the departments.*/
+
+
+SELECT e.FIRST_NAME, e.LAST_NAME, e.DEPARTMENT_ID
+FROM employees e
+INNER JOIN departments d ON e.DEPARTMENT_ID = d.DEPARTMENT_ID
+WHERE e.SALARY = (SELECT MIN(SALARY) FROM employees WHERE DEPARTMENT_ID = d.DEPARTMENT_ID)
+
+/*Here are Mysql tables, with their properties:
+
+regions(REGION_ID, REGION_NAME)
+countries(COUNTRY_ID, COUNTRY_NAME, REGION_ID)
+departments(DEPARTMENT_ID, DEPARTMENT_NAME, MANAGER_ID, LOCATION_ID)
+jobs(JOB_ID, JOB_TITLE, MIN_SALARY, MAX_SALARY)
+employees(EMPLOYEE_ID, FIRST_NAME, LAST_NAME, EMAIL, PHONE_NUMBER, HIRE_DATE, JOB_ID, SALARY, COMMISSION_PCT, MANAGER_ID, DEPARTMENT_ID)
+job_history(EMPLOYEE_ID, START_DATE, END_DATE, JOB_ID, DEPARTMENT_ID)
+locations(LOCATION_ID, STREET_ADDRESS, POSTAL_CODE, CITY, STATE_PROVINCE, COUNTRY_ID)
+
+Create a SQL request to What are the full names and department ids for the lowest paid employees across all departments.*/
+
+
+SELECT e.FIRST_NAME, e.LAST_NAME, e.DEPARTMENT_ID
+FROM employees e
+JOIN (SELECT MIN(SALARY) AS min_salary FROM employees) m
+ON e.SALARY = m.min_salary
+
+/*Here are Mysql tables, with their properties:
+
+regions(REGION_ID, REGION_NAME)
+countries(COUNTRY_ID, COUNTRY_NAME, REGION_ID)
+departments(DEPARTMENT_ID, DEPARTMENT_NAME, MANAGER_ID, LOCATION_ID)
+jobs(JOB_ID, JOB_TITLE, MIN_SALARY, MAX_SALARY)
+employees(EMPLOYEE_ID, FIRST_NAME, LAST_NAME, EMAIL, PHONE_NUMBER, HIRE_DATE, JOB_ID, SALARY, COMMISSION_PCT, MANAGER_ID, DEPARTMENT_ID)
+job_history(EMPLOYEE_ID, START_DATE, END_DATE, JOB_ID, DEPARTMENT_ID)
+locations(LOCATION_ID, STREET_ADDRESS, POSTAL_CODE, CITY, STATE_PROVINCE, COUNTRY_ID)
+
+Create a SQL request to Find the employee id for all employees who earn more than the average salary.*/
+
+
+SELECT EMPLOYEE_ID
+FROM employees
+WHERE SALARY > (SELECT AVG(SALARY) FROM employees)
+
+/*Here are Mysql tables, with their properties:
+
+regions(REGION_ID, REGION_NAME)
+countries(COUNTRY_ID, COUNTRY_NAME, REGION_ID)
+departments(DEPARTMENT_ID, DEPARTMENT_NAME, MANAGER_ID, LOCATION_ID)
+jobs(JOB_ID, JOB_TITLE, MIN_SALARY, MAX_SALARY)
+employees(EMPLOYEE_ID, FIRST_NAME, LAST_NAME, EMAIL, PHONE_NUMBER, HIRE_DATE, JOB_ID, SALARY, COMMISSION_PCT, MANAGER_ID, DEPARTMENT_ID)
+job_history(EMPLOYEE_ID, START_DATE, END_DATE, JOB_ID, DEPARTMENT_ID)
+locations(LOCATION_ID, STREET_ADDRESS, POSTAL_CODE, CITY, STATE_PROVINCE, COUNTRY_ID)
+
+Create a SQL request to answer What are the employee ids for employees who make more than the average?*/
+
+
+SELECT EMPLOYEE_ID
+FROM employees
+WHERE SALARY > (SELECT AVG(SALARY) FROM employees)
+
+/*Here are Mysql tables, with their properties:
+
+regions(REGION_ID, REGION_NAME)
+countries(COUNTRY_ID, COUNTRY_NAME, REGION_ID)
+departments(DEPARTMENT_ID, DEPARTMENT_NAME, MANAGER_ID, LOCATION_ID)
+jobs(JOB_ID, JOB_TITLE, MIN_SALARY, MAX_SALARY)
+employees(EMPLOYEE_ID, FIRST_NAME, LAST_NAME, EMAIL, PHONE_NUMBER, HIRE_DATE, JOB_ID, SALARY, COMMISSION_PCT, MANAGER_ID, DEPARTMENT_ID)
+job_history(EMPLOYEE_ID, START_DATE, END_DATE, JOB_ID, DEPARTMENT_ID)
+locations(LOCATION_ID, STREET_ADDRESS, POSTAL_CODE, CITY, STATE_PROVINCE, COUNTRY_ID)
+
+Create a SQL request to display the employee id and salary of all employees who report to Payam (first name).*/
+
+
+SELECT EMPLOYEE_ID, SALARY 
+FROM employees 
+WHERE MANAGER_ID IN (SELECT EMPLOYEE_ID 
+                      FROM employees 
+                      WHERE FIRST_NAME = 'Payam')
+
+/*Here are Mysql tables, with their properties:
+
+regions(REGION_ID, REGION_NAME)
+countries(COUNTRY_ID, COUNTRY_NAME, REGION_ID)
+departments(DEPARTMENT_ID, DEPARTMENT_NAME, MANAGER_ID, LOCATION_ID)
+jobs(JOB_ID, JOB_TITLE, MIN_SALARY, MAX_SALARY)
+employees(EMPLOYEE_ID, FIRST_NAME, LAST_NAME, EMAIL, PHONE_NUMBER, HIRE_DATE, JOB_ID, SALARY, COMMISSION_PCT, MANAGER_ID, DEPARTMENT_ID)
+job_history(EMPLOYEE_ID, START_DATE, END_DATE, JOB_ID, DEPARTMENT_ID)
+locations(LOCATION_ID, STREET_ADDRESS, POSTAL_CODE, CITY, STATE_PROVINCE, COUNTRY_ID)
+
+Create a SQL request to answer What are the employee ids of employees who report to Payam, and what are their salaries?*/
+
+
+SELECT e.EMPLOYEE_ID, e.SALARY 
+FROM employees e 
+INNER JOIN employees m 
+ON e.MANAGER_ID = m.EMPLOYEE_ID 
+WHERE m.FIRST_NAME = 'Payam'
+
+/*Here are Mysql tables, with their properties:
+
+regions(REGION_ID, REGION_NAME)
+countries(COUNTRY_ID, COUNTRY_NAME, REGION_ID)
+departments(DEPARTMENT_ID, DEPARTMENT_NAME, MANAGER_ID, LOCATION_ID)
+jobs(JOB_ID, JOB_TITLE, MIN_SALARY, MAX_SALARY)
+employees(EMPLOYEE_ID, FIRST_NAME, LAST_NAME, EMAIL, PHONE_NUMBER, HIRE_DATE, JOB_ID, SALARY, COMMISSION_PCT, MANAGER_ID, DEPARTMENT_ID)
+job_history(EMPLOYEE_ID, START_DATE, END_DATE, JOB_ID, DEPARTMENT_ID)
+locations(LOCATION_ID, STREET_ADDRESS, POSTAL_CODE, CITY, STATE_PROVINCE, COUNTRY_ID)
+
+Create a SQL request to find the name of all departments that do actually have one or more employees assigned to them.*/
+
+
+SELECT DISTINCT d.DEPARTMENT_NAME 
+FROM departments d 
+INNER JOIN employees e 
+ON d.DEPARTMENT_ID = e.DEPARTMENT_ID
+
+/*Here are Mysql tables, with their properties:
+
+regions(REGION_ID, REGION_NAME)
+countries(COUNTRY_ID, COUNTRY_NAME, REGION_ID)
+departments(DEPARTMENT_ID, DEPARTMENT_NAME, MANAGER_ID, LOCATION_ID)
+jobs(JOB_ID, JOB_TITLE, MIN_SALARY, MAX_SALARY)
+employees(EMPLOYEE_ID, FIRST_NAME, LAST_NAME, EMAIL, PHONE_NUMBER, HIRE_DATE, JOB_ID, SALARY, COMMISSION_PCT, MANAGER_ID, DEPARTMENT_ID)
+job_history(EMPLOYEE_ID, START_DATE, END_DATE, JOB_ID, DEPARTMENT_ID)
+locations(LOCATION_ID, STREET_ADDRESS, POSTAL_CODE, CITY, STATE_PROVINCE, COUNTRY_ID)
+
+Create a SQL request to What are the names of departments that have at least one employee.*/
+
+
+SELECT DISTINCT d.DEPARTMENT_NAME 
+FROM departments d 
+INNER JOIN employees e 
+ON d.DEPARTMENT_ID = e.DEPARTMENT_ID
+
+/*Here are Mysql tables, with their properties:
+
+regions(REGION_ID, REGION_NAME)
+countries(COUNTRY_ID, COUNTRY_NAME, REGION_ID)
+departments(DEPARTMENT_ID, DEPARTMENT_NAME, MANAGER_ID, LOCATION_ID)
+jobs(JOB_ID, JOB_TITLE, MIN_SALARY, MAX_SALARY)
+employees(EMPLOYEE_ID, FIRST_NAME, LAST_NAME, EMAIL, PHONE_NUMBER, HIRE_DATE, JOB_ID, SALARY, COMMISSION_PCT, MANAGER_ID, DEPARTMENT_ID)
+job_history(EMPLOYEE_ID, START_DATE, END_DATE, JOB_ID, DEPARTMENT_ID)
+locations(LOCATION_ID, STREET_ADDRESS, POSTAL_CODE, CITY, STATE_PROVINCE, COUNTRY_ID)
+
+Create a SQL request to get the details of employees who manage a department.*/
+
+
+SELECT e.EMPLOYEE_ID, e.FIRST_NAME, e.LAST_NAME, e.EMAIL, e.PHONE_NUMBER, e.HIRE_DATE, e.JOB_ID, e.SALARY, e.COMMISSION_PCT, e.MANAGER_ID, e.DEPARTMENT_ID 
+FROM employees e 
+INNER JOIN departments d 
+ON e.EMPLOYEE_ID = d.MANAGER_ID
+
+/*Here are Mysql tables, with their properties:
+
+regions(REGION_ID, REGION_NAME)
+countries(COUNTRY_ID, COUNTRY_NAME, REGION_ID)
+departments(DEPARTMENT_ID, DEPARTMENT_NAME, MANAGER_ID, LOCATION_ID)
+jobs(JOB_ID, JOB_TITLE, MIN_SALARY, MAX_SALARY)
+employees(EMPLOYEE_ID, FIRST_NAME, LAST_NAME, EMAIL, PHONE_NUMBER, HIRE_DATE, JOB_ID, SALARY, COMMISSION_PCT, MANAGER_ID, DEPARTMENT_ID)
+job_history(EMPLOYEE_ID, START_DATE, END_DATE, JOB_ID, DEPARTMENT_ID)
+locations(LOCATION_ID, STREET_ADDRESS, POSTAL_CODE, CITY, STATE_PROVINCE, COUNTRY_ID)
+
+Create a SQL request to answer What is all the information regarding employees who are managers?*/
+
+
+SELECT e.EMPLOYEE_ID, e.FIRST_NAME, e.LAST_NAME, e.EMAIL, e.PHONE_NUMBER, e.HIRE_DATE, e.JOB_ID, e.SALARY, e.COMMISSION_PCT, e.MANAGER_ID, e.DEPARTMENT_ID
+FROM employees e
+INNER JOIN departments d ON e.DEPARTMENT_ID = d.DEPARTMENT_ID
+WHERE d.MANAGER_ID = e.EMPLOYEE_ID
+
+/*Here are Mysql tables, with their properties:
+
+regions(REGION_ID, REGION_NAME)
+countries(COUNTRY_ID, COUNTRY_NAME, REGION_ID)
+departments(DEPARTMENT_ID, DEPARTMENT_NAME, MANAGER_ID, LOCATION_ID)
+jobs(JOB_ID, JOB_TITLE, MIN_SALARY, MAX_SALARY)
+employees(EMPLOYEE_ID, FIRST_NAME, LAST_NAME, EMAIL, PHONE_NUMBER, HIRE_DATE, JOB_ID, SALARY, COMMISSION_PCT, MANAGER_ID, DEPARTMENT_ID)
+job_history(EMPLOYEE_ID, START_DATE, END_DATE, JOB_ID, DEPARTMENT_ID)
+locations(LOCATION_ID, STREET_ADDRESS, POSTAL_CODE, CITY, STATE_PROVINCE, COUNTRY_ID)
+
+Create a SQL request to display all the information about the department Marketing.*/
+
+
+SELECT departments.DEPARTMENT_ID, departments.DEPARTMENT_NAME, departments.MANAGER_ID, departments.LOCATION_ID, locations.STREET_ADDRESS, locations.POSTAL_CODE, locations.CITY, locations.STATE_PROVINCE, countries.COUNTRY_NAME, regions.REGION_NAME
+FROM departments
+INNER JOIN locations ON departments.LOCATION_ID = locations.LOCATION_ID
+INNER JOIN countries ON locations.COUNTRY_ID = countries.COUNTRY_ID
+INNER JOIN regions ON countries.REGION_ID = regions.REGION_ID
+WHERE departments.DEPARTMENT_NAME = 'Marketing'
+
+/*Here are Mysql tables, with their properties:
+
+regions(REGION_ID, REGION_NAME)
+countries(COUNTRY_ID, COUNTRY_NAME, REGION_ID)
+departments(DEPARTMENT_ID, DEPARTMENT_NAME, MANAGER_ID, LOCATION_ID)
+jobs(JOB_ID, JOB_TITLE, MIN_SALARY, MAX_SALARY)
+employees(EMPLOYEE_ID, FIRST_NAME, LAST_NAME, EMAIL, PHONE_NUMBER, HIRE_DATE, JOB_ID, SALARY, COMMISSION_PCT, MANAGER_ID, DEPARTMENT_ID)
+job_history(EMPLOYEE_ID, START_DATE, END_DATE, JOB_ID, DEPARTMENT_ID)
+locations(LOCATION_ID, STREET_ADDRESS, POSTAL_CODE, CITY, STATE_PROVINCE, COUNTRY_ID)
+
+Create a SQL request to answer What is all the information about the Marketing department?*/
+
+
+SELECT d.DEPARTMENT_ID, d.DEPARTMENT_NAME, d.MANAGER_ID, d.LOCATION_ID, l.STREET_ADDRESS, l.POSTAL_CODE, l.CITY, l.STATE_PROVINCE, c.COUNTRY_ID, c.COUNTRY_NAME, r.REGION_ID, r.REGION_NAME
+FROM departments d
+INNER JOIN locations l ON d.LOCATION_ID = l.LOCATION_ID
+INNER JOIN countries c ON l.COUNTRY_ID = c.COUNTRY_ID
+INNER JOIN regions r ON c.REGION_ID = r.REGION_ID
+WHERE d.DEPARTMENT_NAME = 'Marketing'
+
+/*Here are Mysql tables, with their properties:
+
+regions(REGION_ID, REGION_NAME)
+countries(COUNTRY_ID, COUNTRY_NAME, REGION_ID)
+departments(DEPARTMENT_ID, DEPARTMENT_NAME, MANAGER_ID, LOCATION_ID)
+jobs(JOB_ID, JOB_TITLE, MIN_SALARY, MAX_SALARY)
+employees(EMPLOYEE_ID, FIRST_NAME, LAST_NAME, EMAIL, PHONE_NUMBER, HIRE_DATE, JOB_ID, SALARY, COMMISSION_PCT, MANAGER_ID, DEPARTMENT_ID)
+job_history(EMPLOYEE_ID, START_DATE, END_DATE, JOB_ID, DEPARTMENT_ID)
+locations(LOCATION_ID, STREET_ADDRESS, POSTAL_CODE, CITY, STATE_PROVINCE, COUNTRY_ID)
+
+Create a SQL request to display the ID for those employees who did two or more jobs in the past.*/
+
+
+SELECT EMPLOYEE_ID
+FROM job_history
+GROUP BY EMPLOYEE_ID
+HAVING COUNT(*) >= 2
+
+/*Here are Mysql tables, with their properties:
+
+regions(REGION_ID, REGION_NAME)
+countries(COUNTRY_ID, COUNTRY_NAME, REGION_ID)
+departments(DEPARTMENT_ID, DEPARTMENT_NAME, MANAGER_ID, LOCATION_ID)
+jobs(JOB_ID, JOB_TITLE, MIN_SALARY, MAX_SALARY)
+employees(EMPLOYEE_ID, FIRST_NAME, LAST_NAME, EMAIL, PHONE_NUMBER, HIRE_DATE, JOB_ID, SALARY, COMMISSION_PCT, MANAGER_ID, DEPARTMENT_ID)
+job_history(EMPLOYEE_ID, START_DATE, END_DATE, JOB_ID, DEPARTMENT_ID)
+locations(LOCATION_ID, STREET_ADDRESS, POSTAL_CODE, CITY, STATE_PROVINCE, COUNTRY_ID)
+
+Create a SQL request to What are the employee ids for those who had two or more jobs.*/
+
+
+SELECT EMPLOYEE_ID
+FROM job_history
+GROUP BY EMPLOYEE_ID
+HAVING COUNT(*) > 1
+
+/*Here are Mysql tables, with their properties:
+
+regions(REGION_ID, REGION_NAME)
+countries(COUNTRY_ID, COUNTRY_NAME, REGION_ID)
+departments(DEPARTMENT_ID, DEPARTMENT_NAME, MANAGER_ID, LOCATION_ID)
+jobs(JOB_ID, JOB_TITLE, MIN_SALARY, MAX_SALARY)
+employees(EMPLOYEE_ID, FIRST_NAME, LAST_NAME, EMAIL, PHONE_NUMBER, HIRE_DATE, JOB_ID, SALARY, COMMISSION_PCT, MANAGER_ID, DEPARTMENT_ID)
+job_history(EMPLOYEE_ID, START_DATE, END_DATE, JOB_ID, DEPARTMENT_ID)
+locations(LOCATION_ID, STREET_ADDRESS, POSTAL_CODE, CITY, STATE_PROVINCE, COUNTRY_ID)
+
+Create a SQL request to What are the unique ids of those departments where any manager is managing 4 or more employees.*/
+
+
+SELECT DISTINCT DEPARTMENT_ID 
+FROM employees 
+WHERE MANAGER_ID IN (SELECT MANAGER_ID 
+                     FROM employees 
+                     GROUP BY MANAGER_ID 
+                     HAVING COUNT(*) >= 4)
+
+/*Here are Mysql tables, with their properties:
+
+regions(REGION_ID, REGION_NAME)
+countries(COUNTRY_ID, COUNTRY_NAME, REGION_ID)
+departments(DEPARTMENT_ID, DEPARTMENT_NAME, MANAGER_ID, LOCATION_ID)
+jobs(JOB_ID, JOB_TITLE, MIN_SALARY, MAX_SALARY)
+employees(EMPLOYEE_ID, FIRST_NAME, LAST_NAME, EMAIL, PHONE_NUMBER, HIRE_DATE, JOB_ID, SALARY, COMMISSION_PCT, MANAGER_ID, DEPARTMENT_ID)
+job_history(EMPLOYEE_ID, START_DATE, END_DATE, JOB_ID, DEPARTMENT_ID)
+locations(LOCATION_ID, STREET_ADDRESS, POSTAL_CODE, CITY, STATE_PROVINCE, COUNTRY_ID)
+
+Create a SQL request to answer Give the distinct department ids of departments in which a manager is in charge of 4 or more employees?*/
+
+
+SELECT DISTINCT DEPARTMENT_ID 
+FROM employees 
+WHERE MANAGER_ID IN (SELECT MANAGER_ID 
+                     FROM employees 
+                     GROUP BY MANAGER_ID 
+                     HAVING COUNT(*) >= 4)
+
+/*Here are Mysql tables, with their properties:
+
+regions(REGION_ID, REGION_NAME)
+countries(COUNTRY_ID, COUNTRY_NAME, REGION_ID)
+departments(DEPARTMENT_ID, DEPARTMENT_NAME, MANAGER_ID, LOCATION_ID)
+jobs(JOB_ID, JOB_TITLE, MIN_SALARY, MAX_SALARY)
+employees(EMPLOYEE_ID, FIRST_NAME, LAST_NAME, EMAIL, PHONE_NUMBER, HIRE_DATE, JOB_ID, SALARY, COMMISSION_PCT, MANAGER_ID, DEPARTMENT_ID)
+job_history(EMPLOYEE_ID, START_DATE, END_DATE, JOB_ID, DEPARTMENT_ID)
+locations(LOCATION_ID, STREET_ADDRESS, POSTAL_CODE, CITY, STATE_PROVINCE, COUNTRY_ID)
+
+Create a SQL request to Find the job ID for those jobs which average salary is above 8000.*/
+
+
+SELECT JOB_ID 
+FROM jobs 
+WHERE (MIN_SALARY + MAX_SALARY) / 2 > 8000
+
+/*Here are Mysql tables, with their properties:
+
+regions(REGION_ID, REGION_NAME)
+countries(COUNTRY_ID, COUNTRY_NAME, REGION_ID)
+departments(DEPARTMENT_ID, DEPARTMENT_NAME, MANAGER_ID, LOCATION_ID)
+jobs(JOB_ID, JOB_TITLE, MIN_SALARY, MAX_SALARY)
+employees(EMPLOYEE_ID, FIRST_NAME, LAST_NAME, EMAIL, PHONE_NUMBER, HIRE_DATE, JOB_ID, SALARY, COMMISSION_PCT, MANAGER_ID, DEPARTMENT_ID)
+job_history(EMPLOYEE_ID, START_DATE, END_DATE, JOB_ID, DEPARTMENT_ID)
+locations(LOCATION_ID, STREET_ADDRESS, POSTAL_CODE, CITY, STATE_PROVINCE, COUNTRY_ID)
+
+Create a SQL request to answer What are the job ids corresponding to jobs with average salary above 8000?*/
+
+
+SELECT JOB_ID 
+FROM jobs 
+WHERE (MIN_SALARY + MAX_SALARY) / 2 > 8000
+
+/*Here are Mysql tables, with their properties:
+
+regions(REGION_ID, REGION_NAME)
+countries(COUNTRY_ID, COUNTRY_NAME, REGION_ID)
+departments(DEPARTMENT_ID, DEPARTMENT_NAME, MANAGER_ID, LOCATION_ID)
+jobs(JOB_ID, JOB_TITLE, MIN_SALARY, MAX_SALARY)
+employees(EMPLOYEE_ID, FIRST_NAME, LAST_NAME, EMAIL, PHONE_NUMBER, HIRE_DATE, JOB_ID, SALARY, COMMISSION_PCT, MANAGER_ID, DEPARTMENT_ID)
+job_history(EMPLOYEE_ID, START_DATE, END_DATE, JOB_ID, DEPARTMENT_ID)
+locations(LOCATION_ID, STREET_ADDRESS, POSTAL_CODE, CITY, STATE_PROVINCE, COUNTRY_ID)
+
+Create a SQL request to display the employee ID and job name for all those jobs in department 80.*/
+
+
+SELECT e.EMPLOYEE_ID, j.JOB_TITLE 
+FROM employees e 
+INNER JOIN jobs j ON e.JOB_ID = j.JOB_ID 
+INNER JOIN departments d ON e.DEPARTMENT_ID = d.DEPARTMENT_ID 
+WHERE d.DEPARTMENT_ID = 80
+
+/*Here are Mysql tables, with their properties:
+
+regions(REGION_ID, REGION_NAME)
+countries(COUNTRY_ID, COUNTRY_NAME, REGION_ID)
+departments(DEPARTMENT_ID, DEPARTMENT_NAME, MANAGER_ID, LOCATION_ID)
+jobs(JOB_ID, JOB_TITLE, MIN_SALARY, MAX_SALARY)
+employees(EMPLOYEE_ID, FIRST_NAME, LAST_NAME, EMAIL, PHONE_NUMBER, HIRE_DATE, JOB_ID, SALARY, COMMISSION_PCT, MANAGER_ID, DEPARTMENT_ID)
+job_history(EMPLOYEE_ID, START_DATE, END_DATE, JOB_ID, DEPARTMENT_ID)
+locations(LOCATION_ID, STREET_ADDRESS, POSTAL_CODE, CITY, STATE_PROVINCE, COUNTRY_ID)
+
+Create a SQL request to answer what are the employee ids and job titles for employees in department 80?*/
+
+
+SELECT e.EMPLOYEE_ID, j.JOB_TITLE
+FROM employees e
+INNER JOIN jobs j ON e.JOB_ID = j.JOB_ID
+WHERE e.DEPARTMENT_ID = 80
+
+/*Here are Mysql tables, with their properties:
+
+regions(REGION_ID, REGION_NAME)
+countries(COUNTRY_ID, COUNTRY_NAME, REGION_ID)
+departments(DEPARTMENT_ID, DEPARTMENT_NAME, MANAGER_ID, LOCATION_ID)
+jobs(JOB_ID, JOB_TITLE, MIN_SALARY, MAX_SALARY)
+employees(EMPLOYEE_ID, FIRST_NAME, LAST_NAME, EMAIL, PHONE_NUMBER, HIRE_DATE, JOB_ID, SALARY, COMMISSION_PCT, MANAGER_ID, DEPARTMENT_ID)
+job_history(EMPLOYEE_ID, START_DATE, END_DATE, JOB_ID, DEPARTMENT_ID)
+locations(LOCATION_ID, STREET_ADDRESS, POSTAL_CODE, CITY, STATE_PROVINCE, COUNTRY_ID)
+
+Create a SQL request to answer What is the first name and job id for all employees in the Finance department?*/
+
+
+SELECT FIRST_NAME, JOB_ID 
+FROM employees 
+WHERE DEPARTMENT_ID = (SELECT DEPARTMENT_ID FROM departments WHERE DEPARTMENT_NAME = 'Finance')
+
+/*Here are Mysql tables, with their properties:
+
+regions(REGION_ID, REGION_NAME)
+countries(COUNTRY_ID, COUNTRY_NAME, REGION_ID)
+departments(DEPARTMENT_ID, DEPARTMENT_NAME, MANAGER_ID, LOCATION_ID)
+jobs(JOB_ID, JOB_TITLE, MIN_SALARY, MAX_SALARY)
+employees(EMPLOYEE_ID, FIRST_NAME, LAST_NAME, EMAIL, PHONE_NUMBER, HIRE_DATE, JOB_ID, SALARY, COMMISSION_PCT, MANAGER_ID, DEPARTMENT_ID)
+job_history(EMPLOYEE_ID, START_DATE, END_DATE, JOB_ID, DEPARTMENT_ID)
+locations(LOCATION_ID, STREET_ADDRESS, POSTAL_CODE, CITY, STATE_PROVINCE, COUNTRY_ID)
+
+Create a SQL request to Give the first name and job id for all employees in the Finance department.*/
+
+
+SELECT FIRST_NAME, JOB_ID 
+FROM employees 
+WHERE DEPARTMENT_ID = (SELECT DEPARTMENT_ID 
+                       FROM departments 
+                       WHERE DEPARTMENT_NAME = 'Finance')
+
+/*Here are Mysql tables, with their properties:
+
+regions(REGION_ID, REGION_NAME)
+countries(COUNTRY_ID, COUNTRY_NAME, REGION_ID)
+departments(DEPARTMENT_ID, DEPARTMENT_NAME, MANAGER_ID, LOCATION_ID)
+jobs(JOB_ID, JOB_TITLE, MIN_SALARY, MAX_SALARY)
+employees(EMPLOYEE_ID, FIRST_NAME, LAST_NAME, EMAIL, PHONE_NUMBER, HIRE_DATE, JOB_ID, SALARY, COMMISSION_PCT, MANAGER_ID, DEPARTMENT_ID)
+job_history(EMPLOYEE_ID, START_DATE, END_DATE, JOB_ID, DEPARTMENT_ID)
+locations(LOCATION_ID, STREET_ADDRESS, POSTAL_CODE, CITY, STATE_PROVINCE, COUNTRY_ID)
+
+Create a SQL request to display all the information of the employees whose salary if within the range of smallest salary and 2500.*/
+
+
+SELECT * 
+FROM employees 
+WHERE salary BETWEEN (SELECT MIN(salary) FROM employees) AND 2500
+
+/*Here are Mysql tables, with their properties:
+
+regions(REGION_ID, REGION_NAME)
+countries(COUNTRY_ID, COUNTRY_NAME, REGION_ID)
+departments(DEPARTMENT_ID, DEPARTMENT_NAME, MANAGER_ID, LOCATION_ID)
+jobs(JOB_ID, JOB_TITLE, MIN_SALARY, MAX_SALARY)
+employees(EMPLOYEE_ID, FIRST_NAME, LAST_NAME, EMAIL, PHONE_NUMBER, HIRE_DATE, JOB_ID, SALARY, COMMISSION_PCT, MANAGER_ID, DEPARTMENT_ID)
+job_history(EMPLOYEE_ID, START_DATE, END_DATE, JOB_ID, DEPARTMENT_ID)
+locations(LOCATION_ID, STREET_ADDRESS, POSTAL_CODE, CITY, STATE_PROVINCE, COUNTRY_ID)
+
+Create a SQL request to answer What is all the information regarding employees with salaries above the minimum and under 2500?*/
+
+
+SELECT * 
+FROM employees 
+WHERE salary > MIN_SALARY 
+AND salary < 2500
+
+/*Here are Mysql tables, with their properties:
+
+regions(REGION_ID, REGION_NAME)
+countries(COUNTRY_ID, COUNTRY_NAME, REGION_ID)
+departments(DEPARTMENT_ID, DEPARTMENT_NAME, MANAGER_ID, LOCATION_ID)
+jobs(JOB_ID, JOB_TITLE, MIN_SALARY, MAX_SALARY)
+employees(EMPLOYEE_ID, FIRST_NAME, LAST_NAME, EMAIL, PHONE_NUMBER, HIRE_DATE, JOB_ID, SALARY, COMMISSION_PCT, MANAGER_ID, DEPARTMENT_ID)
+job_history(EMPLOYEE_ID, START_DATE, END_DATE, JOB_ID, DEPARTMENT_ID)
+locations(LOCATION_ID, STREET_ADDRESS, POSTAL_CODE, CITY, STATE_PROVINCE, COUNTRY_ID)
+
+Create a SQL request to Find the ids of the employees who does not work in those departments where some employees works whose manager id within the range 100 and 200.*/
+
+
+SELECT EMPLOYEE_ID
+FROM employees
+WHERE DEPARTMENT_ID NOT IN (SELECT DEPARTMENT_ID
+                            FROM employees
+                            WHERE MANAGER_ID BETWEEN 100 AND 200)
+ORDER BY EMPLOYEE_ID
+
+/*Here are Mysql tables, with their properties:
+
+regions(REGION_ID, REGION_NAME)
+countries(COUNTRY_ID, COUNTRY_NAME, REGION_ID)
+departments(DEPARTMENT_ID, DEPARTMENT_NAME, MANAGER_ID, LOCATION_ID)
+jobs(JOB_ID, JOB_TITLE, MIN_SALARY, MAX_SALARY)
+employees(EMPLOYEE_ID, FIRST_NAME, LAST_NAME, EMAIL, PHONE_NUMBER, HIRE_DATE, JOB_ID, SALARY, COMMISSION_PCT, MANAGER_ID, DEPARTMENT_ID)
+job_history(EMPLOYEE_ID, START_DATE, END_DATE, JOB_ID, DEPARTMENT_ID)
+locations(LOCATION_ID, STREET_ADDRESS, POSTAL_CODE, CITY, STATE_PROVINCE, COUNTRY_ID)
+
+Create a SQL request to answer What are the ids for employees who do not work in departments with managers that have ids between 100 and 200?*/
+
+
+SELECT EMPLOYEE_ID
+FROM employees
+WHERE DEPARTMENT_ID NOT IN (SELECT DEPARTMENT_ID
+                            FROM departments
+                            WHERE MANAGER_ID BETWEEN 100 AND 200)
+
+/*Here are Mysql tables, with their properties:
+
+regions(REGION_ID, REGION_NAME)
+countries(COUNTRY_ID, COUNTRY_NAME, REGION_ID)
+departments(DEPARTMENT_ID, DEPARTMENT_NAME, MANAGER_ID, LOCATION_ID)
+jobs(JOB_ID, JOB_TITLE, MIN_SALARY, MAX_SALARY)
+employees(EMPLOYEE_ID, FIRST_NAME, LAST_NAME, EMAIL, PHONE_NUMBER, HIRE_DATE, JOB_ID, SALARY, COMMISSION_PCT, MANAGER_ID, DEPARTMENT_ID)
+job_history(EMPLOYEE_ID, START_DATE, END_DATE, JOB_ID, DEPARTMENT_ID)
+locations(LOCATION_ID, STREET_ADDRESS, POSTAL_CODE, CITY, STATE_PROVINCE, COUNTRY_ID)
+
+Create a SQL request to display the employee name ( first name and last name ) and hire date for all employees in the same department as Clara.*/
+
+
+SELECT FIRST_NAME, LAST_NAME, HIRE_DATE 
+FROM employees 
+WHERE DEPARTMENT_ID = (SELECT DEPARTMENT_ID 
+                       FROM employees 
+                       WHERE FIRST_NAME = 'Clara')
+
+/*Here are Mysql tables, with their properties:
+
+regions(REGION_ID, REGION_NAME)
+countries(COUNTRY_ID, COUNTRY_NAME, REGION_ID)
+departments(DEPARTMENT_ID, DEPARTMENT_NAME, MANAGER_ID, LOCATION_ID)
+jobs(JOB_ID, JOB_TITLE, MIN_SALARY, MAX_SALARY)
+employees(EMPLOYEE_ID, FIRST_NAME, LAST_NAME, EMAIL, PHONE_NUMBER, HIRE_DATE, JOB_ID, SALARY, COMMISSION_PCT, MANAGER_ID, DEPARTMENT_ID)
+job_history(EMPLOYEE_ID, START_DATE, END_DATE, JOB_ID, DEPARTMENT_ID)
+locations(LOCATION_ID, STREET_ADDRESS, POSTAL_CODE, CITY, STATE_PROVINCE, COUNTRY_ID)
+
+Create a SQL request to answer What are the full names and hire dates for employees in the same department as someone with the first name Clara?*/
+
+
+SELECT e.FIRST_NAME, e.LAST_NAME, e.HIRE_DATE
+FROM employees e
+INNER JOIN employees e2 ON e.DEPARTMENT_ID = e2.DEPARTMENT_ID
+WHERE e2.FIRST_NAME = 'Clara'
+
+/*Here are Mysql tables, with their properties:
+
+regions(REGION_ID, REGION_NAME)
+countries(COUNTRY_ID, COUNTRY_NAME, REGION_ID)
+departments(DEPARTMENT_ID, DEPARTMENT_NAME, MANAGER_ID, LOCATION_ID)
+jobs(JOB_ID, JOB_TITLE, MIN_SALARY, MAX_SALARY)
+employees(EMPLOYEE_ID, FIRST_NAME, LAST_NAME, EMAIL, PHONE_NUMBER, HIRE_DATE, JOB_ID, SALARY, COMMISSION_PCT, MANAGER_ID, DEPARTMENT_ID)
+job_history(EMPLOYEE_ID, START_DATE, END_DATE, JOB_ID, DEPARTMENT_ID)
+locations(LOCATION_ID, STREET_ADDRESS, POSTAL_CODE, CITY, STATE_PROVINCE, COUNTRY_ID)
+
+Create a SQL request to display the employee name ( first name and last name ) and hire date for all employees in the same department as Clara excluding Clara.*/
+
+
+SELECT FIRST_NAME, LAST_NAME, HIRE_DATE 
+FROM employees 
+WHERE DEPARTMENT_ID = (SELECT DEPARTMENT_ID FROM employees WHERE FIRST_NAME = 'Clara') 
+AND EMPLOYEE_ID != (SELECT EMPLOYEE_ID FROM employees WHERE FIRST_NAME = 'Clara')
+
+/*Here are Mysql tables, with their properties:
+
+regions(REGION_ID, REGION_NAME)
+countries(COUNTRY_ID, COUNTRY_NAME, REGION_ID)
+departments(DEPARTMENT_ID, DEPARTMENT_NAME, MANAGER_ID, LOCATION_ID)
+jobs(JOB_ID, JOB_TITLE, MIN_SALARY, MAX_SALARY)
+employees(EMPLOYEE_ID, FIRST_NAME, LAST_NAME, EMAIL, PHONE_NUMBER, HIRE_DATE, JOB_ID, SALARY, COMMISSION_PCT, MANAGER_ID, DEPARTMENT_ID)
+job_history(EMPLOYEE_ID, START_DATE, END_DATE, JOB_ID, DEPARTMENT_ID)
+locations(LOCATION_ID, STREET_ADDRESS, POSTAL_CODE, CITY, STATE_PROVINCE, COUNTRY_ID)
+
+Create a SQL request to answer What are the full names and hire dates for employees in the same department as someone with the first name Clara, not including Clara?*/
+
+
+SELECT e.FIRST_NAME, e.LAST_NAME, e.HIRE_DATE
+FROM employees e
+INNER JOIN departments d ON e.DEPARTMENT_ID = d.DEPARTMENT_ID
+INNER JOIN employees e2 ON d.DEPARTMENT_ID = e2.DEPARTMENT_ID
+WHERE e2.FIRST_NAME = 'Clara'
+AND e.EMPLOYEE_ID != e2.EMPLOYEE_ID
+
+/*Here are Mysql tables, with their properties:
+
+regions(REGION_ID, REGION_NAME)
+countries(COUNTRY_ID, COUNTRY_NAME, REGION_ID)
+departments(DEPARTMENT_ID, DEPARTMENT_NAME, MANAGER_ID, LOCATION_ID)
+jobs(JOB_ID, JOB_TITLE, MIN_SALARY, MAX_SALARY)
+employees(EMPLOYEE_ID, FIRST_NAME, LAST_NAME, EMAIL, PHONE_NUMBER, HIRE_DATE, JOB_ID, SALARY, COMMISSION_PCT, MANAGER_ID, DEPARTMENT_ID)
+job_history(EMPLOYEE_ID, START_DATE, END_DATE, JOB_ID, DEPARTMENT_ID)
+locations(LOCATION_ID, STREET_ADDRESS, POSTAL_CODE, CITY, STATE_PROVINCE, COUNTRY_ID)
+
+Create a SQL request to display the employee number and name( first name and last name ) for all employees who work in a department with any employee whose name contains a ¡¯T¡¯.*/
+
+
+SELECT e.EMPLOYEE_ID, e.FIRST_NAME, e.LAST_NAME
+FROM employees e
+INNER JOIN departments d ON e.DEPARTMENT_ID = d.DEPARTMENT_ID
+INNER JOIN employees e2 ON d.DEPARTMENT_ID = e2.DEPARTMENT_ID
+WHERE e2.FIRST_NAME LIKE '%T%' OR e2.LAST_NAME LIKE '%T%'
+
+/*Here are Mysql tables, with their properties:
+
+regions(REGION_ID, REGION_NAME)
+countries(COUNTRY_ID, COUNTRY_NAME, REGION_ID)
+departments(DEPARTMENT_ID, DEPARTMENT_NAME, MANAGER_ID, LOCATION_ID)
+jobs(JOB_ID, JOB_TITLE, MIN_SALARY, MAX_SALARY)
+employees(EMPLOYEE_ID, FIRST_NAME, LAST_NAME, EMAIL, PHONE_NUMBER, HIRE_DATE, JOB_ID, SALARY, COMMISSION_PCT, MANAGER_ID, DEPARTMENT_ID)
+job_history(EMPLOYEE_ID, START_DATE, END_DATE, JOB_ID, DEPARTMENT_ID)
+locations(LOCATION_ID, STREET_ADDRESS, POSTAL_CODE, CITY, STATE_PROVINCE, COUNTRY_ID)
+
+Create a SQL request to answer What are the ids and full names for employees who work in a department that has someone with a first name that contains the letter T?*/
+
+
+SELECT e.EMPLOYEE_ID, CONCAT(e.FIRST_NAME, ' ', e.LAST_NAME) AS 'Full Name'
+FROM employees e
+INNER JOIN departments d ON e.DEPARTMENT_ID = d.DEPARTMENT_ID
+INNER JOIN employees m ON d.MANAGER_ID = m.EMPLOYEE_ID
+WHERE m.FIRST_NAME LIKE '%T%'
+
+/*Here are Mysql tables, with their properties:
+
+regions(REGION_ID, REGION_NAME)
+countries(COUNTRY_ID, COUNTRY_NAME, REGION_ID)
+departments(DEPARTMENT_ID, DEPARTMENT_NAME, MANAGER_ID, LOCATION_ID)
+jobs(JOB_ID, JOB_TITLE, MIN_SALARY, MAX_SALARY)
+employees(EMPLOYEE_ID, FIRST_NAME, LAST_NAME, EMAIL, PHONE_NUMBER, HIRE_DATE, JOB_ID, SALARY, COMMISSION_PCT, MANAGER_ID, DEPARTMENT_ID)
+job_history(EMPLOYEE_ID, START_DATE, END_DATE, JOB_ID, DEPARTMENT_ID)
+locations(LOCATION_ID, STREET_ADDRESS, POSTAL_CODE, CITY, STATE_PROVINCE, COUNTRY_ID)
+
+Create a SQL request to display the employee number, name( first name and last name ), and salary for all employees who earn more than the average salary and who work in a department with any employee with a 'J' in their first name.*/
+
+
+SELECT e.EMPLOYEE_ID, CONCAT(e.FIRST_NAME, ' ', e.LAST_NAME) AS Name, e.SALARY
+FROM employees e
+INNER JOIN departments d ON e.DEPARTMENT_ID = d.DEPARTMENT_ID
+INNER JOIN employees e2 ON d.DEPARTMENT_ID = e2.DEPARTMENT_ID
+WHERE e.SALARY > (SELECT AVG(SALARY) FROM employees)
+AND e2.FIRST_NAME LIKE '%J%'
+GROUP BY e.EMPLOYEE_ID
+
+/*Here are Mysql tables, with their properties:
+
+regions(REGION_ID, REGION_NAME)
+countries(COUNTRY_ID, COUNTRY_NAME, REGION_ID)
+departments(DEPARTMENT_ID, DEPARTMENT_NAME, MANAGER_ID, LOCATION_ID)
+jobs(JOB_ID, JOB_TITLE, MIN_SALARY, MAX_SALARY)
+employees(EMPLOYEE_ID, FIRST_NAME, LAST_NAME, EMAIL, PHONE_NUMBER, HIRE_DATE, JOB_ID, SALARY, COMMISSION_PCT, MANAGER_ID, DEPARTMENT_ID)
+job_history(EMPLOYEE_ID, START_DATE, END_DATE, JOB_ID, DEPARTMENT_ID)
+locations(LOCATION_ID, STREET_ADDRESS, POSTAL_CODE, CITY, STATE_PROVINCE, COUNTRY_ID)
+
+Create a SQL request to answer What are the ids, full names, and salaries for employees making more than average and who work in a department with employees who have the letter J in their first name?*/
+
+
+SELECT e.EMPLOYEE_ID, CONCAT(e.FIRST_NAME, ' ', e.LAST_NAME) AS Full_Name, e.SALARY
+FROM employees e
+INNER JOIN departments d ON e.DEPARTMENT_ID = d.DEPARTMENT_ID
+INNER JOIN employees e2 ON d.DEPARTMENT_ID = e2.DEPARTMENT_ID
+WHERE e.SALARY > (SELECT AVG(SALARY) FROM employees)
+AND e2.FIRST_NAME LIKE '%J%'
+GROUP BY e.EMPLOYEE_ID
+
+/*Here are Mysql tables, with their properties:
+
+regions(REGION_ID, REGION_NAME)
+countries(COUNTRY_ID, COUNTRY_NAME, REGION_ID)
+departments(DEPARTMENT_ID, DEPARTMENT_NAME, MANAGER_ID, LOCATION_ID)
+jobs(JOB_ID, JOB_TITLE, MIN_SALARY, MAX_SALARY)
+employees(EMPLOYEE_ID, FIRST_NAME, LAST_NAME, EMAIL, PHONE_NUMBER, HIRE_DATE, JOB_ID, SALARY, COMMISSION_PCT, MANAGER_ID, DEPARTMENT_ID)
+job_history(EMPLOYEE_ID, START_DATE, END_DATE, JOB_ID, DEPARTMENT_ID)
+locations(LOCATION_ID, STREET_ADDRESS, POSTAL_CODE, CITY, STATE_PROVINCE, COUNTRY_ID)
+
+Create a SQL request to display the employee number and job id for all employees whose salary is smaller than any salary of those employees whose job title is MK_MAN.*/
+
+
+SELECT EMPLOYEE_ID, JOB_ID 
+FROM employees 
+WHERE SALARY < (SELECT MIN(SALARY) 
+                FROM employees 
+                WHERE JOB_ID IN (SELECT JOB_ID 
+                                 FROM jobs 
+                                 WHERE JOB_TITLE = 'MK_MAN'))
+
+/*Here are Mysql tables, with their properties:
+
+regions(REGION_ID, REGION_NAME)
+countries(COUNTRY_ID, COUNTRY_NAME, REGION_ID)
+departments(DEPARTMENT_ID, DEPARTMENT_NAME, MANAGER_ID, LOCATION_ID)
+jobs(JOB_ID, JOB_TITLE, MIN_SALARY, MAX_SALARY)
+employees(EMPLOYEE_ID, FIRST_NAME, LAST_NAME, EMAIL, PHONE_NUMBER, HIRE_DATE, JOB_ID, SALARY, COMMISSION_PCT, MANAGER_ID, DEPARTMENT_ID)
+job_history(EMPLOYEE_ID, START_DATE, END_DATE, JOB_ID, DEPARTMENT_ID)
+locations(LOCATION_ID, STREET_ADDRESS, POSTAL_CODE, CITY, STATE_PROVINCE, COUNTRY_ID)
+
+Create a SQL request to answer What are the employee ids and job ids for employees who make less than the lowest earning employee with title MK_MAN?*/
+
+
+SELECT e.EMPLOYEE_ID, e.JOB_ID 
+FROM employees e 
+INNER JOIN jobs j ON e.JOB_ID = j.JOB_ID 
+WHERE e.SALARY < (SELECT MIN(SALARY) FROM employees WHERE JOB_ID = (SELECT JOB_ID FROM jobs WHERE JOB_TITLE = 'MK_MAN')) 
+ORDER BY e.SALARY ASC
+
+/*Here are Mysql tables, with their properties:
+
+regions(REGION_ID, REGION_NAME)
+countries(COUNTRY_ID, COUNTRY_NAME, REGION_ID)
+departments(DEPARTMENT_ID, DEPARTMENT_NAME, MANAGER_ID, LOCATION_ID)
+jobs(JOB_ID, JOB_TITLE, MIN_SALARY, MAX_SALARY)
+employees(EMPLOYEE_ID, FIRST_NAME, LAST_NAME, EMAIL, PHONE_NUMBER, HIRE_DATE, JOB_ID, SALARY, COMMISSION_PCT, MANAGER_ID, DEPARTMENT_ID)
+job_history(EMPLOYEE_ID, START_DATE, END_DATE, JOB_ID, DEPARTMENT_ID)
+locations(LOCATION_ID, STREET_ADDRESS, POSTAL_CODE, CITY, STATE_PROVINCE, COUNTRY_ID)
+
+Create a SQL request to display the employee number, name( first name and last name ) and job title for all employees whose salary is more than any salary of those employees whose job title is PU_MAN.*/
+
+
+SELECT e.EMPLOYEE_ID, CONCAT(e.FIRST_NAME, ' ', e.LAST_NAME) AS Name, j.JOB_TITLE
+FROM employees e
+INNER JOIN jobs j ON e.JOB_ID = j.JOB_ID
+WHERE e.SALARY > (SELECT MAX(SALARY) FROM employees WHERE JOB_ID = (SELECT JOB_ID FROM jobs WHERE JOB_TITLE = 'PU_MAN'))
+
+
+/*Here are Mysql tables, with their properties:
+
+regions(REGION_ID, REGION_NAME)
+countries(COUNTRY_ID, COUNTRY_NAME, REGION_ID)
+departments(DEPARTMENT_ID, DEPARTMENT_NAME, MANAGER_ID, LOCATION_ID)
+jobs(JOB_ID, JOB_TITLE, MIN_SALARY, MAX_SALARY)
+employees(EMPLOYEE_ID, FIRST_NAME, LAST_NAME, EMAIL, PHONE_NUMBER, HIRE_DATE, JOB_ID, SALARY, COMMISSION_PCT, MANAGER_ID, DEPARTMENT_ID)
+job_history(EMPLOYEE_ID, START_DATE, END_DATE, JOB_ID, DEPARTMENT_ID)
+locations(LOCATION_ID, STREET_ADDRESS, POSTAL_CODE, CITY, STATE_PROVINCE, COUNTRY_ID)
+
+Create a SQL request to answer What are the employee ids, full names, and job ids for employees who make more than the highest earning employee with title PU_MAN?*/
+
+
+SELECT e.EMPLOYEE_ID, CONCAT(e.FIRST_NAME, ' ', e.LAST_NAME) AS Full_Name, e.JOB_ID
+FROM employees e
+JOIN jobs j ON e.JOB_ID = j.JOB_ID
+WHERE e.SALARY > (SELECT MAX(SALARY) FROM employees WHERE JOB_ID = (SELECT JOB_ID FROM jobs WHERE JOB_TITLE = 'PU_MAN'))
+ORDER BY e.SALARY DESC
+
+/*Here are Mysql tables, with their properties:
+
+regions(REGION_ID, REGION_NAME)
+countries(COUNTRY_ID, COUNTRY_NAME, REGION_ID)
+departments(DEPARTMENT_ID, DEPARTMENT_NAME, MANAGER_ID, LOCATION_ID)
+jobs(JOB_ID, JOB_TITLE, MIN_SALARY, MAX_SALARY)
+employees(EMPLOYEE_ID, FIRST_NAME, LAST_NAME, EMAIL, PHONE_NUMBER, HIRE_DATE, JOB_ID, SALARY, COMMISSION_PCT, MANAGER_ID, DEPARTMENT_ID)
+job_history(EMPLOYEE_ID, START_DATE, END_DATE, JOB_ID, DEPARTMENT_ID)
+locations(LOCATION_ID, STREET_ADDRESS, POSTAL_CODE, CITY, STATE_PROVINCE, COUNTRY_ID)
+
+Create a SQL request to display the department id and the total salary for those departments which contains at least two employees.*/
+
+
+SELECT DEPARTMENT_ID, SUM(SALARY) AS TOTAL_SALARY
+FROM employees
+GROUP BY DEPARTMENT_ID
+HAVING COUNT(*) >= 2
+
+/*Here are Mysql tables, with their properties:
+
+regions(REGION_ID, REGION_NAME)
+countries(COUNTRY_ID, COUNTRY_NAME, REGION_ID)
+departments(DEPARTMENT_ID, DEPARTMENT_NAME, MANAGER_ID, LOCATION_ID)
+jobs(JOB_ID, JOB_TITLE, MIN_SALARY, MAX_SALARY)
+employees(EMPLOYEE_ID, FIRST_NAME, LAST_NAME, EMAIL, PHONE_NUMBER, HIRE_DATE, JOB_ID, SALARY, COMMISSION_PCT, MANAGER_ID, DEPARTMENT_ID)
+job_history(EMPLOYEE_ID, START_DATE, END_DATE, JOB_ID, DEPARTMENT_ID)
+locations(LOCATION_ID, STREET_ADDRESS, POSTAL_CODE, CITY, STATE_PROVINCE, COUNTRY_ID)
+
+Create a SQL request to answer What are total salaries and department id for each department that has more than 2 employees?*/
+
+
+SELECT DEPARTMENT_ID, SUM(SALARY) AS TOTAL_SALARIES
+FROM employees
+GROUP BY DEPARTMENT_ID
+HAVING COUNT(*) > 2
+
+/*Here are Mysql tables, with their properties:
+
+regions(REGION_ID, REGION_NAME)
+countries(COUNTRY_ID, COUNTRY_NAME, REGION_ID)
+departments(DEPARTMENT_ID, DEPARTMENT_NAME, MANAGER_ID, LOCATION_ID)
+jobs(JOB_ID, JOB_TITLE, MIN_SALARY, MAX_SALARY)
+employees(EMPLOYEE_ID, FIRST_NAME, LAST_NAME, EMAIL, PHONE_NUMBER, HIRE_DATE, JOB_ID, SALARY, COMMISSION_PCT, MANAGER_ID, DEPARTMENT_ID)
+job_history(EMPLOYEE_ID, START_DATE, END_DATE, JOB_ID, DEPARTMENT_ID)
+locations(LOCATION_ID, STREET_ADDRESS, POSTAL_CODE, CITY, STATE_PROVINCE, COUNTRY_ID)
+
+Create a SQL request to display all the information of those employees who did not have any job in the past.*/
+
+
+SELECT e.EMPLOYEE_ID, e.FIRST_NAME, e.LAST_NAME, e.EMAIL, e.PHONE_NUMBER, e.HIRE_DATE, e.JOB_ID, e.SALARY, e.COMMISSION_PCT, e.MANAGER_ID, e.DEPARTMENT_ID
+FROM employees e
+LEFT JOIN job_history jh ON e.EMPLOYEE_ID = jh.EMPLOYEE_ID
+WHERE jh.EMPLOYEE_ID IS NULL
+
+/*Here are Mysql tables, with their properties:
+
+regions(REGION_ID, REGION_NAME)
+countries(COUNTRY_ID, COUNTRY_NAME, REGION_ID)
+departments(DEPARTMENT_ID, DEPARTMENT_NAME, MANAGER_ID, LOCATION_ID)
+jobs(JOB_ID, JOB_TITLE, MIN_SALARY, MAX_SALARY)
+employees(EMPLOYEE_ID, FIRST_NAME, LAST_NAME, EMAIL, PHONE_NUMBER, HIRE_DATE, JOB_ID, SALARY, COMMISSION_PCT, MANAGER_ID, DEPARTMENT_ID)
+job_history(EMPLOYEE_ID, START_DATE, END_DATE, JOB_ID, DEPARTMENT_ID)
+locations(LOCATION_ID, STREET_ADDRESS, POSTAL_CODE, CITY, STATE_PROVINCE, COUNTRY_ID)
+
+Create a SQL request to answer What is all the information about employees who have never had a job in the past?*/
+
+
+SELECT e.EMPLOYEE_ID, e.FIRST_NAME, e.LAST_NAME, e.EMAIL, e.PHONE_NUMBER, e.HIRE_DATE, e.JOB_ID, e.SALARY, e.COMMISSION_PCT, e.MANAGER_ID, e.DEPARTMENT_ID
+FROM employees e
+LEFT JOIN job_history jh ON e.EMPLOYEE_ID = jh.EMPLOYEE_ID
+WHERE jh.EMPLOYEE_ID IS NULL
+
+/*Here are Mysql tables, with their properties:
+
+regions(REGION_ID, REGION_NAME)
+countries(COUNTRY_ID, COUNTRY_NAME, REGION_ID)
+departments(DEPARTMENT_ID, DEPARTMENT_NAME, MANAGER_ID, LOCATION_ID)
+jobs(JOB_ID, JOB_TITLE, MIN_SALARY, MAX_SALARY)
+employees(EMPLOYEE_ID, FIRST_NAME, LAST_NAME, EMAIL, PHONE_NUMBER, HIRE_DATE, JOB_ID, SALARY, COMMISSION_PCT, MANAGER_ID, DEPARTMENT_ID)
+job_history(EMPLOYEE_ID, START_DATE, END_DATE, JOB_ID, DEPARTMENT_ID)
+locations(LOCATION_ID, STREET_ADDRESS, POSTAL_CODE, CITY, STATE_PROVINCE, COUNTRY_ID)
+
+Create a SQL request to display the department ID, full name (first and last name), salary for those employees who is highest salary in every department.*/
+
+
+SELECT d.DEPARTMENT_ID, CONCAT(e.FIRST_NAME, ' ', e.LAST_NAME) AS 'Full Name', e.SALARY
+FROM departments d
+INNER JOIN employees e ON d.DEPARTMENT_ID = e.DEPARTMENT_ID
+WHERE e.SALARY = (SELECT MAX(SALARY) FROM employees WHERE DEPARTMENT_ID = d.DEPARTMENT_ID)
+ORDER BY d.DEPARTMENT_ID
+
+/*Here are Mysql tables, with their properties:
+
+regions(REGION_ID, REGION_NAME)
+countries(COUNTRY_ID, COUNTRY_NAME, REGION_ID)
+departments(DEPARTMENT_ID, DEPARTMENT_NAME, MANAGER_ID, LOCATION_ID)
+jobs(JOB_ID, JOB_TITLE, MIN_SALARY, MAX_SALARY)
+employees(EMPLOYEE_ID, FIRST_NAME, LAST_NAME, EMAIL, PHONE_NUMBER, HIRE_DATE, JOB_ID, SALARY, COMMISSION_PCT, MANAGER_ID, DEPARTMENT_ID)
+job_history(EMPLOYEE_ID, START_DATE, END_DATE, JOB_ID, DEPARTMENT_ID)
+locations(LOCATION_ID, STREET_ADDRESS, POSTAL_CODE, CITY, STATE_PROVINCE, COUNTRY_ID)
+
+Create a SQL request to answer What are the department ids, full names, and salaries for employees who make the most in their departments?*/
+
+
+SELECT d.DEPARTMENT_ID, d.DEPARTMENT_NAME, e.SALARY
+FROM departments d
+INNER JOIN employees e ON d.DEPARTMENT_ID = e.DEPARTMENT_ID
+WHERE e.SALARY = (SELECT MAX(SALARY) FROM employees WHERE DEPARTMENT_ID = d.DEPARTMENT_ID)
+GROUP BY d.DEPARTMENT_ID, d.DEPARTMENT_NAME, e.SALARY
+
+/*Here are Mysql tables, with their properties:
+
+regions(REGION_ID, REGION_NAME)
+countries(COUNTRY_ID, COUNTRY_NAME, REGION_ID)
+departments(DEPARTMENT_ID, DEPARTMENT_NAME, MANAGER_ID, LOCATION_ID)
+jobs(JOB_ID, JOB_TITLE, MIN_SALARY, MAX_SALARY)
+employees(EMPLOYEE_ID, FIRST_NAME, LAST_NAME, EMAIL, PHONE_NUMBER, HIRE_DATE, JOB_ID, SALARY, COMMISSION_PCT, MANAGER_ID, DEPARTMENT_ID)
+job_history(EMPLOYEE_ID, START_DATE, END_DATE, JOB_ID, DEPARTMENT_ID)
+locations(LOCATION_ID, STREET_ADDRESS, POSTAL_CODE, CITY, STATE_PROVINCE, COUNTRY_ID)
+
+Create a SQL request to display the first and last name, department, city, and state province for each employee.*/
+
+
+SELECT e.FIRST_NAME, e.LAST_NAME, d.DEPARTMENT_NAME, l.CITY, l.STATE_PROVINCE
+FROM employees e
+INNER JOIN departments d ON e.DEPARTMENT_ID = d.DEPARTMENT_ID
+INNER JOIN locations l ON d.LOCATION_ID = l.LOCATION_ID
+
+/*Here are Mysql tables, with their properties:
+
+regions(REGION_ID, REGION_NAME)
+countries(COUNTRY_ID, COUNTRY_NAME, REGION_ID)
+departments(DEPARTMENT_ID, DEPARTMENT_NAME, MANAGER_ID, LOCATION_ID)
+jobs(JOB_ID, JOB_TITLE, MIN_SALARY, MAX_SALARY)
+employees(EMPLOYEE_ID, FIRST_NAME, LAST_NAME, EMAIL, PHONE_NUMBER, HIRE_DATE, JOB_ID, SALARY, COMMISSION_PCT, MANAGER_ID, DEPARTMENT_ID)
+job_history(EMPLOYEE_ID, START_DATE, END_DATE, JOB_ID, DEPARTMENT_ID)
+locations(LOCATION_ID, STREET_ADDRESS, POSTAL_CODE, CITY, STATE_PROVINCE, COUNTRY_ID)
+
+Create a SQL request to answer What are the full names, departments, cities, and state provinces for each employee?*/
+
+
+SELECT e.FIRST_NAME, e.LAST_NAME, d.DEPARTMENT_NAME, l.CITY, l.STATE_PROVINCE
+FROM employees e
+INNER JOIN departments d ON e.DEPARTMENT_ID = d.DEPARTMENT_ID
+INNER JOIN locations l ON d.LOCATION_ID = l.LOCATION_ID
+
+/*Here are Mysql tables, with their properties:
+
+regions(REGION_ID, REGION_NAME)
+countries(COUNTRY_ID, COUNTRY_NAME, REGION_ID)
+departments(DEPARTMENT_ID, DEPARTMENT_NAME, MANAGER_ID, LOCATION_ID)
+jobs(JOB_ID, JOB_TITLE, MIN_SALARY, MAX_SALARY)
+employees(EMPLOYEE_ID, FIRST_NAME, LAST_NAME, EMAIL, PHONE_NUMBER, HIRE_DATE, JOB_ID, SALARY, COMMISSION_PCT, MANAGER_ID, DEPARTMENT_ID)
+job_history(EMPLOYEE_ID, START_DATE, END_DATE, JOB_ID, DEPARTMENT_ID)
+locations(LOCATION_ID, STREET_ADDRESS, POSTAL_CODE, CITY, STATE_PROVINCE, COUNTRY_ID)
+
+Create a SQL request to display those employees who contain a letter z to their first name and also display their last name, city.*/
+
+
+SELECT FIRST_NAME, LAST_NAME, CITY
+FROM employees
+JOIN locations ON employees.LOCATION_ID = locations.LOCATION_ID
+WHERE FIRST_NAME LIKE '%z%'
+
+/*Here are Mysql tables, with their properties:
+
+regions(REGION_ID, REGION_NAME)
+countries(COUNTRY_ID, COUNTRY_NAME, REGION_ID)
+departments(DEPARTMENT_ID, DEPARTMENT_NAME, MANAGER_ID, LOCATION_ID)
+jobs(JOB_ID, JOB_TITLE, MIN_SALARY, MAX_SALARY)
+employees(EMPLOYEE_ID, FIRST_NAME, LAST_NAME, EMAIL, PHONE_NUMBER, HIRE_DATE, JOB_ID, SALARY, COMMISSION_PCT, MANAGER_ID, DEPARTMENT_ID)
+job_history(EMPLOYEE_ID, START_DATE, END_DATE, JOB_ID, DEPARTMENT_ID)
+locations(LOCATION_ID, STREET_ADDRESS, POSTAL_CODE, CITY, STATE_PROVINCE, COUNTRY_ID)
+
+Create a SQL request to answer What are the full names and cities of employees who have the letter Z in their first names?*/
+
+
+SELECT CONCAT(FIRST_NAME, ' ', LAST_NAME) AS 'Full Name', CITY
+FROM employees
+JOIN locations USING (LOCATION_ID)
+WHERE FIRST_NAME LIKE '%Z%'
+
+/*Here are Mysql tables, with their properties:
+
+regions(REGION_ID, REGION_NAME)
+countries(COUNTRY_ID, COUNTRY_NAME, REGION_ID)
+departments(DEPARTMENT_ID, DEPARTMENT_NAME, MANAGER_ID, LOCATION_ID)
+jobs(JOB_ID, JOB_TITLE, MIN_SALARY, MAX_SALARY)
+employees(EMPLOYEE_ID, FIRST_NAME, LAST_NAME, EMAIL, PHONE_NUMBER, HIRE_DATE, JOB_ID, SALARY, COMMISSION_PCT, MANAGER_ID, DEPARTMENT_ID)
+job_history(EMPLOYEE_ID, START_DATE, END_DATE, JOB_ID, DEPARTMENT_ID)
+locations(LOCATION_ID, STREET_ADDRESS, POSTAL_CODE, CITY, STATE_PROVINCE, COUNTRY_ID)
+
+Create a SQL request to display the department name, city, and state province for each department.*/
+
+
+SELECT departments.DEPARTMENT_NAME, locations.CITY, locations.STATE_PROVINCE
+FROM departments
+INNER JOIN locations ON departments.LOCATION_ID = locations.LOCATION_ID
+
+/*Here are Mysql tables, with their properties:
+
+regions(REGION_ID, REGION_NAME)
+countries(COUNTRY_ID, COUNTRY_NAME, REGION_ID)
+departments(DEPARTMENT_ID, DEPARTMENT_NAME, MANAGER_ID, LOCATION_ID)
+jobs(JOB_ID, JOB_TITLE, MIN_SALARY, MAX_SALARY)
+employees(EMPLOYEE_ID, FIRST_NAME, LAST_NAME, EMAIL, PHONE_NUMBER, HIRE_DATE, JOB_ID, SALARY, COMMISSION_PCT, MANAGER_ID, DEPARTMENT_ID)
+job_history(EMPLOYEE_ID, START_DATE, END_DATE, JOB_ID, DEPARTMENT_ID)
+locations(LOCATION_ID, STREET_ADDRESS, POSTAL_CODE, CITY, STATE_PROVINCE, COUNTRY_ID)
+
+Create a SQL request to answer What are the department names, cities, and state provinces for each department?*/
+
+
+SELECT d.DEPARTMENT_NAME, l.CITY, l.STATE_PROVINCE
+FROM departments d
+INNER JOIN locations l ON d.LOCATION_ID = l.LOCATION_ID
+
+/*Here are Mysql tables, with their properties:
+
+regions(REGION_ID, REGION_NAME)
+countries(COUNTRY_ID, COUNTRY_NAME, REGION_ID)
+departments(DEPARTMENT_ID, DEPARTMENT_NAME, MANAGER_ID, LOCATION_ID)
+jobs(JOB_ID, JOB_TITLE, MIN_SALARY, MAX_SALARY)
+employees(EMPLOYEE_ID, FIRST_NAME, LAST_NAME, EMAIL, PHONE_NUMBER, HIRE_DATE, JOB_ID, SALARY, COMMISSION_PCT, MANAGER_ID, DEPARTMENT_ID)
+job_history(EMPLOYEE_ID, START_DATE, END_DATE, JOB_ID, DEPARTMENT_ID)
+locations(LOCATION_ID, STREET_ADDRESS, POSTAL_CODE, CITY, STATE_PROVINCE, COUNTRY_ID)
+
+Create a SQL request to display the full name (first and last name ) of employee with ID and name of the country presently where (s)he is working.*/
+
+
+SELECT e.EMPLOYEE_ID, CONCAT(e.FIRST_NAME, ' ', e.LAST_NAME) AS 'Full Name', c.COUNTRY_NAME
+FROM employees e
+INNER JOIN departments d ON e.DEPARTMENT_ID = d.DEPARTMENT_ID
+INNER JOIN locations l ON d.LOCATION_ID = l.LOCATION_ID
+INNER JOIN countries c ON l.COUNTRY_ID = c.COUNTRY_ID
+
+/*Here are Mysql tables, with their properties:
+
+regions(REGION_ID, REGION_NAME)
+countries(COUNTRY_ID, COUNTRY_NAME, REGION_ID)
+departments(DEPARTMENT_ID, DEPARTMENT_NAME, MANAGER_ID, LOCATION_ID)
+jobs(JOB_ID, JOB_TITLE, MIN_SALARY, MAX_SALARY)
+employees(EMPLOYEE_ID, FIRST_NAME, LAST_NAME, EMAIL, PHONE_NUMBER, HIRE_DATE, JOB_ID, SALARY, COMMISSION_PCT, MANAGER_ID, DEPARTMENT_ID)
+job_history(EMPLOYEE_ID, START_DATE, END_DATE, JOB_ID, DEPARTMENT_ID)
+locations(LOCATION_ID, STREET_ADDRESS, POSTAL_CODE, CITY, STATE_PROVINCE, COUNTRY_ID)
+
+Create a SQL request to answer What the full names, ids of each employee and the name of the country they are in?*/
+
+
+SELECT e.EMPLOYEE_ID, CONCAT(e.FIRST_NAME, ' ', e.LAST_NAME) AS Full_Name, c.COUNTRY_NAME
+FROM employees e
+INNER JOIN departments d ON e.DEPARTMENT_ID = d.DEPARTMENT_ID
+INNER JOIN locations l ON d.LOCATION_ID = l.LOCATION_ID
+INNER JOIN countries c ON l.COUNTRY_ID = c.COUNTRY_ID
+
+/*Here are Mysql tables, with their properties:
+
+regions(REGION_ID, REGION_NAME)
+countries(COUNTRY_ID, COUNTRY_NAME, REGION_ID)
+departments(DEPARTMENT_ID, DEPARTMENT_NAME, MANAGER_ID, LOCATION_ID)
+jobs(JOB_ID, JOB_TITLE, MIN_SALARY, MAX_SALARY)
+employees(EMPLOYEE_ID, FIRST_NAME, LAST_NAME, EMAIL, PHONE_NUMBER, HIRE_DATE, JOB_ID, SALARY, COMMISSION_PCT, MANAGER_ID, DEPARTMENT_ID)
+job_history(EMPLOYEE_ID, START_DATE, END_DATE, JOB_ID, DEPARTMENT_ID)
+locations(LOCATION_ID, STREET_ADDRESS, POSTAL_CODE, CITY, STATE_PROVINCE, COUNTRY_ID)
+
+Create a SQL request to display the department name and number of employees in each of the department.*/
+
+
+SELECT departments.DEPARTMENT_NAME, COUNT(employees.EMPLOYEE_ID) AS 'Number of Employees'
+FROM departments
+INNER JOIN employees ON departments.DEPARTMENT_ID = employees.DEPARTMENT_ID
+GROUP BY departments.DEPARTMENT_NAME
+
+/*Here are Mysql tables, with their properties:
+
+regions(REGION_ID, REGION_NAME)
+countries(COUNTRY_ID, COUNTRY_NAME, REGION_ID)
+departments(DEPARTMENT_ID, DEPARTMENT_NAME, MANAGER_ID, LOCATION_ID)
+jobs(JOB_ID, JOB_TITLE, MIN_SALARY, MAX_SALARY)
+employees(EMPLOYEE_ID, FIRST_NAME, LAST_NAME, EMAIL, PHONE_NUMBER, HIRE_DATE, JOB_ID, SALARY, COMMISSION_PCT, MANAGER_ID, DEPARTMENT_ID)
+job_history(EMPLOYEE_ID, START_DATE, END_DATE, JOB_ID, DEPARTMENT_ID)
+locations(LOCATION_ID, STREET_ADDRESS, POSTAL_CODE, CITY, STATE_PROVINCE, COUNTRY_ID)
+
+Create a SQL request to answer What are the department names and how many employees work in each of them?*/
+
+
+SELECT d.DEPARTMENT_NAME, COUNT(e.EMPLOYEE_ID) AS 'Number of Employees'
+FROM departments d
+INNER JOIN employees e ON d.DEPARTMENT_ID = e.DEPARTMENT_ID
+GROUP BY d.DEPARTMENT_NAME
+
+/*Here are Mysql tables, with their properties:
+
+regions(REGION_ID, REGION_NAME)
+countries(COUNTRY_ID, COUNTRY_NAME, REGION_ID)
+departments(DEPARTMENT_ID, DEPARTMENT_NAME, MANAGER_ID, LOCATION_ID)
+jobs(JOB_ID, JOB_TITLE, MIN_SALARY, MAX_SALARY)
+employees(EMPLOYEE_ID, FIRST_NAME, LAST_NAME, EMAIL, PHONE_NUMBER, HIRE_DATE, JOB_ID, SALARY, COMMISSION_PCT, MANAGER_ID, DEPARTMENT_ID)
+job_history(EMPLOYEE_ID, START_DATE, END_DATE, JOB_ID, DEPARTMENT_ID)
+locations(LOCATION_ID, STREET_ADDRESS, POSTAL_CODE, CITY, STATE_PROVINCE, COUNTRY_ID)
+
+Create a SQL request to display the full name (first and last name), and salary of those employees who working in any department located in London.*/
+
+
+SELECT e.FIRST_NAME, e.LAST_NAME, e.SALARY
+FROM employees e
+INNER JOIN departments d ON e.DEPARTMENT_ID = d.DEPARTMENT_ID
+INNER JOIN locations l ON d.LOCATION_ID = l.LOCATION_ID
+INNER JOIN countries c ON l.COUNTRY_ID = c.COUNTRY_ID
+WHERE l.CITY = 'London'
+
+/*Here are Mysql tables, with their properties:
+
+regions(REGION_ID, REGION_NAME)
+countries(COUNTRY_ID, COUNTRY_NAME, REGION_ID)
+departments(DEPARTMENT_ID, DEPARTMENT_NAME, MANAGER_ID, LOCATION_ID)
+jobs(JOB_ID, JOB_TITLE, MIN_SALARY, MAX_SALARY)
+employees(EMPLOYEE_ID, FIRST_NAME, LAST_NAME, EMAIL, PHONE_NUMBER, HIRE_DATE, JOB_ID, SALARY, COMMISSION_PCT, MANAGER_ID, DEPARTMENT_ID)
+job_history(EMPLOYEE_ID, START_DATE, END_DATE, JOB_ID, DEPARTMENT_ID)
+locations(LOCATION_ID, STREET_ADDRESS, POSTAL_CODE, CITY, STATE_PROVINCE, COUNTRY_ID)
+
+Create a SQL request to answer What are full names and salaries of employees working in the city of London?*/
+
+
+SELECT CONCAT(FIRST_NAME, ' ', LAST_NAME) AS Full_Name, SALARY
+FROM employees e
+INNER JOIN departments d ON e.DEPARTMENT_ID = d.DEPARTMENT_ID
+INNER JOIN locations l ON d.LOCATION_ID = l.LOCATION_ID
+WHERE l.CITY = 'London'
+
