@@ -12,7 +12,7 @@ from language_model import OpenAIModel
 
 logging.basicConfig(format='%(message)s\n',
                     level=logging.ERROR,
-                    filename='sqlTest/execuatableTest.log',
+                    filename='sqlTest/sqlGrammerTest.log',
                     filemode='w')
 
 with open('extractedQuestion.json', 'r') as json_file:
