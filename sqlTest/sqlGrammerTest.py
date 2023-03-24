@@ -12,27 +12,13 @@ from language_model import OpenAIModel
 
 logging.basicConfig(format='%(message)s\n',
                     level=logging.ERROR,
-                    filename='execuatableTest.log',
+                    filename='sqlTest/execuatableTest.log',
                     filemode='w')
 
-# 生成 prompts.json
-# questions = defaultdict(list)
-# with open(f'./spider/train_spider.json', 'r') as f:
-#     objects = ijson.items(f, 'item')
-#     for obj in objects:
-#         question = obj['question']
-#         query = obj['query']
-#         db_id = obj['db_id']
-#         questions[db_id].append({'question': question,'query': query})
-
-# with open('prompts.json', 'w') as json_file:
-#     json_file.write(json.dumps(questions, indent=4))
-
-
-with open('prompts.json', 'r') as json_file:
+with open('extractedQuestion.json', 'r') as json_file:
     questions = json.load(json_file)
 
-with open(f'./extractedDB.json', 'r') as f:
+with open(f'extractedDB.json', 'r') as f:
     extractedDB = json.load(f)
 
 prompt_head = "Here are Mysql tables, with their properties:\n\n"
@@ -76,7 +62,7 @@ for db_id, val_list in tqdm(questions.items()):
         prompt_rest = prompt_db + prompt_question
         continuation = gpt3.predict_unconstrained(prompt_rest, max_tokens=320, stop=[';'])
 
-        with open(f'./sql/{db_id}.sql', 'a') as f:
+        with open(f'sql/{db_id}.sql', 'a') as f:
             p = r'/*' + prompt + r'*/'
             f.write(p + '\n' + continuation + '\n\n')
 
