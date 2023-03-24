@@ -14,7 +14,7 @@ import sqlite3
 
 logging.basicConfig(format='%(message)s\n',
                     level=logging.ERROR,
-                    filename='sqlTest/execuatableTest.log',
+                    filename='sqlTest/sqlExectuableTest.log',
                     filemode='w')
 
 # 准备测试的 dbs
