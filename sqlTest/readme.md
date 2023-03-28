@@ -1,0 +1,3 @@
+- sqlAccTest: 测试生成的 sql 和 gt_sql 运行后结果
+- sqlExectuableTest: 测试生成的 sql 能不能跑
+- sqlGrammerTest：请求 gpt 并生成 sql，同时测试是否有语法问题
