@@ -12,10 +12,12 @@ import re
 
 import sqlite3
 
+cur_dir = os.path.dirname(__file__)
+
 logging.basicConfig(format='%(message)s\n',
                     level=logging.ERROR,)
-file_handler1 = logging.FileHandler('sqlTest/sqlAccTest.log')
-file_handler2 = logging.FileHandler('sqlTest/unaccurateSql.log')
+file_handler1 = logging.FileHandler(os.path.join(cur_dir, 'sqlAccTest.log'))
+file_handler2 = logging.FileHandler(os.path.join(cur_dir, 'unaccurateSql.log'))
 
 logger1 = logging.getLogger("accTest")
 logger1.setLevel(level=logging.ERROR)
@@ -39,7 +41,11 @@ def res_print(s):
     print()
 
 def match(res, gt):
-    for i in range(min(len(res), 5)): # 最多判断一下前5行结果
+    '''
+    最多判断一下前5行结果
+    如果每行的结果中, gt 中的 column, res 中如果没有就返回 False
+    '''
+    for i in range(min(len(res), 5)): 
         for attr in gt[i]:
             if attr not in res[i]:
                 return False

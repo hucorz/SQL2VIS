@@ -10,9 +10,11 @@ import sqlglot
 
 from language_model import OpenAIModel
 
+cur_dir = os.path.dirname(__file__)
+
 logging.basicConfig(format='%(message)s\n',
                     level=logging.ERROR,
-                    filename='sqlTest/sqlGrammerTest.log',
+                    filename=os.path.join(cur_dir, 'sqlGrammerTest.log'),
                     filemode='w')
 
 with open('extractedQuestion.json', 'r') as json_file:

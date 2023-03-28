@@ -12,10 +12,12 @@ import re
 
 import sqlite3
 
+cur_dir = os.path.dirname(__file__)
+
 logging.basicConfig(format='%(message)s\n',
                     level=logging.ERROR,)
-file_handler1 = logging.FileHandler('sqlTest/sqlExectuableTest.log')
-file_handler2 = logging.FileHandler('sqlTest/failedSql.log')
+file_handler1 = logging.FileHandler(os.path.join(cur_dir, 'sqlExectuableTest.log'))
+file_handler2 = logging.FileHandler(os.path.join(cur_dir, 'failedSql.log'))
 
 logger1 = logging.getLogger("exectuableTest")
 logger1.setLevel(level=logging.ERROR)
@@ -61,4 +63,4 @@ for db_id in db_list:
             
 
     connection.close()
-    logger1.error(f'{db_id}:{total-err} / {total}')
+    logger1.error(f'{db_id}: {total-err} / {total}')
