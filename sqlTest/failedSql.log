@@ -2,17 +2,12 @@
 
 
 
-
 SELECT Airport_Name, Total_Passengers, %_Change_2007, International_Passengers, Domestic_Passengers, Transit_Passengers, Aircraft_Movements, Freight_Metric_Tonnes
 FROM airport
 WHERE International_Passengers = (SELECT MAX(International_Passengers) FROM airport)
 
 
-
-aircraft:45 / 46
-
 ******* allergy_1 *********
-
 
 
 
@@ -21,7 +16,6 @@ FROM Allergy_Type
 INNER JOIN Has_Allergy 
 ON Allergy_Type.Allergy = Has_Allergy.Allergy 
 GROUP BY AllergyType
-
 
 
 
@@ -39,7 +33,6 @@ LIMIT 1
 
 
 
-
 SELECT AllergyType, COUNT(Allergy) AS NumAllergies
 FROM Allergy_Type
 INNER JOIN Has_Allergy
@@ -47,7 +40,6 @@ ON Allergy_Type.Allergy = Has_Allergy.Allergy
 GROUP BY AllergyType
 ORDER BY NumAllergies ASC
 LIMIT 1
-
 
 
 
@@ -59,7 +51,6 @@ INNER JOIN Has_Allergy
 ON Student.StuID = Has_Allergy.StuID 
 INNER JOIN Allergy_Type 
 ON Has_Allergy.Allergy = Allergy_Type.Allergy
-
 
 
 
@@ -77,7 +68,6 @@ LIMIT 1
 
 
 
-
 SELECT Allergy, COUNT(*) AS Total
 FROM Has_Allergy
 INNER JOIN Allergy_Type
@@ -85,7 +75,6 @@ ON Has_Allergy.Allergy = Allergy_Type.Allergy
 GROUP BY Allergy
 ORDER BY Total DESC
 LIMIT 1
-
 
 
 
@@ -100,13 +89,11 @@ GROUP BY Allergy
 
 
 
-
 SELECT Allergy, COUNT(StuID) AS 'Number of Students'
 FROM Has_Allergy
 INNER JOIN Allergy_Type
 ON Has_Allergy.Allergy = Allergy_Type.Allergy
 GROUP BY Allergy
-
 
 
 
@@ -125,7 +112,6 @@ ORDER BY Allergy
 
 
 
-
 SELECT Allergy, AllergyType 
 FROM Allergy_Type 
 INNER JOIN Has_Allergy ON Allergy_Type.Allergy = Has_Allergy.Allergy 
@@ -134,11 +120,7 @@ WHERE Student.Fname = 'Lisa'
 ORDER BY Allergy
 
 
-
-allergy_1:88 / 98
-
 ******* apartment_rentals *********
-
 
  who have booked an apartment in a building with a building_id of 1
 
@@ -147,7 +129,6 @@ FROM Guests
 INNER JOIN Apartment_Bookings ON Guests.guest_id = Apartment_Bookings.guest_id
 INNER JOIN Apartments ON Apartment_Bookings.apt_id = Apartments.apt_id
 WHERE Apartments.building_id = 1
-
 
 
 
@@ -160,11 +141,7 @@ ORDER BY avg_room_count DESC
 LIMIT 3
 
 
-
-apartment_rentals:78 / 80
-
 ******* assets_maintenance *********
-
 
 
 
@@ -179,12 +156,10 @@ HAVING COUNT(Fault_Log_Parts.part_fault_id) > 2
 
 
 
-
 SELECT e.first_name, e.last_name
 FROM Engineers e
 LEFT JOIN Engineer_Visits ev ON e.engineer_id = ev.engineer_id
 WHERE ev.engineer_visit_id IS NULL
-
 
 
 
@@ -202,7 +177,6 @@ LIMIT 1
 
 
 
-
 SELECT skill_id, skill_description
 FROM Skills
 INNER JOIN Skills_Required_To_Fix ON Skills.skill_id = Skills_Required_To_Fix.skill_id
@@ -211,11 +185,7 @@ ORDER BY COUNT(*) DESC
 LIMIT 1
 
 
-
-assets_maintenance:27 / 31
-
 ******* behavior_monitoring *********
-
 
 
 
@@ -231,7 +201,6 @@ LIMIT 3
 
 
 
-
 SELECT incident_type_code, incident_type_description
 FROM Ref_Incident_Type
 INNER JOIN Behavior_Incident
@@ -241,27 +210,11 @@ ORDER BY COUNT(*) DESC
 LIMIT 1
 
 
-
-behavior_monitoring:38 / 40
-
 ******* body_builder *********
-
-body_builder:24 / 24
-
 ******* book_2 *********
-
-book_2:21 / 21
-
 ******* browser_web *********
-
-browser_web:18 / 18
-
 ******* candidate_poll *********
-
-candidate_poll:40 / 40
-
 ******* cinema *********
-
 
 
 
@@ -269,11 +222,7 @@ SELECT Name, Opening_year, Capacity
 FROM cinema
 
 
-
-cinema:29 / 30
-
 ******* climbing *********
-
 
 
 
@@ -287,7 +236,6 @@ WHERE climber.Country = 'West Germany'
 
 
 
-
 SELECT Name 
 FROM mountain 
 INNER JOIN climber 
@@ -295,11 +243,7 @@ ON mountain.Mountain_ID = climber.Mountain_ID
 WHERE climber.Country = 'West Germany'
 
 
-
-climbing:38 / 40
-
 ******* club_1 *********
-
 
 
 
@@ -313,11 +257,7 @@ ORDER BY COUNT(StuID) DESC
 LIMIT 1
 
 
-
-club_1:69 / 70
-
 ******* coffee_shop *********
-
 
 
 
@@ -327,11 +267,7 @@ INNER JOIN member ON shop.Shop_ID = member.Shop_ID
 WHERE member.Age < 30 AND member.Age > 40
 
 
-
-coffee_shop:17 / 18
-
 ******* college_3 *********
-
 
  ¡°Database¡±
 
@@ -342,15 +278,8 @@ ON Faculty.FacID = Course.Instructor
 WHERE Course.CName = 'Database'
 
 
-
-college_3:73 / 74
-
 ******* company_employee *********
-
-company_employee:16 / 16
-
 ******* company_office *********
-
 
  and have moved into a building with more than 10 stories
 
@@ -364,19 +293,9 @@ WHERE c.Industry IN ('Banking', 'Conglomerate')
 AND b.Stories > 10
 
 
-
-company_office:39 / 40
-
 ******* county_public_safety *********
-
-county_public_safety:40 / 40
-
 ******* cre_Doc_Control_Systems *********
-
-cre_Doc_Control_Systems:33 / 33
-
 ******* cre_Doc_Tracking_DB *********
-
 
 
 
@@ -385,7 +304,6 @@ FROM Roles
 LEFT JOIN Employees
 ON Roles.Role_Code = Employees.Role_Code
 GROUP BY Role_Code
-
 
 
 
@@ -403,14 +321,12 @@ LIMIT 1
 
 
 
-
 SELECT Role_Code 
 FROM Roles 
 INNER JOIN Employees 
 ON Roles.Role_Code = Employees.Role_Code 
 GROUP BY Role_Code 
 HAVING COUNT(Employee_ID) >= 3
-
 
 
 
@@ -428,7 +344,6 @@ LIMIT 1
 
 
 
-
 SELECT DISTINCT Location_Code 
 FROM Ref_Locations 
 INNER JOIN Document_Locations 
@@ -438,12 +353,10 @@ ON Ref_Locations.Location_Code = Document_Locations.Location_Code
 
 
 
-
 SELECT DISTINCT Location_Code 
 FROM Ref_Locations 
 INNER JOIN Document_Locations 
 ON Ref_Locations.Location_Code = Document_Locations.Location_Code
-
 
 
 
@@ -457,11 +370,7 @@ GROUP BY Location_Code
 HAVING COUNT(Document_ID) >= 3
 
 
-
-cre_Doc_Tracking_DB:83 / 90
-
 ******* csu_1 *********
-
 
 
 
@@ -478,14 +387,12 @@ AND Faculty > (SELECT MAX(Faculty)
 
 
 
-
 SELECT MIN(Degrees) AS Least_Degrees, Faculty 
 FROM campuses 
 INNER JOIN degrees ON campuses.Id = degrees.Campus 
 INNER JOIN faculty ON campuses.Id = faculty.Campus 
 WHERE Year = 2001 
 GROUP BY Faculty
-
 
 
 
@@ -497,11 +404,7 @@ WHERE Campus = 'San Jose State University'
 AND Year = 2020
 
 
-
-csu_1:67 / 70
-
 ******* customers_and_invoices *********
-
 
 
 
@@ -516,22 +419,14 @@ LIMIT 1
 
 
 
-
 SELECT customer_id, customer_first_name, customer_last_name, COUNT(account_id) AS 'Number of Accounts'
 FROM Customers
 LEFT JOIN Accounts ON Customers.customer_id = Accounts.customer_id
 GROUP BY customer_id
 
 
-
-customers_and_invoices:80 / 82
-
 ******* customers_campaigns_ecommerce *********
-
-customers_campaigns_ecommerce:15 / 15
-
 ******* customers_card_transactions *********
-
 
 
 
@@ -543,30 +438,14 @@ ORDER BY COUNT(a.account_id) ASC
 LIMIT 1
 
 
-
-customers_card_transactions:79 / 80
-
 ******* customer_deliveries *********
-
-customer_deliveries:16 / 16
-
 ******* debate *********
-
-debate:15 / 15
-
 ******* decoration_competition *********
-
-decoration_competition:15 / 15
-
 ******* department_management *********
-
-department_management:16 / 16
-
 ******* department_store *********
 
 
 
-
 SELECT staff_id, staff_gender 
 FROM Staff 
 INNER JOIN Staff_Department_Assignments 
@@ -577,13 +456,11 @@ WHERE job_title_code = 'Department Manager'
 
 
 
-
 SELECT staff_id, staff_gender 
 FROM Staff 
 INNER JOIN Staff_Department_Assignments 
 ON Staff.staff_id = Staff_Department_Assignments.staff_id 
 WHERE job_title_code = 'Department Manager'
-
 
 
 
@@ -600,12 +477,10 @@ ORDER BY customer_id
 
 
 
-
 SELECT product_id 
 FROM Products 
 WHERE supplier_id = 2 
 AND product_price > (SELECT AVG(product_price) FROM Products)
-
 
 
 
@@ -623,7 +498,6 @@ LIMIT 2
 
 
 
-
 SELECT dept_store_chain_id, COUNT(dept_store_id) AS store_count
 FROM Department_Store_Chain
 INNER JOIN Department_Stores
@@ -631,7 +505,6 @@ ON Department_Store_Chain.dept_store_chain_id = Department_Stores.dept_store_cha
 GROUP BY dept_store_chain_id
 ORDER BY store_count DESC
 LIMIT 2
-
 
 
 
@@ -648,14 +521,12 @@ LIMIT 1
 
 
 
-
 SELECT staff_id, staff_name 
 FROM Staff 
 INNER JOIN Staff_Department_Assignments 
 ON Staff.staff_id = Staff_Department_Assignments.staff_id 
 ORDER BY date_assigned_from ASC 
 LIMIT 1
-
 
 
 
@@ -673,7 +544,6 @@ WHERE address_details LIKE '%TN%'
 
 
 
-
 SELECT staff_name, staff_gender 
 FROM Staff 
 INNER JOIN Staff_Department_Assignments 
@@ -684,13 +554,11 @@ WHERE YEAR(date_assigned_from) = 2016
 
 
 
-
 SELECT staff_name, staff_gender 
 FROM Staff 
 INNER JOIN Staff_Department_Assignments 
 ON Staff.staff_id = Staff_Department_Assignments.staff_id 
 WHERE YEAR(date_assigned_from) = 2016
-
 
 
 
@@ -705,14 +573,12 @@ HAVING COUNT(order_id) > 3 OR SUM(total_amount_purchased) > 80000
 
 
 
-
 SELECT DISTINCT product_name 
 FROM Products 
 WHERE product_id IN (SELECT product_id 
                      FROM Customer_Orders 
                      GROUP BY product_id 
                      HAVING COUNT(DISTINCT customer_id) > 1)
-
 
 
 
@@ -732,7 +598,6 @@ GROUP BY staff_name, staff_gender
 
 
 
-
 SELECT customer_id, customer_name 
 FROM Customers 
 INNER JOIN Customer_Addresses 
@@ -741,7 +606,6 @@ INNER JOIN Addresses
 ON Customer_Addresses.address_id = Addresses.address_id 
 WHERE Addresses.address_details LIKE '%WY%' 
 AND Customers.payment_method_code != 'credit_card'
-
 
 
 
@@ -757,15 +621,8 @@ WHERE address_details LIKE '%WY%'
 AND payment_method_code != 'credit_card'
 
 
-
-department_store:72 / 88
-
 ******* device *********
-
-device:5 / 5
-
 ******* document_management *********
-
 
 
 
@@ -774,7 +631,6 @@ FROM Documents
 LEFT JOIN Document_Sections_Images
 ON Documents.document_code = Document_Sections_Images.document_code
 WHERE Document_Sections_Images.image_id IS NULL
-
 
 
 
@@ -789,14 +645,10 @@ ORDER BY access_count DESC
 LIMIT 1
 
 
-
-document_management:42 / 44
-
 ******* election *********
 
 
 
-
 SELECT Delegate, Party 
 FROM election 
 JOIN party 
@@ -806,12 +658,10 @@ ON election.Party = party.Party
 
 
 
-
 SELECT Delegate, Party 
 FROM election 
 JOIN party 
 ON election.Party = party.Party
-
 
 
 
@@ -827,13 +677,11 @@ WHERE District = 1
 
 
 
-
 SELECT Party, Comptroller 
 FROM party 
 INNER JOIN election 
 ON party.Party_ID = election.Party 
 WHERE election.District IN (1,2)
-
 
 
 
@@ -846,23 +694,10 @@ GROUP BY Party
 HAVING COUNT(DISTINCT Delegate) = 2
 
 
-
-election:63 / 68
-
 ******* election_representative *********
-
-election_representative:20 / 20
-
 ******* entertainment_awards *********
-
-entertainment_awards:22 / 22
-
 ******* entrepreneur *********
-
-entrepreneur:40 / 40
-
 ******* e_learning *********
-
 
 
 
@@ -878,14 +713,12 @@ LIMIT 1
 
 
 
-
 SELECT personal_name, family_name, author_id
 FROM Course_Authors_and_Tutors
 INNER JOIN Courses ON Course_Authors_and_Tutors.author_id = Courses.author_id
 GROUP BY author_id
 ORDER BY COUNT(*) DESC
 LIMIT 1
-
 
 
 
@@ -903,26 +736,15 @@ LIMIT 1
 
 
 
-
 SELECT login_name
 FROM Course_Authors_and_Tutors
 INNER JOIN Students
 ON Course_Authors_and_Tutors.login_name = Students.login_name
 
 
-
-e_learning:78 / 82
-
 ******* farm *********
-
-farm:40 / 40
-
 ******* film_rank *********
-
-film_rank:48 / 48
-
 ******* flight_1 *********
-
 
 ?
 
@@ -931,7 +753,6 @@ FROM flight f
 INNER JOIN aircraft a 
 ON f.aid = a.aid 
 WHERE f.flno = 99
-
 
 
 
@@ -946,19 +767,9 @@ ORDER BY COUNT(c.eid) DESC
 LIMIT 1
 
 
-
-flight_1:94 / 96
-
 ******* game_injury *********
-
-game_injury:19 / 19
-
 ******* gas_company *********
-
-gas_company:46 / 46
-
 ******* gymnast *********
-
 
 
 
@@ -971,11 +782,7 @@ WHERE People_ID IN (SELECT People_ID
 GROUP BY Hometown
 
 
-
-gymnast:39 / 40
-
 ******* hospital_1 *********
-
 
 
 
@@ -985,7 +792,6 @@ INNER JOIN Patient
 ON Physician.EmployeeID = Patient.PCP 
 GROUP BY Name 
 HAVING COUNT(Patient.SSN) > 1
-
 
 
 
@@ -1003,7 +809,6 @@ WHERE Medication.Name = 'Thesisin'
 
 
 
-
 SELECT Name 
 FROM Physician 
 INNER JOIN Prescribes 
@@ -1016,6 +821,17 @@ WHERE Medication.Name = 'Thesisin'
 
 
 
+SELECT Name, Position 
+FROM Physician 
+INNER JOIN Prescribes 
+ON Physician.EmployeeID = Prescribes.Physician 
+INNER JOIN Medication 
+ON Prescribes.Medication = Medication.Code 
+WHERE Medication.Brand = 'X'
+
+
+
+
 
 SELECT Name, Position 
 FROM Physician 
@@ -1029,20 +845,6 @@ WHERE Medication.Brand = 'X'
 
 
 
-
-SELECT Name, Position 
-FROM Physician 
-INNER JOIN Prescribes 
-ON Physician.EmployeeID = Prescribes.Physician 
-INNER JOIN Medication 
-ON Prescribes.Medication = Medication.Code 
-WHERE Medication.Brand = 'X'
-
-
-
-
-
-
 SELECT TOP 3 Name, Cost
 FROM Procedures
 ORDER BY Cost DESC
@@ -1051,11 +853,9 @@ ORDER BY Cost DESC
 
 
 
-
 SELECT TOP 3 Name, Cost
 FROM Procedures
 ORDER BY Cost DESC
-
 
 
 
@@ -1073,7 +873,6 @@ WHERE Department.Name IN ('Surgery', 'Psychiatry')
 
 
 
-
 SELECT Name 
 FROM Physician 
 INNER JOIN Affiliated_With 
@@ -1082,19 +881,14 @@ INNER JOIN Department
 ON Affiliated_With.Department = Department.DepartmentID 
 WHERE Department.Name IN ('Surgery', 'Psychiatry')
 
-
-
-hospital_1:91 / 100
 
 ******* hr_1 *********
-
 
 
 
 SELECT CONCAT(FIRST_NAME, ' ', LAST_NAME) AS Full_Name, SALARY 
 FROM employees 
 WHERE COMMISSION_PCT IS NULL
-
 
 
 
@@ -1108,11 +902,9 @@ WHERE FIRST_NAME LIKE '%m'
 
 
 
-
 SELECT CONCAT(FIRST_NAME, ' ', LAST_NAME) AS 'Full Name'
 FROM employees
 WHERE DEPARTMENT_ID IN (70, 90)
-
 
 
 
@@ -1128,13 +920,11 @@ HAVING COUNT(*) >= 4
 
 
 
-
 SELECT DEPARTMENT_ID
 FROM departments d
 INNER JOIN employees e ON d.MANAGER_ID = e.MANAGER_ID
 GROUP BY DEPARTMENT_ID
 HAVING COUNT(*) > 3
-
 
 
 
@@ -1149,12 +939,10 @@ HAVING COUNT(EMPLOYEE_ID) > 1 AND SUM(DATEDIFF(END_DATE, START_DATE)) > 300
 
 
 
-
 SELECT CONCAT(FIRST_NAME, ' ', LAST_NAME) AS Full_Name 
 FROM employees 
 WHERE SALARY > (SELECT SALARY FROM employees WHERE EMPLOYEE_ID = 163) 
 ORDER BY SALARY DESC
-
 
 
 
@@ -1169,13 +957,11 @@ AND salary < 2500
 
 
 
-
 SELECT e.EMPLOYEE_ID, CONCAT(e.FIRST_NAME, ' ', e.LAST_NAME) AS 'Full Name'
 FROM employees e
 INNER JOIN departments d ON e.DEPARTMENT_ID = d.DEPARTMENT_ID
 INNER JOIN employees m ON d.MANAGER_ID = m.EMPLOYEE_ID
 WHERE m.FIRST_NAME LIKE '%T%'
-
 
 
 
@@ -1193,7 +979,6 @@ GROUP BY e.EMPLOYEE_ID
 
 
 
-
 SELECT e.EMPLOYEE_ID, CONCAT(e.FIRST_NAME, ' ', e.LAST_NAME) AS Full_Name, e.SALARY
 FROM employees e
 INNER JOIN departments d ON e.DEPARTMENT_ID = d.DEPARTMENT_ID
@@ -1206,12 +991,10 @@ GROUP BY e.EMPLOYEE_ID
 
 
 
-
 SELECT e.EMPLOYEE_ID, CONCAT(e.FIRST_NAME, ' ', e.LAST_NAME) AS Name, j.JOB_TITLE
 FROM employees e
 INNER JOIN jobs j ON e.JOB_ID = j.JOB_ID
 WHERE e.SALARY > (SELECT MAX(SALARY) FROM employees WHERE JOB_ID = (SELECT JOB_ID FROM jobs WHERE JOB_TITLE = 'PU_MAN'))
-
 
 
 
@@ -1228,13 +1011,11 @@ ORDER BY e.SALARY DESC
 
 
 
-
 SELECT d.DEPARTMENT_ID, CONCAT(e.FIRST_NAME, ' ', e.LAST_NAME) AS 'Full Name', e.SALARY
 FROM departments d
 INNER JOIN employees e ON d.DEPARTMENT_ID = e.DEPARTMENT_ID
 WHERE e.SALARY = (SELECT MAX(SALARY) FROM employees WHERE DEPARTMENT_ID = d.DEPARTMENT_ID)
 ORDER BY d.DEPARTMENT_ID
-
 
 
 
@@ -1249,12 +1030,10 @@ WHERE FIRST_NAME LIKE '%z%'
 
 
 
-
 SELECT CONCAT(FIRST_NAME, ' ', LAST_NAME) AS 'Full Name', CITY
 FROM employees
 JOIN locations USING (LOCATION_ID)
 WHERE FIRST_NAME LIKE '%Z%'
-
 
 
 
@@ -1270,13 +1049,11 @@ INNER JOIN countries c ON l.COUNTRY_ID = c.COUNTRY_ID
 
 
 
-
 SELECT e.EMPLOYEE_ID, CONCAT(e.FIRST_NAME, ' ', e.LAST_NAME) AS Full_Name, c.COUNTRY_NAME
 FROM employees e
 INNER JOIN departments d ON e.DEPARTMENT_ID = d.DEPARTMENT_ID
 INNER JOIN locations l ON d.LOCATION_ID = l.LOCATION_ID
 INNER JOIN countries c ON l.COUNTRY_ID = c.COUNTRY_ID
-
 
 
 
@@ -1289,11 +1066,7 @@ INNER JOIN locations l ON d.LOCATION_ID = l.LOCATION_ID
 WHERE l.CITY = 'London'
 
 
-
-hr_1:105 / 124
-
 ******* insurance_and_eClaims *********
-
 
 
 
@@ -1303,10 +1076,8 @@ SELECT SUM(Amount_Paid) AS Total_Amount_Paid, AVG(Amount_Paid) AS Average_Amount
 
 
 
-
 SELECT SUM(Amount_Paid) AS Total_Amount_Paid, AVG(Amount_Paid) AS Average_Amount_Paid
 FROM Claim_Headers
-
 
 
 
@@ -1320,11 +1091,7 @@ WHERE ch.Amount_Paid = (SELECT MIN(Amount_Paid) FROM Claim_Headers)
 GROUP BY c.Customer_Details
 
 
-
-insurance_and_eClaims:37 / 40
-
 ******* insurance_fnol *********
-
 
 
 
@@ -1340,13 +1107,11 @@ WHERE Available_Policies.policy_type_code = 'Life Insurance'
 
 
 
-
 SELECT c.Customer_Phone 
 FROM Customers c 
 INNER JOIN Customers_Policies cp ON c.Customer_ID = cp.Customer_ID 
 INNER JOIN Available_Policies ap ON cp.Policy_ID = ap.Policy_ID 
 WHERE ap.policy_type_code = 'Life Insurance'
-
 
 
 
@@ -1359,11 +1124,7 @@ INNER JOIN Available_Policies ON Customers_Policies.Policy_ID = Available_Polici
 WHERE Customers.Customer_name LIKE '%Diana%'
 
 
-
-insurance_fnol:39 / 42
-
 ******* insurance_policies *********
-
 
 
 
@@ -1372,7 +1133,6 @@ FROM Claims c
 INNER JOIN Settlements s ON c.Claim_ID = s.Claim_ID
 WHERE c.Amount_Claimed <= (SELECT AVG(Amount_Claimed) FROM Claims)
 ORDER BY c.Start_Date
-
 
 
 
@@ -1385,19 +1145,9 @@ ON Customer_Policies.Policy_ID = Claims.Policy_ID
 WHERE Amount_Claimed <= (SELECT AVG(Amount_Claimed) FROM Claims)
 
 
-
-insurance_policies:46 / 48
-
 ******* journal_committee *********
-
-journal_committee:18 / 18
-
 ******* loan_1 *********
-
-loan_1:80 / 80
-
 ******* local_govt_and_lot *********
-
 
 
 
@@ -1413,7 +1163,6 @@ LIMIT 1
 
 
 
-
 SELECT DISTINCT thing_id, Type_of_Thing_Code 
 FROM Things 
 INNER JOIN Timed_Status_of_Things 
@@ -1422,11 +1171,7 @@ WHERE Timed_Status_of_Things.Status_of_Thing_Code = 'Close'
 OR Timed_Status_of_Things.Date_and_Time < '2017-06-19 02:59:21'
 
 
-
-local_govt_and_lot:15 / 17
-
 ******* local_govt_in_alabama *********
-
 
 
 
@@ -1439,11 +1184,7 @@ ORDER BY Num_Participants DESC
 LIMIT 1
 
 
-
-local_govt_in_alabama:14 / 15
-
 ******* local_govt_mdm *********
-
 
 
 
@@ -1451,7 +1192,6 @@ SELECT cmi_cross_ref_id, source_system_code
 FROM CMI_Cross_References
 INNER JOIN Council_Tax
 ON CMI_Cross_References.cmi_cross_ref_id = Council_Tax.cmi_cross_ref_id
-
 
 
 
@@ -1467,7 +1207,6 @@ GROUP BY cmi_cross_ref_id, master_customer_id
 
 
 
-
 SELECT cmi_cross_ref_id, source_system_code 
 FROM CMI_Cross_References 
 INNER JOIN Benefits_Overpayments 
@@ -1475,15 +1214,8 @@ ON CMI_Cross_References.cmi_cross_ref_id = Benefits_Overpayments.cmi_cross_ref_i
 ORDER BY Benefits_Overpayments.council_tax_id
 
 
-
-local_govt_mdm:11 / 14
-
 ******* machine_repair *********
-
-machine_repair:30 / 30
-
 ******* manufacturer *********
-
 
 
 
@@ -1492,18 +1224,13 @@ FROM furniture
 WHERE Price_in_Dollar < (SELECT MAX(Price_in_Dollar) FROM furniture_manufacte)
 
 
-
-manufacturer:15 / 16
-
 ******* match_season *********
-
 
 
 
 SELECT Player, Season, Country
 FROM match_season
 WHERE Player_ID = Player.Player_ID
-
 
 
 
@@ -1518,19 +1245,9 @@ ON match_season.Country = country.Country_id
 WHERE country.Country_name = 'Indonesia'
 
 
-
-match_season:56 / 58
-
 ******* medicine_enzyme_interaction *********
-
-medicine_enzyme_interaction:44 / 44
-
 ******* mountain_photos *********
-
-mountain_photos:17 / 17
-
 ******* movie_1 *********
-
 
 
 
@@ -1538,7 +1255,6 @@ SELECT r.name, AVG(r.stars) AS 'Average Rating'
 FROM Rating r
 JOIN Reviewer rev ON r.rID = rev.rID
 GROUP BY r.name
-
 
 
 
@@ -1557,13 +1273,11 @@ AND stars > (SELECT AVG(stars)
 
 
 
-
 SELECT r.name, m.title, r.stars 
 FROM Movie m 
 INNER JOIN Rating r ON m.mID = r.mID 
 INNER JOIN Reviewer rev ON r.rID = rev.rID 
 WHERE m.director = rev.name
-
 
 
 
@@ -1580,7 +1294,6 @@ ORDER BY r.rID
 
 
 
-
 SELECT m.title, r.stars 
 FROM Movie m 
 INNER JOIN Rating r ON m.mID = r.mID 
@@ -1589,15 +1302,8 @@ ORDER BY r.stars ASC
 LIMIT 1
 
 
-
-movie_1:93 / 98
-
 ******* musical *********
-
-musical:40 / 40
-
 ******* music_1 *********
-
 
 
 
@@ -1609,7 +1315,6 @@ WHERE song.rating > 9
 
 
 
-
 SELECT artist_name, country 
 FROM artist 
 INNER JOIN song ON artist.artist_name = song.artist_name 
@@ -1619,7 +1324,6 @@ WHERE song.rating > 9
 
 
 
-
 SELECT artist_name 
 FROM song 
 INNER JOIN files ON song.f_id = files.f_id 
@@ -1630,13 +1334,11 @@ LIMIT 1
 
 
 
-
 SELECT artist_name 
 FROM song 
 INNER JOIN files ON song.f_id = files.f_id 
 ORDER BY files.duration ASC 
 LIMIT 1
-
 
 
 
@@ -1647,7 +1349,6 @@ FROM artist
 INNER JOIN song ON artist.artist_name = song.artist_name 
 WHERE song.rating IN (SELECT MAX(rating) FROM song ORDER BY rating DESC LIMIT 3) 
 ORDER BY rating DESC
-
 
 
 
@@ -1665,7 +1366,6 @@ LIMIT 3
 
 
 
-
 SELECT COUNT(*) 
 FROM song 
 WHERE duration BETWEEN 240 AND 260
@@ -1674,11 +1374,9 @@ WHERE duration BETWEEN 240 AND 260
 
 
 
-
 SELECT AVG(COUNT(song_name)) 
 FROM song 
 WHERE artist_name IN (SELECT artist_name FROM artist WHERE gender = 'female')
-
 
 
 
@@ -1695,7 +1393,6 @@ AND song.languages = 'English'
 
 
 
-
 SELECT artist_name 
 FROM artist 
 INNER JOIN song ON artist.artist_name = song.artist_name 
@@ -1705,7 +1402,6 @@ WHERE artist.country = 'UK' AND song.languages = 'English'
 
 
 
-
 SELECT f_id 
 FROM files 
 WHERE formats = 'mp4' AND resolution < 1000
@@ -1714,11 +1410,9 @@ WHERE formats = 'mp4' AND resolution < 1000
 
 
 
-
 SELECT f_id 
 FROM files 
 WHERE formats = 'mp4' AND resolution < 1000
-
 
 
 
@@ -1727,7 +1421,6 @@ WHERE formats = 'mp4' AND resolution < 1000
 SELECT country FROM artist 
 INNER JOIN song ON artist.artist_name = song.artist_name 
 WHERE gender = 'female' AND languages = 'Bangla'
-
 
 
 
@@ -1743,7 +1436,6 @@ LIMIT 1
 
 
 
-
 SELECT artist_name, gender 
 FROM artist 
 INNER JOIN song ON artist.artist_name = song.artist_name 
@@ -1753,11 +1445,9 @@ WHERE resolution = (SELECT MIN(resolution) FROM song)
 
 
 
-
 SELECT artist_name, country FROM artist 
 INNER JOIN song ON artist.artist_name = song.artist_name 
 WHERE song_name LIKE '%love%'
-
 
 
 
@@ -1773,7 +1463,6 @@ WHERE song_name LIKE '%love%'
 
 
 
-
 SELECT artist_name, gender 
 FROM artist 
 INNER JOIN song 
@@ -1784,13 +1473,11 @@ WHERE MONTH(releasedate) = 3
 
 
 
-
 SELECT artist_name, gender 
 FROM artist 
 INNER JOIN song 
 ON artist.artist_name = song.artist_name 
 WHERE MONTH(releasedate) = 3
-
 
 
 
@@ -1799,7 +1486,6 @@ WHERE MONTH(releasedate) = 3
 SELECT f_id 
 FROM files 
 WHERE formats = 'mp4' OR resolution > 720
-
 
 
 
@@ -1815,11 +1501,9 @@ WHERE formats LIKE '%mp4%' OR resolution > 720
 
 
 
-
 SELECT song_name 
 FROM song 
 WHERE duration = 240 OR languages = 'English'
-
 
 
 
@@ -1829,7 +1513,6 @@ SELECT song_name
 FROM song 
 WHERE duration BETWEEN 3.5 AND 4.5 
 OR languages = 'English'
-
 
 
 
@@ -1846,12 +1529,10 @@ AND song.languages = 'English'
 
 
 
-
 SELECT artist_name 
 FROM artist 
 INNER JOIN song ON artist.artist_name = song.artist_name 
 WHERE country = 'UK' AND languages = 'English'
-
 
 
 
@@ -1865,11 +1546,9 @@ WHERE duration = 3
 
 
 
-
 SELECT MAX(resolution), MIN(resolution)
 FROM song
 WHERE duration BETWEEN 180 AND 210
-
 
 
 
@@ -1884,12 +1563,10 @@ ORDER BY languages
 
 
 
-
 SELECT languages, MAX(duration) AS max_duration, MAX(resolution) AS max_resolution
 FROM song
 GROUP BY languages
 ORDER BY languages ASC
-
 
 
 
@@ -1905,7 +1582,6 @@ ORDER BY g_name
 
 
 
-
 SELECT g_name, song_name, duration, rating
 FROM genre
 JOIN song ON genre.g_name = song.genre_is
@@ -1915,7 +1591,6 @@ ORDER BY g_name ASC, duration ASC, rating ASC
 
 
 
-
 SELECT artist_name, country FROM artist 
 INNER JOIN song ON artist.artist_name = song.artist_name 
 WHERE resolution > 900
@@ -1924,11 +1599,9 @@ WHERE resolution > 900
 
 
 
-
 SELECT artist_name, country FROM artist 
 INNER JOIN song ON artist.artist_name = song.artist_name 
 WHERE resolution > 900
-
 
 
 
@@ -1939,7 +1612,6 @@ INNER JOIN song ON artist.artist_name = song.artist_name
 GROUP BY country 
 ORDER BY COUNT(*) ASC 
 LIMIT 1
-
 
 
 
@@ -1956,7 +1628,6 @@ LIMIT 1
 
 
 
-
 SELECT artist_name 
 FROM artist 
 INNER JOIN song ON artist.artist_name = song.artist_name 
@@ -1967,19 +1638,14 @@ AND song.rating <= 8
 
 
 
-
 SELECT artist_name 
 FROM artist 
 INNER JOIN song ON artist.artist_name = song.artist_name 
 WHERE song.languages = 'English' 
 AND song.rating <= 8
 
-
-
-music_1:63 / 100
 
 ******* network_2 *********
-
 
 
 
@@ -1989,7 +1655,6 @@ INNER JOIN PersonFriend
 ON Person.name = PersonFriend.name 
 GROUP BY name 
 HAVING COUNT(friend) = 1
-
 
 
 
@@ -2006,7 +1671,6 @@ ORDER BY pf.age DESC
 
 
 
-
 SELECT p.name
 FROM Person p
 INNER JOIN PersonFriend pf ON p.name = pf.name
@@ -2015,11 +1679,7 @@ ORDER BY AVG(p2.age) DESC
 LIMIT 1
 
 
-
-network_2:83 / 86
-
 ******* news_report *********
-
 
  by journalist name
 
@@ -2030,11 +1690,7 @@ INNER JOIN event e ON nr.Event_ID = e.Event_ID
 ORDER BY j.Name ASC
 
 
-
-news_report:17 / 18
-
 ******* party_host *********
-
 
 
 
@@ -2046,11 +1702,7 @@ ORDER BY Host_Count DESC
 LIMIT 1
 
 
-
-party_host:29 / 30
-
 ******* party_people *********
-
 
 
 
@@ -2060,31 +1712,12 @@ WHERE Party_name != 'Progress Party'
 AND In_office = 1
 
 
-
-party_people:43 / 44
-
 ******* performance_attendance *********
-
-performance_attendance:15 / 15
-
 ******* perpetrator *********
-
-perpetrator:21 / 21
-
 ******* phone_1 *********
-
-phone_1:29 / 29
-
 ******* phone_market *********
-
-phone_market:15 / 15
-
 ******* pilot_record *********
-
-pilot_record:15 / 15
-
 ******* products_for_hire *********
-
 
 
 
@@ -2096,11 +1729,7 @@ ORDER BY COUNT(p.payment_id) DESC
 LIMIT 1
 
 
-
-products_for_hire:17 / 18
-
 ******* product_catalog *********
-
 
 
 
@@ -2118,7 +1747,6 @@ WHERE Catalog_Contents_Additional_Attributes.attribute_id = most_entries.attribu
 
 
 
-
 SELECT cs.catalog_level_name 
 FROM Catalog_Structure cs 
 INNER JOIN Catalog_Contents cc 
@@ -2131,7 +1759,6 @@ LIMIT 1
 
 
 
-
 SELECT cs.catalog_level_name 
 FROM Catalog_Structure cs 
 INNER JOIN Catalog_Contents cc 
@@ -2139,7 +1766,6 @@ ON cs.catalog_level_number = cc.catalog_level_number
 AND cs.catalog_id = cc.catalog_id 
 WHERE cc.price_in_dollars = (SELECT MIN(price_in_dollars) FROM Catalog_Contents) 
 LIMIT 1
-
 
 
 
@@ -2152,11 +1778,7 @@ ON Attribute_Definitions.attribute_id = Catalog_Contents_Additional_Attributes.a
 WHERE attribute_value = 0
 
 
-
-product_catalog:38 / 42
-
 ******* program_share *********
-
 
 
 
@@ -2166,23 +1788,10 @@ INNER JOIN broadcast b ON c.Channel_ID = b.Channel_ID
 GROUP BY c.Owner
 
 
-
-program_share:39 / 40
-
 ******* protein_institute *********
-
-protein_institute:20 / 20
-
 ******* race_track *********
-
-race_track:42 / 42
-
 ******* restaurant_1 *********
-
-restaurant_1:22 / 22
-
 ******* riding_club *********
-
 
 
 
@@ -2198,12 +1807,10 @@ WHERE Starting_year > 2011
 
 
 
-
 SELECT c.Club_ID, c.Club_name, COUNT(pc.Coach_ID) AS 'Number of Coaches'
 FROM club c
 INNER JOIN player_coach pc ON c.Club_ID = pc.Club_ID
 GROUP BY c.Club_ID, c.Club_name
-
 
 
 
@@ -2218,11 +1825,7 @@ ORDER BY COUNT(Gold) DESC
 LIMIT 1
 
 
-
-riding_club:14 / 17
-
 ******* school_finance *********
-
 
 000
 
@@ -2231,7 +1834,6 @@ FROM School
 INNER JOIN endowment 
 ON School.School_id = endowment.School_id 
 WHERE endowment.amount <= 10000
-
 
 
 
@@ -2247,7 +1849,6 @@ WHERE budget.total_budget > 100 OR endowment.amount > 10
 
 
 
-
 SELECT School_name, IHSAA_Football_Class, Mascot 
 FROM School 
 INNER JOIN budget ON School.School_id = budget.School_id 
@@ -2255,11 +1856,7 @@ WHERE budget.Budgeted > 6000 OR School.Year < 2003
 ORDER BY budget.total_budget_percent_invested DESC, budget.total_budget_percent_budgeted DESC
 
 
-
-school_finance:23 / 26
-
 ******* school_player *********
-
 
 
 
@@ -2270,15 +1867,8 @@ ON sd.School_ID = sp.School_ID
 WHERE sp.Division != 1
 
 
-
-school_player:39 / 40
-
 ******* ship_mission *********
-
-ship_mission:30 / 30
-
 ******* soccer_2 *********
-
 
 
 
@@ -2290,9 +1880,7 @@ WHERE decision = 'Train'
 
 
 
-
 SELECT AVG(hours_spent_training) AS Average, MAX(hours_spent_training) AS Maximum, MIN(hours_spent_training) AS Minimum FROM Tryout
-
 
 
 
@@ -2309,7 +1897,6 @@ ORDER BY enr DESC
 
 
 
-
 SELECT cName 
 FROM College 
 INNER JOIN Tryout 
@@ -2320,12 +1907,10 @@ ORDER BY cName ASC
 
 
 
-
 SELECT AVG(hoursPracticed) 
 FROM Tryout 
 JOIN Player ON Tryout.pID = Player.pID 
 WHERE decision = 'Rejected'
-
 
 
 
@@ -2343,7 +1928,6 @@ WHERE Player.pName LIKE 'D%'
 
 
 
-
 SELECT cName 
 FROM College 
 INNER JOIN Tryout 
@@ -2355,13 +1939,11 @@ AND Tryout.decision = 'succeeded'
 
 
 
-
 SELECT cName 
 FROM College c 
 INNER JOIN Tryout t 
 ON c.cName = t.cName 
 WHERE t.pPos = 'goalie' AND t.decision = 'success'
-
 
 
 
@@ -2378,7 +1960,6 @@ GROUP BY cName, state, enr
 
 
 
-
 SELECT cName 
 FROM College 
 INNER JOIN Tryout 
@@ -2390,13 +1971,11 @@ GROUP BY cName
 
 
 
-
 SELECT cName 
 FROM College c 
 INNER JOIN Tryout t 
 ON c.cName = t.cName 
 WHERE t.pPos IN ('goal', 'mid-field')
-
 
 
 
@@ -2415,7 +1994,6 @@ AND c.cName NOT IN (SELECT cName
 
 
 
-
 SELECT cName 
 FROM College 
 INNER JOIN Tryout 
@@ -2425,23 +2003,10 @@ AND Tryout.pID NOT IN (SELECT pID FROM Tryout WHERE pPos = 'goalie')
 GROUP BY cName
 
 
-
-soccer_2:93 / 106
-
 ******* solvency_ii *********
-
-solvency_ii:15 / 15
-
 ******* sports_competition *********
-
-sports_competition:52 / 52
-
 ******* station_weather *********
-
-station_weather:16 / 16
-
 ******* store_product *********
-
 
  in the store
 
@@ -2451,7 +2016,6 @@ INNER JOIN store_product
 ON product.product_id = store_product.product_id 
 GROUP BY max_page_size 
 HAVING COUNT(*) > 3
-
 
 
 
@@ -2471,13 +2035,11 @@ LIMIT 3
 
 
 
-
 SELECT Headquartered_City, COUNT(Store_ID) AS Number_of_Stores
 FROM district
 INNER JOIN store_district ON district.District_ID = store_district.District_ID
 INNER JOIN store ON store_district.Store_ID = store.Store_ID
 GROUP BY Headquartered_City
-
 
 
 
@@ -2492,22 +2054,14 @@ ORDER BY Store_Count DESC
 LIMIT 1
 
 
-
-store_product:40 / 44
-
 ******* storm_record *********
-
-storm_record:44 / 44
-
 ******* student_assessment *********
-
 
 
 
 SELECT candidate_id 
 FROM Candidates 
 WHERE email_address = 'stanley.monahan@example.org'
-
 
 
 
@@ -2524,7 +2078,6 @@ LIMIT 1
 
 
 
-
 SELECT candidate_id 
 FROM Candidates 
 INNER JOIN Candidate_Assessments 
@@ -2535,13 +2088,11 @@ WHERE assessment_outcome_code = 'Pass'
 
 
 
-
 SELECT candidate_id 
 FROM Candidates 
 INNER JOIN Candidate_Assessments 
 ON Candidates.candidate_id = Candidate_Assessments.candidate_id 
 WHERE assessment_outcome_code = 'Pass'
-
 
 
 
@@ -2554,14 +2105,10 @@ INNER JOIN Student_Course_Attendance sca ON c.course_id = sca.course_id
 WHERE scr.student_id = 121 OR sca.student_id = 121
 
 
-
-student_assessment:48 / 53
-
 ******* theme_gallery *********
 
 
 
-
 SELECT COUNT(*) 
 FROM exhibition 
 WHERE Attendance > 100 OR Ticket_Price < 10
@@ -2570,17 +2117,12 @@ WHERE Attendance > 100 OR Ticket_Price < 10
 
 
 
-
 SELECT COUNT(*) 
 FROM exhibition 
 WHERE Attendance > 100 OR Ticket_Price < 10
 
-
-
-theme_gallery:38 / 40
 
 ******* tracking_grants_for_research *********
-
 
  projects with tasks
 
@@ -2588,7 +2130,6 @@ SELECT o.organisation_id, o.organisation_details
 FROM Organisations o 
 INNER JOIN Projects p ON o.organisation_id = p.organisation_id 
 INNER JOIN Tasks t ON p.project_id = t.project_id
-
 
 
 
@@ -2601,7 +2142,6 @@ INNER JOIN Organisations ON Grants.organisation_id = Organisations.organisation_
 INNER JOIN Organisation_Types ON Organisations.organisation_type = Organisation_Types.organisation_type 
 WHERE Grants.grant_amount > 5000 
 AND Organisation_Types.organisation_type_description = 'University'
-
 
 
 
@@ -2621,7 +2161,6 @@ WHERE Grants.grant_amount > 5000
 
 
 
-
 SELECT task_id, project_id, task_details 
 FROM Tasks 
 INNER JOIN Projects 
@@ -2630,7 +2169,6 @@ INNER JOIN Project_Outcomes
 ON Projects.project_id = Project_Outcomes.project_id 
 WHERE Projects.project_details LIKE '%omnis%' 
 OR (SELECT COUNT(*) FROM Project_Outcomes WHERE Project_Outcomes.project_id = Projects.project_id) > 2
-
 
 
 
@@ -2646,12 +2184,10 @@ ORDER BY s.date_from
 
 
 
-
 SELECT s.staff_details, r.role_description 
 FROM Research_Staff s 
 INNER JOIN Staff_Roles r ON s.role_code = r.role_code 
 WHERE r.role_description LIKE '%researcher%'
-
 
 
 
@@ -2665,12 +2201,10 @@ WHERE project_id = ?
 
 
 
-
 SELECT o.outcome_description 
 FROM Projects p 
 INNER JOIN Project_Outcomes o ON p.project_id = o.project_id 
 WHERE p.project_details = 'sint'
-
 
 
 
@@ -2682,7 +2216,6 @@ WHERE Projects.organisation_id = 'ORG001'
 
 
 
-
  are working on projects for organisation with id = 1
 
 SELECT s.role_code, sr.role_description
@@ -2690,7 +2223,6 @@ FROM Staff_Roles sr
 INNER JOIN Project_Staff s ON s.role_code = sr.role_code
 INNER JOIN Projects p ON p.project_id = s.project_id
 WHERE p.organisation_id = 1
-
 
 
 
@@ -2708,7 +2240,6 @@ LIMIT 1
 
 
 
-
 SELECT role_code, COUNT(*) AS role_count
 FROM Staff_Roles
 INNER JOIN Project_Staff
@@ -2718,14 +2249,10 @@ ORDER BY role_count DESC
 LIMIT 1
 
 
-
-tracking_grants_for_research:66 / 78
-
 ******* university_basketball *********
 
 
 
-
 SELECT COUNT(DISTINCT School_ID) 
 FROM basketball_match 
 INNER JOIN university 
@@ -2735,21 +2262,11 @@ ON basketball_match.School_ID = university.School_ID
 
 
 
-
 SELECT COUNT(DISTINCT School_ID) 
 FROM basketball_match 
 INNER JOIN university 
 ON basketball_match.School_ID = university.School_ID
 
-
-
-university_basketball:44 / 46
 
 ******* wedding *********
-
-wedding:20 / 20
-
 ******* wrestler *********
-
-wrestler:40 / 40
-

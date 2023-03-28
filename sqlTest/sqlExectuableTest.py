@@ -16,6 +16,11 @@ logging.basicConfig(format='%(message)s\n',
                     level=logging.ERROR,
                     filename='sqlTest/sqlExectuableTest.log',
                     filemode='w')
+file_handler = logging.FileHandler('sqlTest/failedSql.log')
+
+logger2 = logging.getLogger("failedSql")
+logger2.setLevel(level=logging.ERROR)
+logger2.addHandler(file_handler)
 
 # 准备测试的 dbs
 db_list = os.listdir('sql')
@@ -28,6 +33,8 @@ def res_print(s):
     print()
 
 for db_id in db_list:
+    logger2.error(f"******* {db_id} *********")
+
     total, err = 0, 0
 
     connection = sqlite3.connect(f'spider/database/{db_id}/{db_id}.sqlite')
@@ -43,10 +50,11 @@ for db_id in db_list:
         total += 1
         try:
             res = cursor.execute(sql)
-        except sqlite3.OperationalError as e:
-            err += 1
+        # except sqlite3.OperationalError as e:
+        #     err += 1
         except Exception as e:
             err += 1
+            logger2.error(sql)
             
 
     connection.close()

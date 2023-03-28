@@ -11,3 +11,4 @@
 TODO:
 
 - [ ] 抽取 spider 数据集中的 table 和 column 不需要从每个 db 的 sql 中提取，可以直接从 {db_id}.sqlite 文件中提取
+- [ ] 测试生成的 sql 与 groundTruth 对不对
