@@ -18,13 +18,9 @@ def res_print(s):
     print()
 
 sql = '''
-SELECT artist_name 
-FROM artist 
-INNER JOIN song ON artist.artist_name = song.artist_name 
-WHERE song.languages = 'English' 
-AND song.rating <= 8
+SELECT count(*) FROM aircraft
 '''
-db = "music_1"
+db = "aircraft"
 connection = sqlite3.connect(f'spider/database/{db}/{db}.sqlite')
 cursor = connection.cursor()
 res = cursor.execute(sql)
