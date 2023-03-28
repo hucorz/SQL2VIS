@@ -13,14 +13,17 @@ import re
 import sqlite3
 
 logging.basicConfig(format='%(message)s\n',
-                    level=logging.ERROR,
-                    filename='sqlTest/sqlExectuableTest.log',
-                    filemode='w')
-file_handler = logging.FileHandler('sqlTest/failedSql.log')
+                    level=logging.ERROR,)
+file_handler1 = logging.FileHandler('sqlTest/sqlExectuableTest.log')
+file_handler2 = logging.FileHandler('sqlTest/failedSql.log')
+
+logger1 = logging.getLogger("exectuableTest")
+logger1.setLevel(level=logging.ERROR)
+logger1.addHandler(file_handler1)
 
 logger2 = logging.getLogger("failedSql")
 logger2.setLevel(level=logging.ERROR)
-logger2.addHandler(file_handler)
+logger2.addHandler(file_handler2)
 
 # 准备测试的 dbs
 db_list = os.listdir('sql')
@@ -58,4 +61,4 @@ for db_id in db_list:
             
 
     connection.close()
-    logging.error(f'{db_id}:{total-err} / {total}')
+    logger1.error(f'{db_id}:{total-err} / {total}')
